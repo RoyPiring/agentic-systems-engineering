@@ -24,9 +24,10 @@ Explain the real-world problem in plain language first. Start with the outcome, 
 ## How To Read This
 
 1. `business-context.md`
-2. `architecture.md`
+2. `architecture.md` (and `architecture/` for diagrams and per-phase assets)
 3. `implementation.md`
 4. `validation.md`
+5. `build/` when you need runnable code and configs
 
 ## System Summary
 
@@ -39,9 +40,11 @@ Explain the real-world problem in plain language first. Start with the outcome, 
 
 - `business-context.md`
 - `architecture.md`
+- `architecture/` — RP-style per-phase images and prompts (`P00`–`P04`)
 - `implementation.md`
 - `validation.md`
-- `executions/` if applicable
+- `build/` — code, scripts, and configs produced during the series
+- `executions/` — P01–P04 execution records and evidence
 
 ## Cross-System References
 

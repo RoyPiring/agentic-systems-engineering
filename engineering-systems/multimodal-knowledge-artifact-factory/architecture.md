@@ -13,6 +13,10 @@ flowchart LR
   C --> D["Validation / Evidence"]
 ```
 
+## Supplemental artifacts (RP layout)
+
+Exported diagrams, screenshots, and per-phase notes belong under `architecture/` (not in this file). Use `architecture/P0X/01-Images/` and `architecture/P0X/02-Prompts/` per the Repository Packaging layout. Link out from this document when you add assets (for example: `![Overview](./architecture/P00/01-Images/overview.png)`).
+
 ## Components
 
 | Component | Responsibility | Boundary |
