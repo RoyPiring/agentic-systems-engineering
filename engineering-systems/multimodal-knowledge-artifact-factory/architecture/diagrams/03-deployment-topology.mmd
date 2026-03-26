@@ -1,0 +1,16 @@
+%% Technology / deployment topology — local-first runtime (where logical blocks execute)
+flowchart TB
+  subgraph host["Operator workstation (local)"]
+    subgraph processes["Processes / artifacts on disk"]
+      RUST["Rust toolchain\nparser / Dioxus UI\n(cargo run)"]
+      PY["Python 3.x\nVibeVoice bridge\n(integration.py, tts_inference.py)"]
+      FS["Working tree\nmarkdown, wav, json, quiz MD"]
+    end
+  end
+  AIRI["AIRI desktop\n(local app)"]
+  OP["Operator"]
+  OP --> host
+  RUST --> FS
+  PY --> FS
+  FS --> AIRI
+  PY --> AIRI

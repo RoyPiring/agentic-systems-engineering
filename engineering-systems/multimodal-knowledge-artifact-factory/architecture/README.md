@@ -1,21 +1,31 @@
-# Architecture artifacts
+# Architecture scaffold
 
-This folder mirrors the **Repository Packaging (RP)** layout from the Project Library series: per-phase folders for diagrams, screenshots, and supporting notes.
+This folder is the **canonical place** for architecture evidence alongside root `architecture.md`:
 
-## Layout
+| Subfolder | Purpose |
+|-----------|---------|
+| `diagrams/` | **Standard five** Mermaid sources (`.mmd`): context, **logical architectural topology**, **deployment topology**, roadmap phases, data flow. See `diagrams/README.md`. |
+| `adr/` | Architecture Decision Records — one file per decision (`ADR-NNN-short-title.md`). |
 
-```text
-architecture/
-├── README.md          ← you are here
-├── P00/               ← series / system-level
-│   ├── 01-Images/     ← diagrams, screenshots, exports
-│   └── 02-Prompts/    ← prompts and short architecture notes
-├── P01/ … P04/        ← same structure per project in the series
-```
+Root `architecture.md` should keep the **overview** (intent, summary Mermaid, component table, tradeoffs, failure modes). **Detailed decisions** live in `adr/`; **full diagram sources** live in `diagrams/`.
 
-## How this relates to `architecture.md`
+## Standard diagram files
 
-- **`architecture.md`** (at the engineering-system root) is the narrative: intent, Mermaid overview, ADRs, tradeoffs, failure modes, security, cost.
-- **`architecture/`** holds **supplemental** assets that are awkward to inline (PNG/SVG exports, multi-page diagrams, prompt transcripts).
+| File | Purpose |
+|------|---------|
+| `diagrams/01-system-context.mmd` | External actors and system boundary |
+| `diagrams/02-architectural-topology.mmd` | **Logical** system design (capabilities, dependencies)—not hosting |
+| `diagrams/03-deployment-topology.mmd` | **Technology** view: nodes, runtimes, environments |
+| `diagrams/04-roadmap-phases.mmd` | Delivery phases (e.g. P01–P04) |
+| `diagrams/05-data-flow.mmd` | Information / artifact flow between parts |
 
-During the portfolio build, drop exports into `architecture/P0X/01-Images/` and optional prompt or decision notes into `architecture/P0X/02-Prompts/`.
+Portfolio-wide wording and TOGAF-style mapping: `02-BUILD/07-GitHub-Protifilo/00-template-systems-engineering/02-system-templates/scaffold-architecture-README.md`.
+
+## Naming
+
+- ADRs: `ADR-001-short-slug.md` — zero-padded index, kebab-case slug, `.md` only.
+
+## Conventions
+
+- Link from `architecture.md` using relative paths, e.g. `./architecture/adr/ADR-001-local-first-zero-cost-multimodal-pipeline.md`.
+- When GitHub cannot render `.mmd` natively, paste the same graph in `architecture.md` inside a `mermaid` fence **or** link to a rendered export under `diagrams/exports/`.

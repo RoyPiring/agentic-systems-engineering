@@ -1,0 +1,25 @@
+%% Multimodal Knowledge Artifact Factory — system context
+%% Canonical source; mirror in architecture.md mermaid fence for GitHub preview.
+flowchart TB
+  subgraph inputs["Inputs"]
+    MD["Structured markdown\n(research / specs)"]
+  end
+  subgraph pipeline["Local pipeline"]
+    PARSE["Parse & structure\npulldown-cmark"]
+    AUDIO["Narration\nVibeVoice"]
+    UI["Interactive views\nDioxus 0.7"]
+    ASSEMBLE["Multimodal assembly\nAIRI desktop"]
+  end
+  subgraph outputs["Study artifacts"]
+    A["Audio files"]
+    V["UI / binaries"]
+    S["Flashcards, quiz MD,\nexports"]
+  end
+  MD --> PARSE
+  PARSE --> AUDIO
+  PARSE --> UI
+  AUDIO --> ASSEMBLE
+  UI --> ASSEMBLE
+  ASSEMBLE --> A
+  ASSEMBLE --> V
+  ASSEMBLE --> S
