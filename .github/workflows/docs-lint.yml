@@ -1,0 +1,39 @@
+name: Documentation Quality
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Markdown Lint
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: '**/*.md'
+
+      - name: Link Check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress './**/*.md'
+
+      - name: Structure Validation
+        run: |
+          echo "Checking engineering system file completeness..."
+          FAILED=0
+          for dir in engineering-systems/*/; do
+            if [ -d "\C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GitHub-Builds\agentic-systems-engineering\feature-systems" ] && [ "\" != "README.md" ]; then
+              for file in README.md business-context.md architecture.md implementation.md validation.md; do
+                if [ ! -f "\C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GitHub-Builds\agentic-systems-engineering\feature-systems/\" ]; then
+                  echo "MISSING: \C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GitHub-Builds\agentic-systems-engineering\feature-systems\"
+                  FAILED=1
+                fi
+              done
+            fi
+          done
+          if [ \ -eq 1 ]; then exit 1; fi
+          echo "All systems complete."
