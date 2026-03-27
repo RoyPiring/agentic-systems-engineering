@@ -24,11 +24,11 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 | | |
 |--|--|
 | **Plan** | [executions/implementation/P02-implementation-plan.md](./executions/implementation/P02-implementation-plan.md) |
-| **Goal** | Python **`build/tts_inference.py`** drives local **VibeVoice** TTS from P01 structured lines; chunked, stripped text → **`.wav`** under `executions/evidence/` (or subfolder) |
-| **Inputs** | P01 CLI stdout (pipe) or equivalent structured text file |
-| **Output** | Playable `.wav` files + run transcripts |
+| **Goal** | Python **`build/tts_inference.py`** implements P01 → strip → chunk → **`.wav`** (default **`stub`** backend; neural VibeVoice-TTS deferred per upstream repo status) |
+| **Inputs** | P01 CLI stdout (pipe) or saved structured transcript (`--from-file`) |
+| **Output** | Playable `.wav` under `executions/evidence/p02-audio/` + transcripts |
 
-**Status:** Plan committed — execution **not started** (see [`validation/P02-validation.md`](./validation/P02-validation.md)).
+**Status:** **Executed** — [`validation/P02-validation.md`](./validation/P02-validation.md) **PASS**; evidence under [`executions/evidence/`](./executions/evidence/).
 
 **Depends on:** P01 **PASS** — [`validation/P01-validation.md`](./validation/P01-validation.md).
 
@@ -46,6 +46,12 @@ End-to-end proof; evidence under [`executions/evidence/`](./executions/evidence/
 2. `cd build`  
 3. `cargo build --release`  
 4. `cargo run --release -- samples/complex-sample.md`  
+
+## How to run (P02)
+
+1. Python **3.10+** on `PATH`.  
+2. From `build/`: save P01 stdout or pipe — see [build/README.md](./build/README.md).  
+3. `python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.txt` (or `--stdin`).  
 
 ## Decisions
 

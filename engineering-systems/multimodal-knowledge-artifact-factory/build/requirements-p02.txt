@@ -1,0 +1,6 @@
+# P02 optional Python deps.
+# Default ``tts_inference.py`` uses only the Python standard library (--backend stub).
+#
+# Microsoft VibeVoice: TTS-1.5B “quick try” is disabled in the upstream repo and TTS
+# inference code was removed from github.com/microsoft/VibeVoice (see their README).
+# For neural TTS, follow current Microsoft / Hugging Face docs (e.g. Realtime model, Colab).
