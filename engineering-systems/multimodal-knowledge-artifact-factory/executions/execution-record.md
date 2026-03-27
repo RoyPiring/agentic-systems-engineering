@@ -10,7 +10,7 @@ Rolling summary for **P01–P04**. Each project has a plan in [`implementation/`
 | **Window** | Mar 2026 |
 | **Owner** | Roy |
 
-### Summary
+### P01 — phase summary
 
 | Phase | What shipped | Status | Evidence |
 | ----- | ------------ | ------ | -------- |
@@ -19,7 +19,7 @@ Rolling summary for **P01–P04**. Each project has a plan in [`implementation/`
 | 3 | Happy path + missing-file run | Done | [`evidence/complex-sample-run.txt`](./evidence/complex-sample-run.txt), [`evidence/p01-negative-missing-file.txt`](./evidence/p01-negative-missing-file.txt) |
 | 4 | Rollups + P01 validation | Done | [`../validation/P01-validation.md`](../validation/P01-validation.md), [`../validation.md`](../validation.md) |
 
-### Commands (from `build/`)
+### P01 — commands (from `build/`)
 
 ```bash
 cargo build --release
@@ -27,7 +27,7 @@ cargo run --release -- samples/complex-sample.md
 cargo run --release -- does-not-exist.md
 ```
 
-### Notes
+### P01 — notes
 
 - Default sample path is relative to cwd `build/`.
 - Stdout format `H{n}:` / `P:` is the handoff contract toward audio/UI in later phases.
@@ -35,6 +35,36 @@ cargo run --release -- does-not-exist.md
 
 ---
 
-## P02 — (not started)
+## P02 — Local audio narrations (VibeVoice)
 
-_Add a matching summary row when P02 begins._
+| | |
+|--|--|
+| **Plan** | [`implementation/P02-implementation-plan.md`](./implementation/P02-implementation-plan.md) |
+| **Window** | Mar 2026 |
+| **Owner** | Roy |
+
+### P02 — phase summary
+
+| Phase | Target | Status | Evidence |
+| ----- | ------ | ------ | -------- |
+| 1 | Python 3.x recorded; `tts_inference.py`; **stub** backend (no pip deps) | Done | [`evidence/p02-python-version.txt`](./evidence/p02-python-version.txt), [`../build/tts_inference.py`](../build/tts_inference.py), [`../build/requirements-p02.txt`](../build/requirements-p02.txt) |
+| 2 | P01 → chunk → strip for TTS | Done | [`evidence/p01-stdout-for-p02.txt`](./evidence/p01-stdout-for-p02.txt), [`evidence/p02-pipeline-run.txt`](./evidence/p02-pipeline-run.txt) |
+| 3 | `.wav` files with unique names; empty-input edge | Done | [`evidence/p02-audio/`](./evidence/p02-audio/), [`evidence/p02-audio-listing.txt`](./evidence/p02-audio-listing.txt), [`evidence/p02-edge-empty-stderr.txt`](./evidence/p02-edge-empty-stderr.txt) |
+| 4 | P02 validation **PASS**, rollups | Done | [`../validation/P02-validation.md`](../validation/P02-validation.md), [`../implementation.md`](../implementation.md), [`../validation.md`](../validation.md) |
+
+### P02 — commands (from `build/`)
+
+```bash
+cargo run --release -- samples/complex-sample.md > ../executions/evidence/p01-stdout-for-p02.txt
+python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.txt
+
+# Or pipe
+cargo run --release -- samples/complex-sample.md | python tts_inference.py --stdin
+```
+
+### P02 — notes
+
+- Default WAV output directory: `../executions/evidence/p02-audio/` (override with `--output-dir`).
+- **VibeVoice-TTS-1.5B** public inference is not wired: upstream repo disabled/removed TTS quick try; **`--backend stub`** proves the pipeline. See [`../build/README.md`](../build/README.md).
+
+---

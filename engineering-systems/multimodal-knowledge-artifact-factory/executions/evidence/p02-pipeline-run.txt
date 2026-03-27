@@ -1,0 +1,25 @@
+backend=stub chunks=12 output_dir=C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GITHUB-BUILDS\agentic-systems-engineering\engineering-systems\multimodal-knowledge-artifact-factory\executions\evidence\p02-audio
+  chunk 0000 len=28 | 'Multimodal pipeline overview'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0000.wav
+  chunk 0001 len=141 | 'This document exercises multiple heading levels, plain paragraphs, listsà'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0001.wav
+  chunk 0002 len=23 | 'Nested topic: ingestion'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0002.wav
+  chunk 0003 len=139 | 'Markdown is the trust boundary for local research notes. The parser shouà'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0003.wav
+  chunk 0004 len=18 | 'Detail level three'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0004.wav
+  chunk 0005 len=37 | 'Short paragraph after a deep heading.'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0005.wav
+  chunk 0006 len=19 | 'Lists and structure'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0006.wav
+  chunk 0007 len=88 | 'A block quote should not confuse paragraph detection when quotes containà'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0007.wav
+  chunk 0008 len=26 | 'Code block (informational)'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0008.wav
+  chunk 0009 len=117 | 'The following fenced block is structural markdown; P01 focuses on headinà'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0009.wav
+  chunk 0010 len=15 | 'Closing section'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0010.wav
+  chunk 0011 len=44 | 'Final paragraph for smoke tests: soft breaks'
+    -> ..\executions\evidence\p02-audio\p02-chunk-0011.wav

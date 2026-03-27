@@ -1,0 +1,17 @@
+
+Name               Length
+----               ------
+p02-chunk-0000.wav   9746
+p02-chunk-0001.wav  34662
+p02-chunk-0002.wav   8642
+p02-chunk-0003.wav  34220
+p02-chunk-0004.wav   7540
+p02-chunk-0005.wav  11730
+p02-chunk-0006.wav   7760
+p02-chunk-0007.wav  22976
+p02-chunk-0008.wav   9304
+p02-chunk-0009.wav  29370
+p02-chunk-0010.wav   6878
+p02-chunk-0011.wav  13274
+
+
