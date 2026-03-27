@@ -37,7 +37,7 @@ Each engineering system starts with a real-world problem and works backward to t
 
 | System | What It Demonstrates | Status |
 |---|---|---|
-| — | — | In progress |
+| multimodal-knowledge-artifact-factory | P01: governed Markdown parsing CLI, architecture + validation trail | Published — P01 merged 2026-03-26 |
 
 ## Project Library Source
 
