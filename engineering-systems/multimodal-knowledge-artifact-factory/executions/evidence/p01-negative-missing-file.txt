@@ -1,0 +1,8 @@
+
+--- cargo run (missing file) ---
+
+exit code: 1
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `target\release\mkaf_md_parse.exe does-not-exist.md`
+error: read does-not-exist.md: The system cannot find the file specified. (os error 2)
+error: process didn't exit successfully: `target\release\mkaf_md_parse.exe does-not-exist.md` (exit code: 1)

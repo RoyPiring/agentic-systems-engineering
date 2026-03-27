@@ -1,0 +1,20 @@
+    Updating crates.io index
+     Locking 7 packages to latest compatible versions
+      Adding pulldown-cmark v0.11.3 (available: v0.13.3)
+ Downloading crates ...
+  Downloaded getopts v0.2.24
+  Downloaded unicase v2.9.0
+  Downloaded pulldown-cmark-escape v0.11.0
+  Downloaded bitflags v2.11.0
+  Downloaded memchr v2.8.0
+  Downloaded unicode-width v0.2.2
+  Downloaded pulldown-cmark v0.11.3
+   Compiling unicode-width v0.2.2
+   Compiling pulldown-cmark v0.11.3
+   Compiling pulldown-cmark-escape v0.11.0
+   Compiling bitflags v2.11.0
+   Compiling memchr v2.8.0
+   Compiling unicase v2.9.0
+   Compiling getopts v0.2.24
+   Compiling mkaf_md_parse v0.1.0 (C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GITHUB-BUILDS\agentic-systems-engineering\engineering-systems\multimodal-knowledge-artifact-factory\build)
+    Finished `release` profile [optimized] target(s) in 7.53s

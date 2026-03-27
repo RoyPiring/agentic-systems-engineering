@@ -1,0 +1,15 @@
+%% Data flow — structured markdown to multimodal study artifacts (happy path)
+flowchart LR
+  MD["Structured\nmarkdown files"]
+  AST["Parsed structure\n(headers, body)"]
+  AUD["Audio\n(.wav / segments)"]
+  UI["UI state /\nDioxus views"]
+  EXP["Exports\nflashcards.json\nquiz.md"]
+  PKG["AIRI session /\nassembled artifact"]
+  MD --> AST
+  AST --> AUD
+  AST --> UI
+  AST --> EXP
+  AUD --> PKG
+  UI --> PKG
+  EXP --> PKG

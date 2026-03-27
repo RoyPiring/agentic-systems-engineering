@@ -1,0 +1,8 @@
+[package]
+name = "mkaf_md_parse"
+version = "0.1.0"
+edition = "2021"
+description = "P01: parse local Markdown into structured header/paragraph output (multimodal-knowledge-artifact-factory)"
+
+[dependencies]
+pulldown-cmark = "0.11"

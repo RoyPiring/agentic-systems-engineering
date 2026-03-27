@@ -1,3 +1,5 @@
+# Markdown: markdownlint-cli2 auto-loads repo-root `.markdownlint.json`.
+# Do not remove that file without updating rules here or restoring compatible defaults.
 name: Documentation Quality
 
 on:
@@ -23,17 +25,17 @@ jobs:
 
       - name: Structure Validation
         run: |
+          set -e
           echo "Checking engineering system file completeness..."
           FAILED=0
           for dir in engineering-systems/*/; do
-            if [ -d "\C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GitHub-Builds\agentic-systems-engineering\feature-systems" ] && [ "\" != "README.md" ]; then
-              for file in README.md business-context.md architecture.md implementation.md validation.md; do
-                if [ ! -f "\C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GitHub-Builds\agentic-systems-engineering\feature-systems/\" ]; then
-                  echo "MISSING: \C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GitHub-Builds\agentic-systems-engineering\feature-systems\"
-                  FAILED=1
-                fi
-              done
-            fi
+            [ -d "$dir" ] || continue
+            for file in README.md business-context.md architecture.md implementation.md validation.md; do
+              if [ ! -f "${dir}${file}" ]; then
+                echo "MISSING: ${dir}${file}"
+                FAILED=1
+              fi
+            done
           done
-          if [ \ -eq 1 ]; then exit 1; fi
+          if [ "$FAILED" -ne 0 ]; then exit 1; fi
           echo "All systems complete."

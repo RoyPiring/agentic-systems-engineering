@@ -1,0 +1,17 @@
+%% Logical architectural topology — building blocks and dependencies (not where they are hosted)
+flowchart TB
+  subgraph logical["In-scope system (logical)"]
+    ING["Content ingestion\n(markdown sources)"]
+    PARSE["Structure & extraction\n(CommonMark → model)"]
+    NARR["Narration\n(text → audio assets)"]
+    PRES["Presentation\n(interactive knowledge views)"]
+    EXP["Export & packaging\n(study artifacts)"]
+  end
+  EXT["AIRI assembly\n(consumer of exports)"]
+  ING --> PARSE
+  PARSE --> NARR
+  PARSE --> PRES
+  PARSE --> EXP
+  NARR --> EXP
+  PRES --> EXP
+  EXP --> EXT
