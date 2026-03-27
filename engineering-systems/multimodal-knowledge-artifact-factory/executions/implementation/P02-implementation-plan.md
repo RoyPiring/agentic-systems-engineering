@@ -17,7 +17,7 @@
 
 | Phase | Focus |
 | ----- | ----- |
-| **1** | Python 3.11+ venv, VibeVoice deps, baseline model load (no OOM) |
+| **1** | Python 3.10+ recorded; `tts_inference.py`; **stub** baseline (optional venv for future neural deps) |
 | **2** | Read P01 output (pipe from `cargo run` or intermediate text file); chunk + strip for TTS |
 | **3** | Synthesize per chunk → `.wav`; happy path + one edge case (oversized chunk or empty input) |
 | **4** | Evidence, execution summary, `validation/P02-validation.md` → **PASS**, rollups |
