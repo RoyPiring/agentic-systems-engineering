@@ -21,7 +21,16 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 
 ### P02 — Core build
 
-VibeVoice / TTS from structured text. **Not started** here; depends on P01 (now **PASS** — see [`validation/P01-validation.md`](./validation/P01-validation.md)).
+| | |
+|--|--|
+| **Plan** | [executions/implementation/P02-implementation-plan.md](./executions/implementation/P02-implementation-plan.md) |
+| **Goal** | Python **`build/tts_inference.py`** drives local **VibeVoice** TTS from P01 structured lines; chunked, stripped text → **`.wav`** under `executions/evidence/` (or subfolder) |
+| **Inputs** | P01 CLI stdout (pipe) or equivalent structured text file |
+| **Output** | Playable `.wav` files + run transcripts |
+
+**Status:** Plan committed — execution **not started** (see [`validation/P02-validation.md`](./validation/P02-validation.md)).
+
+**Depends on:** P01 **PASS** — [`validation/P01-validation.md`](./validation/P01-validation.md).
 
 ### P03 — Hardening
 

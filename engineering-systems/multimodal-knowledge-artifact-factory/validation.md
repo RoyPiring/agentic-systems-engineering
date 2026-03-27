@@ -5,13 +5,15 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 | Project | Plan | Validation | Result |
 | ------- | ---- | ---------- | ------ |
 | P01 | [executions/implementation/P01-implementation-plan.md](./executions/implementation/P01-implementation-plan.md) | [validation/P01-validation.md](./validation/P01-validation.md) | **PASS** |
-| P02 | — | — | — |
+| P02 | [executions/implementation/P02-implementation-plan.md](./executions/implementation/P02-implementation-plan.md) | [validation/P02-validation.md](./validation/P02-validation.md) | **PENDING** |
 | P03 | — | — | — |
 | P04 | — | — | — |
 
 ## Summary
 
 **P01:** Rust CLI under `build/` builds and runs; structured `H{n}:` / `P:` output and error path verified. Evidence: [`executions/evidence/`](./executions/evidence/) (toolchain, build log, sample run, negative run).
+
+**P02:** Local VibeVoice TTS from P01 output — plan and validation stub in place; **PENDING** execution and **PASS**.
 
 ## Expected vs actual
 

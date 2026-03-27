@@ -35,6 +35,32 @@ cargo run --release -- does-not-exist.md
 
 ---
 
-## P02 — (not started)
+## P02 — Local audio narrations (VibeVoice)
 
-_Add a matching summary row when P02 begins._
+| | |
+|--|--|
+| **Plan** | [`implementation/P02-implementation-plan.md`](./implementation/P02-implementation-plan.md) |
+| **Window** | Mar 2026 |
+| **Owner** | Roy |
+
+### Summary
+
+| Phase | Target | Status | Evidence |
+| ----- | ------ | ------ | -------- |
+| 1 | Python venv, `tts_inference.py` scaffold, model load | Not started | _(add `p02-*.txt` under [`evidence/`](./evidence/) when run)_ |
+| 2 | P01 → chunk → strip for TTS | Not started | — |
+| 3 | `.wav` files with unique names | Not started | — |
+| 4 | P02 validation **PASS**, rollups | Not started | [`../validation/P02-validation.md`](../validation/P02-validation.md) |
+
+### Commands (preview)
+
+_From `build/` after implementation:_
+
+```bash
+# Example: pipe P01 stdout into Python (exact invocation TBD in plan execution)
+cargo run --release -- samples/complex-sample.md | python tts_inference.py
+```
+
+_Phase table and real commands replace this section when P02 executes._
+
+---
