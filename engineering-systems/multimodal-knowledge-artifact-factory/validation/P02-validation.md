@@ -46,5 +46,5 @@ python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.tx
 
 | | |
 |--|--|
-| **PR** | (add link when you open the PR) |
+| **PR** | https://github.com/RoyPiring/agentic-systems-engineering/pull/3 |
 | **Merge commit** | (short SHA on `main` after merge) |
