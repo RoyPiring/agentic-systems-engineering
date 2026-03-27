@@ -20,7 +20,6 @@
 - [ ] Per-project plans in `executions/implementation/` (`P0X-implementation-plan.md`); run transcripts in `executions/evidence/`
 - [ ] Changelog entry created in `.github/changelog/` (copy from `CHANGELOG_ENTRY_TEMPLATE.md`; name `YYYY-MM-DD-<slug>.md`)
 - [ ] Mermaid diagram(s) in `architecture.md` render in GitHub preview
-- [ ] Claude Sonnet evidence review: PASS <!-- omit or N/A if not run for this PR -->
 
 ### Evidence Summary
 

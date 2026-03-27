@@ -20,7 +20,6 @@
 - [x] Per-project plans in `executions/implementation/` (`P0X-implementation-plan.md`); run transcripts in `executions/evidence/`
 - [x] Changelog entry created in `.github/changelog/` (`2026-03-26-multimodal-knowledge-artifact-factory.md`)
 - [x] Mermaid diagram(s) in `architecture.md` render in GitHub preview
-- [ ] Claude Sonnet evidence review: PASS (N/A — optional pre-merge review)
 
 ### Evidence Summary
 
