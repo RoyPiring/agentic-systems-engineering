@@ -1,49 +1,51 @@
 # Implementation
 
-## Delivery Strategy
+How this system is phased from a working **parse path** through media and UI. Per-project plans live in [`executions/implementation/`](./executions/implementation/) (`P0X-implementation-plan.md`); run evidence lives in [`executions/evidence/`](./executions/evidence/). This page is the rolling **system** view.
 
-Explain why the implementation is phased and what sequence reduces risk.
+## Strategy
+
+Work moves **P01 → P04**: Markdown → structured text → audio/UI → assembly. Each phase stays testable on its own.
 
 ## Phases
 
-### Phase 1 - Foundation
+### P01 — Foundation
 
-- goal
-- inputs
-- expected output
+| | |
+|--|--|
+| **Plan** | [executions/implementation/P01-implementation-plan.md](./executions/implementation/P01-implementation-plan.md) |
+| **Goal** | Rust binary under `build/` turns `.md` into structured lines (`H{n}:`, `P:`) for downstream use |
+| **Inputs** | CLI path or default `samples/complex-sample.md` (cwd = `build/`) |
+| **Output** | Structured stdout; stderr + exit `1` on read errors |
 
-### Phase 2 - Core Build
+**Artifacts:** `build/Cargo.toml`, `build/src/main.rs`, `build/samples/complex-sample.md`, [`build/README.md`](./build/README.md).
 
-- goal
-- inputs
-- expected output
+### P02 — Core build
 
-### Phase 3 - Hardening
+VibeVoice / TTS from structured text. **Not started** here; depends on P01 (now **PASS** — see [`validation/P01-validation.md`](./validation/P01-validation.md)).
 
-- goal
-- inputs
-- expected output
+### P03 — Hardening
 
-### Phase 4 - Validation
+UI (e.g. Dioxus), edge cases, performance—later.
 
-- goal
-- inputs
-- expected output
+### P04 — Validation
 
-## Execution Path Start To Finish
+End-to-end proof; evidence under [`executions/evidence/`](./executions/evidence/); roll-up in [`validation.md`](./validation.md).
 
-1. Prepare prerequisites
-2. Build core components
-3. Apply controls and guardrails
-4. Run validation
-5. Record evidence
+## How to run (P01)
 
-## Decision Points
+1. Install Rust.  
+2. `cd build`  
+3. `cargo build --release`  
+4. `cargo run --release -- samples/complex-sample.md`  
 
-| Decision Point | Why It Matters | Chosen Path |
-|---|---|---|
-| | | |
+## Decisions
 
-## Reproducibility Notes
+| Topic | Choice |
+| ----- | ------ |
+| Crate location | `build/`, not repo root |
+| Parser | `pulldown-cmark` **0.11** (ADR-002) |
+| Default sample | `samples/complex-sample.md` |
 
-List assumptions, prerequisites, and environment expectations.
+## Reproduce
+
+Use stable Rust; run commands from `build/`. Evidence and status: [`executions/execution-record.md`](./executions/execution-record.md) and [`validation/P01-validation.md`](./validation/P01-validation.md).

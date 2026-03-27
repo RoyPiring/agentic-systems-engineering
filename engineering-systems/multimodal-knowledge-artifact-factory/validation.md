@@ -1,43 +1,51 @@
 # Validation
 
-## Validation Summary
+Roll-up of proof for this engineering system. Start with the status table, then open each per-project file for detail.
 
-Summarize whether the system met its success criteria.
+| Project | Plan | Validation | Result |
+| ------- | ---- | ---------- | ------ |
+| P01 | [executions/implementation/P01-implementation-plan.md](./executions/implementation/P01-implementation-plan.md) | [validation/P01-validation.md](./validation/P01-validation.md) | **PASS** |
+| P02 | — | — | — |
+| P03 | — | — | — |
+| P04 | — | — | — |
 
-## Expected Vs Observed
+## Summary
 
-| Check | Expected Result | Observed Result | Delta |
-|---|---|---|---|
-| | | | |
+**P01:** Rust CLI under `build/` builds and runs; structured `H{n}:` / `P:` output and error path verified. Evidence: [`executions/evidence/`](./executions/evidence/) (toolchain, build log, sample run, negative run).
 
-## Evidence Artifacts
+## Expected vs actual
 
-- screenshots
-- logs
-- metrics
-- command output
-- test results
+| Check | Expected | Actual | Δ |
+| ----- | -------- | -------- | --- |
+| P01 build | Success from `build/` | **PASS** — [`p01-cargo-build.txt`](./executions/evidence/p01-cargo-build.txt) | — |
+| P01 sample | `H*` / `P:` output | **PASS** — [`complex-sample-run.txt`](./executions/evidence/complex-sample-run.txt) | — |
+| P01 bad path | Non-zero exit | **PASS** — exit 1 in [`p01-negative-missing-file.txt`](./executions/evidence/p01-negative-missing-file.txt) | — |
 
-## Negative Testing
+## Evidence
 
-| Failure Scenario | What Was Tested | Result | Recovery / Rollback |
-|---|---|---|---|
-| | | | |
+- [Execution record](./executions/execution-record.md) — P01 summary  
+- [executions/evidence/](./executions/evidence/) — transcripts  
 
-## Security Validation
+## Negative cases
 
-Document what security controls were checked and how.
+| Scenario | Result |
+| -------- | ------ |
+| P01 missing input | **PASS** — non-zero exit, error on stderr ([`p01-negative-missing-file.txt`](./executions/evidence/p01-negative-missing-file.txt)) |
 
-## Cost Validation
+## Security (P01)
 
-| Cost Driver | Budget / Constraint | Observed Cost | Variance |
-|---|---|---|---|
-| | | | |
+Local-only; no secrets in tree; parser path has no network calls.
 
-## Reproducibility Assessment
+## Cost (P01)
 
-State whether another engineer can repeat the validation with the documented prerequisites.
+| Item | Note |
+| ---- | ---- |
+| Tooling | $0 (local Rust) |
 
-## Limitations
+## Reproduce
 
-List known gaps, assumptions, and any unverified areas.
+Install Rust, clone this system, follow [P01-validation.md](./validation/P01-validation.md) from `build/`. `Cargo.lock` is pinned under `build/`.
+
+## Limits
+
+P01 scope is parse + stdout + error path; list bodies are not fully enumerated as separate `P:` lines (see sample transcript). Optional: regenerate evidence after toolchain upgrades using the same commands from `build/`.
