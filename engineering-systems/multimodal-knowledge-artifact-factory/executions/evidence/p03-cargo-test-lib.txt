@@ -1,0 +1,14 @@
+Transcript: P03 — library tests (P01 stdout golden vs P02 handoff file)
+
+Command (from build/):
+
+    cargo test --lib
+
+Excerpt:
+
+    running 1 test
+    test tests::structured_stdout_matches_p02_golden ... ok
+
+    test result: ok. 1 passed; 0 failed; 0 ignored
+
+Rationale: Refactor moved parsing into `src/lib.rs`; golden compare keeps `H{n}:` / `P:` stream identical to `executions/evidence/p01-stdout-for-p02.txt`.

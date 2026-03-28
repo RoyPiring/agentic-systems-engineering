@@ -32,9 +32,18 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 
 **Depends on:** P01 **PASS** — [`validation/P01-validation.md`](./validation/P01-validation.md).
 
-### P03 — Hardening
+### P03 — Interactive views
 
-UI (e.g. Dioxus), edge cases, performance—later.
+| | |
+|--|--|
+| **Plan** | [executions/implementation/P03-implementation-plan.md](./executions/implementation/P03-implementation-plan.md) |
+| **Goal** | **Dioxus 0.7.3** desktop **Knowledge Viewer**: render parsed markdown sections; per-section control targeting P02 **`.wav`** files under `executions/evidence/p02-audio/` |
+| **Inputs** | Same markdown sample contract as P01; P02 audio artifacts on disk |
+| **Output** | Runnable desktop UI; evidence under `executions/evidence/`; [validation/P03-validation.md](./validation/P03-validation.md) → **PASS** when executed |
+
+**Status:** **Executed** — [`validation/P03-validation.md`](./validation/P03-validation.md) **PASS**; evidence under [`executions/evidence/`](./executions/evidence/) (`p03-*.txt`).
+
+**Depends on:** P01 **PASS** — [validation/P01-validation.md](./validation/P01-validation.md); P02 **PASS** — [validation/P02-validation.md](./validation/P02-validation.md).
 
 ### P04 — Validation
 
@@ -52,6 +61,12 @@ End-to-end proof; evidence under [`executions/evidence/`](./executions/evidence/
 1. Python **3.10+** on `PATH`.  
 2. From `build/`: save P01 stdout or pipe — see [build/README.md](./build/README.md).  
 3. `python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.txt` (or `--stdin`).  
+
+## How to run (P03)
+
+1. From `build/`: `cargo run --release --features viewer --bin knowledge_viewer` (after `cargo build --release --features viewer --bin knowledge_viewer` if needed).  
+2. Requires **WebView2** on Windows; keep cwd as `build/` so `samples/` and `../executions/evidence/p02-audio/` resolve.  
+3. Details: [build/README.md](./build/README.md).  
 
 ## Decisions
 

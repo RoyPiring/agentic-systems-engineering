@@ -5,4 +5,6 @@ Flat files **`P01-validation.md` … `P04-validation.md`** in this folder. The s
 | Project | File |
 | ------- | ---- |
 | P01 | [P01-validation.md](./P01-validation.md) |
-| P02–P04 | Add when those phases start |
+| P02 | [P02-validation.md](./P02-validation.md) |
+| P03 | [P03-validation.md](./P03-validation.md) |
+| P04 | Add when that phase starts |

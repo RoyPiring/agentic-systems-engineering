@@ -41,7 +41,7 @@ flowchart TB
 |---|---|---|
 | Markdown ingestion | Parse CommonMark into a structured internal representation | Trust boundary: only local files the operator selects |
 | VibeVoice TTS | Generate local narrations from text segments | GPU/RAM; no external API in core path |
-| Dioxus UI | Present navigable, interactive knowledge views | Desktop/web target per build config |
+| Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer** |
 | AIRI integration | Assemble multimodal study artifacts and companion workflows | Desktop app boundary; local only |
 | Export layer | Emit static assets (e.g. flashcard JSON, quiz markdown) | Filesystem output under operator control |
 

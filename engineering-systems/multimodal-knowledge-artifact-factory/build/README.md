@@ -40,6 +40,30 @@ cargo run --release -- samples/complex-sample.md | python tts_inference.py --std
 - **Stub WAV format:** mono **16-bit PCM**, **22050 Hz** (valid files for players / downstream tests).
 - **Optional deps:** `requirements-p02.txt` documents that stub mode needs no packages.
 
+## P03 — Knowledge Viewer (`knowledge_viewer`, Dioxus 0.7.3 desktop)
+
+**Prerequisites:** Same Rust stable toolchain; **Windows:** WebView2 (bundled with Edge). Build the UI with the **`viewer`** Cargo feature (optional dependency so the P01 CLI stays lightweight).
+
+From this directory:
+
+```bash
+# Parser CLI (default binary)
+cargo build --release
+cargo run --release -- samples/complex-sample.md
+
+# Desktop viewer (separate binary)
+cargo build --release --features viewer --bin knowledge_viewer
+cargo run --release --features viewer --bin knowledge_viewer
+```
+
+**Windows:** If the viewer build fails with MSVC **LNK1104** on `build_script_build-….exe`, try `cargo clean`, a shorter clone path, antivirus exclusion for the repo, or a short target directory for that shell only, for example `$env:CARGO_TARGET_DIR = "C:\t\mkaf-tgt"` (PowerShell) before `cargo build`.
+
+- **Dioxus in `Cargo.toml`:** use `dioxus = { version = "0.7.3", optional = true, features = ["desktop"] }` — keep **default** crate features enabled so `macro` / `launch` / `html` / `signals` are available. Turning **`default-features = false`** on `dioxus` without adding those features breaks `#[component]`, `rsx!`, and `LaunchBuilder`.
+
+- **Crate layout:** `src/lib.rs` — shared `parse_markdown_blocks` / `blocks_to_sections` / `list_p02_wavs_sorted`; `src/main.rs` — P01 CLI; `src/bin/knowledge_viewer.rs` — Dioxus app.
+- **Data:** Loads `samples/complex-sample.md`; maps **Play Narration** to sorted files under `../executions/evidence/p02-audio/` (run P02 first so `.wav` files exist).
+- **Evidence:** See [`../executions/evidence/p03-*.txt`](../executions/evidence/) for commands and notes.
+
 ## Rules
 
 - Prefer real, runnable content over empty placeholders.

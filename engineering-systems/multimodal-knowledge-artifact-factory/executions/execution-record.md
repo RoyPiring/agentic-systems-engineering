@@ -68,3 +68,39 @@ cargo run --release -- samples/complex-sample.md | python tts_inference.py --std
 - **VibeVoice-TTS-1.5B** public inference is not wired: upstream repo disabled/removed TTS quick try; **`--backend stub`** proves the pipeline. See [`../build/README.md`](../build/README.md).
 
 ---
+
+## P03 — Interactive knowledge views (Dioxus)
+
+| | |
+|--|--|
+| **Plan** | [`implementation/P03-implementation-plan.md`](./implementation/P03-implementation-plan.md) |
+| **Window** | Mar 2026 |
+| **Owner** | Roy |
+
+### P03 — phase summary
+
+| Phase | Target | Status | Evidence |
+| ----- | ------ | ------ | -------- |
+| 1 | Dioxus desktop shell; **Knowledge Viewer** window; crate layout supports CLI + UI | Done | [`evidence/p03-viewer-build.txt`](./evidence/p03-viewer-build.txt), [`../build/README.md`](../build/README.md) |
+| 2 | Parsed markdown in UI state; section rendering | Done | `build/src/lib.rs`, `build/src/bin/knowledge_viewer.rs` |
+| 3 | Per-section **Play Narration** (or equivalent) → P02 `.wav` paths | Done | `println!` path log; mapping note in [`evidence/p03-viewer-build.txt`](./evidence/p03-viewer-build.txt) |
+| 4 | Evidence, [`../validation/P03-validation.md`](../validation/P03-validation.md) **PASS**, rollups | Done | [`evidence/p03-cargo-test-lib.txt`](./evidence/p03-cargo-test-lib.txt), [`evidence/p03-cargo-release-cli.txt`](./evidence/p03-cargo-release-cli.txt) |
+
+### P03 — commands (from `build/`)
+
+```bash
+cargo test --lib
+cargo build --release
+cargo run --release -- samples/complex-sample.md
+cargo build --release --features viewer --bin knowledge_viewer
+cargo run --release --features viewer --bin knowledge_viewer
+```
+
+### P03 — notes
+
+- Architectural intent: [ADR-003](../architecture/adr/ADR-003-dioxus-for-interactive-knowledge-views.md).
+- Parser lives in `build/src/lib.rs`; P01 stdout shape locked by unit test against [`evidence/p01-stdout-for-p02.txt`](./evidence/p01-stdout-for-p02.txt).
+- Dioxus **`Cargo.toml`:** keep default crate features on (`features = ["desktop"]` only); `default-features = false` without `macro`/`launch` broke compilation (see gap log).
+- Desktop **LNK1104** on very long `target/` paths is environmental — short **`CARGO_TARGET_DIR`**, `cargo clean`, or AV exclusion; see [`evidence/p03-viewer-build.txt`](./evidence/p03-viewer-build.txt) and [`evidence/p03-viewer-release-build-success.txt`](./evidence/p03-viewer-release-build-success.txt).
+
+---

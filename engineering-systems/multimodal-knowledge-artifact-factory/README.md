@@ -13,7 +13,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 | Problem framing | Why multimodal, local delivery matters | `business-context.md` |
 | Architectural judgment | Parse → voice → UI → assembly, with ADRs | `architecture.md`, `architecture/adr/` |
 | Delivery discipline | Phased implementation with runnable `build/` | `implementation.md` |
-| Validation rigor | Checks, commands, and proof paths | `validation.md`, `validation/P01-validation.md` |
+| Validation rigor | Checks, commands, and proof paths | `validation.md`, `validation/P01-validation.md`, `validation/P03-validation.md` |
 
 ## Intended audience
 
@@ -27,7 +27,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 2. `architecture.md` (plus `architecture/diagrams/` and `architecture/adr/`)
 3. `implementation.md`
 4. `validation.md`
-5. `build/` for the Rust CLI and samples
+5. `build/` for the Rust CLI, optional Dioxus **Knowledge Viewer**, Python TTS bridge, and samples
 
 ## System summary
 
@@ -44,7 +44,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 - `architecture/adr/` — decision records
 - `implementation.md` — phased delivery narrative
 - `validation.md` — rollup; per-project files under `validation/`
-- `build/` — Rust crate and samples (P01)
+- `build/` — Rust crate (P01 CLI + P03 `knowledge_viewer` behind `--features viewer`), `tts_inference.py` (P02), samples
 - `executions/` — execution record, `implementation/` (per-project plans), `evidence/` (transcripts)
 
 ## Cross-system references

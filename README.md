@@ -43,6 +43,10 @@ Each engineering system starts with a real-world problem and works backward to t
 
 Systems in this repo are built from the **06-Agentic** categories of the PineappleKingdom Project Library.
 
+## Legal and maintenance posture
+
+This repository is a **portfolio**: it presents **engineering systems and practical project-series narratives** for reviewers and learners. It is **not** packaged or positioned as reusable open-source software that requires a SPDX license grant. There is **no `LICENSE` file** and **no `CODEOWNERS`** — use the material as **read-only context** for how work is framed, built, and verified.
+
 ## Operating Standards
 
 - Evidence-first — every claim traces to an artifact

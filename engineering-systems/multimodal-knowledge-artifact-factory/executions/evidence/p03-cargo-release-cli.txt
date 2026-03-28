@@ -1,0 +1,9 @@
+Transcript: P03 — P01 CLI still default binary after crate split
+
+Command (from build/):
+
+    cargo run --release -- samples/complex-sample.md
+
+Uses `[package] default-run = "mkaf_md_parse"` so `cargo run` without `--bin` targets the parser CLI.
+
+Exit code: 0. Stdout matches golden `p01-stdout-for-p02.txt` (see `p03-cargo-test-lib.txt`).
