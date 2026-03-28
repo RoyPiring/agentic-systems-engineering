@@ -32,8 +32,8 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 ## System summary
 
 - **Problem:** Markdown knowledge stays hard to reuse as audio, UI, or packaged study assets.
-- **Scope:** **P01–P03** shipped in this folder (parse, stub-audio bridge, Dioxus viewer); **P04** (AIRI-style assembly) remains to be executed.
-- **Outcome:** Runnable **P01–P03** trail with ADRs, per-project plans, execution record, and validation—**P04** extends the same pattern.
+- **Scope:** **P01–P03** shipped in this folder (parse, stub-audio bridge, Dioxus viewer); **P04** (export + AIRI integration) has a committed [implementation plan](./executions/implementation/P04-implementation-plan.md) and is **not executed** yet.
+- **Outcome:** Runnable **P01–P03** trail with ADRs, per-project plans, execution record, and validation — **P04** completes multimodal assembly per that plan.
 - **Constraints:** Local compute, explicit cost/time posture; no paid API calls in scope for the core story.
 
 ## Repository artifacts
@@ -44,7 +44,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 - `architecture/adr/` — decision records
 - `implementation.md` — phased delivery narrative
 - `validation.md` — rollup; per-project files under `validation/`
-- `build/` — Rust crate (P01 CLI + P03 `knowledge_viewer` behind `--features viewer`), `tts_inference.py` (P02), samples
+- `build/` — Rust crate (P01 CLI + P03 `knowledge_viewer` behind `--features viewer`; P04 adds `export` binary per plan), `tts_inference.py` (P02); P04 adds `integration.py` when built, samples
 - `executions/` — execution record, `implementation/` (per-project plans), `evidence/` (transcripts)
 
 ## Cross-system references

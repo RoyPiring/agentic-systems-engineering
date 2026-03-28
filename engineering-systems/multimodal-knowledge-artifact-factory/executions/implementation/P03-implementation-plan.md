@@ -66,4 +66,4 @@
 
 ## Next
 
-**P04** (AIRI multimodal assembly) will consume the UI + audio artifacts; keep paths under `executions/evidence/` stable and documented.
+**P04** — follow [P04-implementation-plan.md](./P04-implementation-plan.md); keep `executions/evidence/p02-audio/` and export paths stable and documented.

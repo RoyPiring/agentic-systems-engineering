@@ -104,3 +104,27 @@ cargo run --release --features viewer --bin knowledge_viewer
 - Desktop **LNK1104** on very long `target/` paths is environmental — short **`CARGO_TARGET_DIR`**, `cargo clean`, or AV exclusion; see [`evidence/p03-viewer-build.txt`](./evidence/p03-viewer-build.txt) and [`evidence/p03-viewer-release-build-success.txt`](./evidence/p03-viewer-release-build-success.txt).
 
 ---
+
+## P04 — Multimodal assembly (AIRI)
+
+| | |
+|--|--|
+| **Plan** | [`implementation/P04-implementation-plan.md`](./implementation/P04-implementation-plan.md) |
+| **Window** | *TBD — not started* |
+| **Owner** | Roy |
+
+### P04 — phase summary
+
+| Phase | Target | Status | Evidence |
+| ----- | ------ | ------ | -------- |
+| 1 | `serde` / `serde_json`; **`export`** binary; `flashcards.json` + `quiz.md` | Not started | *Planned:* `evidence/p04-export-*.txt` |
+| 2 | `build/integration.py`; path map to P02/P03/P04 artifacts; AIRI launch contract | Not started | *Planned:* `evidence/p04-integration-*.txt` |
+| 3 | End-to-end pipeline transcript (+ optional AIRI capture) | Not started | *Planned:* `evidence/p04-e2e-*.txt` |
+| 4 | [`../validation/P04-validation.md`](../validation/P04-validation.md) **PASS**, rollups | Not started | — |
+
+### P04 — notes
+
+- Prerequisite: **AIRI** installed locally where full UI validation is required; plan allows **conditional PASS** with documented gaps.
+- Reuses `mkaf_md_parse` types from `build/src/lib.rs` for export logic ([ADR-004](../architecture/adr/ADR-004-vibevoice-tts-and-airi-multimodal-assembly.md)).
+
+---

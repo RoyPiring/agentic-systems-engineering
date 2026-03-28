@@ -42,8 +42,8 @@ flowchart TB
 | Markdown ingestion | Parse CommonMark into a structured internal representation | Trust boundary: only local files the operator selects |
 | Audio bridge (P02) | Chunk/strip P01 text → **`.wav`** (default **stub** PCM; neural VibeVoice optional) | Stub: no model; neural path: GPU/RAM; no external API in **core** story |
 | Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer** |
-| AIRI integration | Assemble multimodal study artifacts and companion workflows | Desktop app boundary; local only |
-| Export layer | Emit static assets (e.g. flashcard JSON, quiz markdown) | Filesystem output under operator control |
+| AIRI integration (**P04**) | Assemble multimodal study artifacts; **`build/integration.py`** maps paths and invokes AIRI per operator setup | Desktop app boundary; local only; **planned** until P04 **PASS** |
+| Export layer (**P04**) | **`export`** binary → flashcard JSON + quiz markdown under `executions/evidence/` | Filesystem output under operator control; **planned** until P04 **PASS** |
 
 ## Key decisions (ADRs)
 

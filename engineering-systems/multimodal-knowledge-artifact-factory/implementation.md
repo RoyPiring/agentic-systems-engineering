@@ -51,9 +51,11 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 
 | | |
 |--|--|
-| **Plan** | *`executions/implementation/P04-implementation-plan.md` when created* |
-| **Goal** | AIRI (or series-equivalent) assembles study artifacts from P01–P03 outputs |
-| **Status** | **Not started** — validation rollup reserves **P04** in [`validation.md`](./validation.md) |
+| **Plan** | [executions/implementation/P04-implementation-plan.md](./executions/implementation/P04-implementation-plan.md) |
+| **Goal** | Rust **`export`** binary → **`flashcards.json`** + **`quiz.md`**; **`build/integration.py`** hands paths to **AIRI**; end-to-end pipeline documented with evidence |
+| **Inputs** | P01 sample markdown; P02 WAVs under `executions/evidence/p02-audio/`; P03 viewer layout as documented in plan |
+| **Output** | Static study assets + integration script + transcripts; [validation/P04-validation.md](./validation/P04-validation.md) **Pending** until executed |
+| **Status** | **Planned** — implementation plan and validation stub committed; execution not started |
 
 End-to-end proof will live under [`executions/evidence/`](./executions/evidence/); roll-up in [`validation.md`](./validation.md).
 
@@ -88,4 +90,4 @@ End-to-end proof will live under [`executions/evidence/`](./executions/evidence/
 
 ## Reproduce
 
-Use stable Rust; run commands from `build/`. Per-phase evidence and commands: [`executions/execution-record.md`](./executions/execution-record.md). Status roll-up: [`validation.md`](./validation.md) and `validation/P01-validation.md` … `P03-validation.md`.
+Use stable Rust; run commands from `build/`. Per-phase evidence and commands: [`executions/execution-record.md`](./executions/execution-record.md). Status roll-up: [`validation.md`](./validation.md) and `validation/P01-validation.md` … `P04-validation.md`.
