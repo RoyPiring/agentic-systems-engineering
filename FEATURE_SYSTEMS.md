@@ -8,7 +8,7 @@ This document curates the top engineering systems in this repository for fast re
 
 | System | One-Line Summary | Why It's Featured |
 |---|---|---|
-| multimodal-knowledge-artifact-factory | Markdown → structured outline CLI (P01); ADRs and validation artifacts on `main` | First published system in this domain; end-to-end evidence for P01 |
+| multimodal-knowledge-artifact-factory | Parse (P01) → stub WAV audio bridge (P02) → Dioxus **Knowledge Viewer** (P03); local-first multimodal pipeline story | First system in this domain; phased evidence through **P03** on the active feature branch; **P04** assembly still planned |
 
 ## Navigation
 
