@@ -17,7 +17,9 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 | **Inputs** | CLI path or default `samples/complex-sample.md` (cwd = `build/`) |
 | **Output** | Structured stdout; stderr + exit `1` on read errors |
 
-**Artifacts:** `build/Cargo.toml`, `build/src/main.rs`, `build/samples/complex-sample.md`, [`build/README.md`](./build/README.md).
+**Artifacts:** `build/Cargo.toml`, `build/src/main.rs` (CLI), `build/src/lib.rs` (shared parse for P03), `build/samples/complex-sample.md`, [`build/README.md`](./build/README.md).
+
+**Status:** **Executed** — [`validation/P01-validation.md`](./validation/P01-validation.md) **PASS**.
 
 ### P02 — Core build
 
@@ -39,15 +41,21 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 | **Plan** | [executions/implementation/P03-implementation-plan.md](./executions/implementation/P03-implementation-plan.md) |
 | **Goal** | **Dioxus 0.7.3** desktop **Knowledge Viewer**: render parsed markdown sections; per-section control targeting P02 **`.wav`** files under `executions/evidence/p02-audio/` |
 | **Inputs** | Same markdown sample contract as P01; P02 audio artifacts on disk |
-| **Output** | Runnable desktop UI; evidence under `executions/evidence/`; [validation/P03-validation.md](./validation/P03-validation.md) → **PASS** when executed |
+| **Output** | Runnable desktop UI; evidence under `executions/evidence/`; [validation/P03-validation.md](./validation/P03-validation.md) **PASS** |
 
 **Status:** **Executed** — [`validation/P03-validation.md`](./validation/P03-validation.md) **PASS**; evidence under [`executions/evidence/`](./executions/evidence/) (`p03-*.txt`).
 
 **Depends on:** P01 **PASS** — [validation/P01-validation.md](./validation/P01-validation.md); P02 **PASS** — [validation/P02-validation.md](./validation/P02-validation.md).
 
-### P04 — Validation
+### P04 — Multimodal assembly (AIRI)
 
-End-to-end proof; evidence under [`executions/evidence/`](./executions/evidence/); roll-up in [`validation.md`](./validation.md).
+| | |
+|--|--|
+| **Plan** | *`executions/implementation/P04-implementation-plan.md` when created* |
+| **Goal** | AIRI (or series-equivalent) assembles study artifacts from P01–P03 outputs |
+| **Status** | **Not started** — validation rollup reserves **P04** in [`validation.md`](./validation.md) |
+
+End-to-end proof will live under [`executions/evidence/`](./executions/evidence/); roll-up in [`validation.md`](./validation.md).
 
 ## How to run (P01)
 
@@ -73,9 +81,11 @@ End-to-end proof; evidence under [`executions/evidence/`](./executions/evidence/
 | Topic | Choice |
 | ----- | ------ |
 | Crate location | `build/`, not repo root |
-| Parser | `pulldown-cmark` **0.11** (ADR-002) |
+| Parser | `pulldown-cmark` **0.11** (ADR-002); shared in `src/lib.rs` for CLI + viewer |
 | Default sample | `samples/complex-sample.md` |
+| P03 UI | Dioxus **0.7.3** desktop; binary `knowledge_viewer`, feature `viewer` (ADR-003) |
+| P02 audio default | **stub** WAV (stdlib Python); neural VibeVoice deferred per upstream |
 
 ## Reproduce
 
-Use stable Rust; run commands from `build/`. Evidence and status: [`executions/execution-record.md`](./executions/execution-record.md) and [`validation/P01-validation.md`](./validation/P01-validation.md).
+Use stable Rust; run commands from `build/`. Per-phase evidence and commands: [`executions/execution-record.md`](./executions/execution-record.md). Status roll-up: [`validation.md`](./validation.md) and `validation/P01-validation.md` … `P03-validation.md`.

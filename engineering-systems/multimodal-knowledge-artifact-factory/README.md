@@ -1,6 +1,6 @@
 # Multimodal Knowledge Artifact Factory
 
-**Local-first pipeline:** structured Markdown → parse → (later) narration, interactive views, and study artifacts—without recurring cloud spend.
+**Local-first pipeline:** structured Markdown → parse (**P01**) → local audio chunks (**P02**, default **stub** WAV) → interactive **Knowledge Viewer** (**P03**, Dioxus) → multimodal assembly (**P04**, planned)—without recurring cloud spend.
 
 ## Why This Matters
 
@@ -13,7 +13,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 | Problem framing | Why multimodal, local delivery matters | `business-context.md` |
 | Architectural judgment | Parse → voice → UI → assembly, with ADRs | `architecture.md`, `architecture/adr/` |
 | Delivery discipline | Phased implementation with runnable `build/` | `implementation.md` |
-| Validation rigor | Checks, commands, and proof paths | `validation.md`, `validation/P01-validation.md`, `validation/P03-validation.md` |
+| Validation rigor | Checks, commands, and proof paths | `validation.md`, `validation/P01-validation.md`, `validation/P02-validation.md`, `validation/P03-validation.md` |
 
 ## Intended audience
 
@@ -32,8 +32,8 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 ## System summary
 
 - **Problem:** Markdown knowledge stays hard to reuse as audio, UI, or packaged study assets.
-- **Scope:** Four phases (P01–P04): parse → TTS → Dioxus views → AIRI-style assembly; **$0 recurring** in the core path.
-- **Outcome:** A demonstrable pipeline with ADRs, execution record, and validation—not a slide deck.
+- **Scope:** **P01–P03** shipped in this folder (parse, stub-audio bridge, Dioxus viewer); **P04** (AIRI-style assembly) remains to be executed.
+- **Outcome:** Runnable **P01–P03** trail with ADRs, per-project plans, execution record, and validation—**P04** extends the same pattern.
 - **Constraints:** Local compute, explicit cost/time posture; no paid API calls in scope for the core story.
 
 ## Repository artifacts
