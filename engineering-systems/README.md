@@ -8,7 +8,7 @@ All engineering systems in this repository. Each system has five required docume
 
 | # | System | Scope | Tech Stack | Status |
 |---|--------|-------|-----------|--------|
-| 1 | [multimodal-knowledge-artifact-factory](./multimodal-knowledge-artifact-factory/) | Local pipeline: markdown → parse → audio → Dioxus viewer → study exports | Rust, Python, Dioxus | ✅ P01–P04 |
+| 10 | [multimodal-knowledge-artifact-factory](./multimodal-knowledge-artifact-factory/) | Local pipeline: markdown → parse → audio → Dioxus viewer → study exports | Rust, Python, Dioxus | ✅ P01–P04 |
 
 ## How systems are added
 
