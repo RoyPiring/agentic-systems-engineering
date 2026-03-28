@@ -1,6 +1,6 @@
 # Build
 
-Application code, scripts, configs, and infrastructure-as-code produced while executing the series (P01–P04).
+Application code, scripts, configs, and infrastructure-as-code produced while executing the series (**P01–P04**).
 
 Aligned with the series **Repository Packaging (RP)** manifest: runnable artifacts live here—not in the narrative docs at the engineering-system root.
 
@@ -63,6 +63,39 @@ cargo run --release --features viewer --bin knowledge_viewer
 - **Crate layout:** `src/lib.rs` — shared `parse_markdown_blocks` / `blocks_to_sections` / `list_p02_wavs_sorted`; `src/main.rs` — P01 CLI; `src/bin/knowledge_viewer.rs` — Dioxus app.
 - **Data:** Loads `samples/complex-sample.md`; maps **Play Narration** to sorted files under `../executions/evidence/p02-audio/` (run P02 first so `.wav` files exist).
 - **Evidence:** See [`../executions/evidence/p03-*.txt`](../executions/evidence/) for commands and notes.
+
+## P04 — Study exports (`export`) + AIRI bridge (`integration.py`)
+
+**Prerequisites:** Same Rust stable toolchain; **Python 3.10+** for `integration.py`.
+
+### Static exports (Rust)
+
+From this directory:
+
+```bash
+cargo build --release --bin export
+cargo run --release --bin export
+# Optional: custom input and output directory (paths relative to cwd)
+cargo run --release --bin export -- samples/complex-sample.md ../executions/evidence/p04-exports
+```
+
+- **Default input:** `samples/complex-sample.md`
+- **Default output directory:** `../executions/evidence/p04-exports/`
+- **Writes:** `flashcards.json` (array of `{ "term", "definition" }` per parsed section) and `quiz.md` (one question block per section; answers inside `<details>` for self-testing).
+
+### Integration script (Python)
+
+```bash
+python integration.py --help
+python integration.py --print-env
+python integration.py --dry-run
+# Launch AIRI when installed (binary on PATH or AIRI_EXECUTABLE set):
+python integration.py
+```
+
+- Resolves **engineering-system root** as the parent of `build/`.
+- Prints or exports **`MKAF_*`** paths: `MKAF_ROOT`, `MKAF_P02_AUDIO`, `MKAF_P04_EXPORTS`, `MKAF_VIEWER_SOURCE`, `MKAF_VIEWER_BINARY` (empty until `knowledge_viewer` release binary exists).
+- Without AIRI on PATH, non–dry-run exits **2** with a clear message.
 
 ## Rules
 

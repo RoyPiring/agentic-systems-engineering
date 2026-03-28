@@ -52,10 +52,10 @@ Work moves **P01 → P04**: Markdown → structured text → audio/UI → assemb
 | | |
 |--|--|
 | **Plan** | [executions/implementation/P04-implementation-plan.md](./executions/implementation/P04-implementation-plan.md) |
-| **Goal** | Rust **`export`** binary → **`flashcards.json`** + **`quiz.md`**; **`build/integration.py`** hands paths to **AIRI**; end-to-end pipeline documented with evidence |
-| **Inputs** | P01 sample markdown; P02 WAVs under `executions/evidence/p02-audio/`; P03 viewer layout as documented in plan |
-| **Output** | Static study assets + integration script + transcripts; [validation/P04-validation.md](./validation/P04-validation.md) **Pending** until executed |
-| **Status** | **Planned** — implementation plan and validation stub committed; execution not started |
+| **Goal** | Rust **`export`** binary → **`flashcards.json`** + **`quiz.md`**; **`build/integration.py`** maps paths and launches **AIRI** when installed |
+| **Inputs** | P01 sample markdown; P02 WAVs under `executions/evidence/p02-audio/`; P03 viewer source/binary paths for handoff |
+| **Output** | `executions/evidence/p04-exports/`; integration script; transcripts `p04-*`; [validation/P04-validation.md](./validation/P04-validation.md) **PASS (conditional)** |
+| **Status** | **Executed** — export + integration + E2E slice evidenced; AIRI desktop launch **not** observed (see validation) |
 
 End-to-end proof will live under [`executions/evidence/`](./executions/evidence/); roll-up in [`validation.md`](./validation.md).
 
@@ -78,6 +78,12 @@ End-to-end proof will live under [`executions/evidence/`](./executions/evidence/
 2. Requires **WebView2** on Windows; keep cwd as `build/` so `samples/` and `../executions/evidence/p02-audio/` resolve.  
 3. Details: [build/README.md](./build/README.md).  
 
+## How to run (P04)
+
+1. From `build/`: `cargo build --release --bin export` then `cargo run --release --bin export` (writes under `../executions/evidence/p04-exports/`).  
+2. `python integration.py --dry-run` to verify paths; install **AIRI** and set **`AIRI_EXECUTABLE`** or PATH, then `python integration.py` to launch.  
+3. Details: [build/README.md](./build/README.md) § P04.
+
 ## Decisions
 
 | Topic | Choice |
@@ -87,6 +93,8 @@ End-to-end proof will live under [`executions/evidence/`](./executions/evidence/
 | Default sample | `samples/complex-sample.md` |
 | P03 UI | Dioxus **0.7.3** desktop; binary `knowledge_viewer`, feature `viewer` (ADR-003) |
 | P02 audio default | **stub** WAV (stdlib Python); neural VibeVoice deferred per upstream |
+| P04 export | **`serde`** / **`serde_json`**; binary `export`; outputs under `executions/evidence/p04-exports/` |
+| P04 integration | **`build/integration.py`**; **`MKAF_*`** env vars for AIRI |
 
 ## Reproduce
 

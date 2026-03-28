@@ -1,0 +1,10 @@
+Command (from `build/`): python integration.py --help
+
+usage: integration.py [-h] [--dry-run] [--print-env]
+
+Map P02/P03/P04 paths and optionally launch AIRI with MKAF_* env vars.
+
+options:
+  -h, --help   show this help message and exit
+  --dry-run    Print paths and env; do not launch AIRI.
+  --print-env  Print suggested export-style environment variables only.

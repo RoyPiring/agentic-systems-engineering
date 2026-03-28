@@ -8,7 +8,7 @@ This document curates the top engineering systems in this repository for fast re
 
 | System | One-Line Summary | Why It's Featured |
 |---|---|---|
-| multimodal-knowledge-artifact-factory | Parse (P01) → stub WAV audio bridge (P02) → Dioxus **Knowledge Viewer** (P03); local-first multimodal pipeline story | First system in this domain; phased evidence through **P03** on the active feature branch; **P04** assembly still planned |
+| multimodal-knowledge-artifact-factory | Parse (P01) → stub WAV (P02) → Dioxus viewer (P03) → study exports + AIRI bridge (P04); local-first multimodal pipeline | First system in this domain; **P01–P04** on feature branch; AIRI desktop launch operator-dependent (**conditional** validation) |
 
 ## Navigation
 

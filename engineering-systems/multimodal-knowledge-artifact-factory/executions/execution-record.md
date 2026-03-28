@@ -110,21 +110,37 @@ cargo run --release --features viewer --bin knowledge_viewer
 | | |
 |--|--|
 | **Plan** | [`implementation/P04-implementation-plan.md`](./implementation/P04-implementation-plan.md) |
-| **Window** | *TBD — not started* |
+| **Window** | Mar 2026 |
 | **Owner** | Roy |
 
 ### P04 — phase summary
 
 | Phase | Target | Status | Evidence |
 | ----- | ------ | ------ | -------- |
-| 1 | `serde` / `serde_json`; **`export`** binary; `flashcards.json` + `quiz.md` | Not started | *Planned:* `evidence/p04-export-*.txt` |
-| 2 | `build/integration.py`; path map to P02/P03/P04 artifacts; AIRI launch contract | Not started | *Planned:* `evidence/p04-integration-*.txt` |
-| 3 | End-to-end pipeline transcript (+ optional AIRI capture) | Not started | *Planned:* `evidence/p04-e2e-*.txt` |
-| 4 | [`../validation/P04-validation.md`](../validation/P04-validation.md) **PASS**, rollups | Not started | — |
+| 1 | `serde` / `serde_json`; **`export`** binary; `flashcards.json` + `quiz.md` | Done | [`evidence/p04-export-run.txt`](./evidence/p04-export-run.txt), [`evidence/p04-export-listing.txt`](./evidence/p04-export-listing.txt), [`evidence/p04-exports/`](./evidence/p04-exports/) |
+| 2 | `build/integration.py`; path map; AIRI contract | Done | [`evidence/p04-integration-help.txt`](./evidence/p04-integration-help.txt), [`evidence/p04-integration-dry-run.txt`](./evidence/p04-integration-dry-run.txt), [`evidence/p04-integration-no-airi.txt`](./evidence/p04-integration-no-airi.txt) |
+| 3 | P01 → P02 → export ordering | Done | [`evidence/p04-e2e-summary.txt`](./evidence/p04-e2e-summary.txt), [`evidence/p04-e2e-p02.txt`](./evidence/p04-e2e-p02.txt), [`evidence/p04-e2e-export.txt`](./evidence/p04-e2e-export.txt) |
+| 4 | [`../validation/P04-validation.md`](../validation/P04-validation.md) **PASS (conditional)**, rollups | Done | This record + root rollups |
+
+### P04 — commands (from `build/`)
+
+```bash
+cargo build --release --bin export
+cargo run --release --bin export
+
+python integration.py --help
+python integration.py --dry-run
+python integration.py   # exits 2 if AIRI not on PATH
+
+# E2E slice (reuse or regenerate P01 stdout, then P02, then export)
+cargo run --release -- samples/complex-sample.md > ../executions/evidence/p04-e2e-p01-stdout.txt
+python tts_inference.py --from-file ../executions/evidence/p04-e2e-p01-stdout.txt --output-dir ../executions/evidence/p02-audio
+cargo run --release --bin export
+```
 
 ### P04 — notes
 
-- Prerequisite: **AIRI** installed locally where full UI validation is required; plan allows **conditional PASS** with documented gaps.
-- Reuses `mkaf_md_parse` types from `build/src/lib.rs` for export logic ([ADR-004](../architecture/adr/ADR-004-vibevoice-tts-and-airi-multimodal-assembly.md)).
+- **AIRI:** Full desktop launch not observed in this environment (`airi` absent on PATH). Integration script behavior and exit codes are evidenced in `p04-integration-*.txt`. Operators with AIRI set `AIRI_EXECUTABLE` or install on PATH, then run `python integration.py` (non–dry-run).
+- Export uses `parse_markdown_blocks` / `blocks_to_sections` from `build/src/lib.rs` ([ADR-004](../architecture/adr/ADR-004-vibevoice-tts-and-airi-multimodal-assembly.md)).
 
 ---

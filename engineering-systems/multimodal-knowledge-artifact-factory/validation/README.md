@@ -7,4 +7,4 @@ Flat files **`P01-validation.md` … `P04-validation.md`** in this folder. The s
 | P01 | [P01-validation.md](./P01-validation.md) |
 | P02 | [P02-validation.md](./P02-validation.md) |
 | P03 | [P03-validation.md](./P03-validation.md) |
-| P04 | [P04-validation.md](./P04-validation.md) (**Pending** until build) |
+| P04 | [P04-validation.md](./P04-validation.md) (**PASS (conditional)**) |

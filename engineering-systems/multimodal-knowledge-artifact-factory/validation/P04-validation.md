@@ -3,32 +3,32 @@
 | | |
 |--|--|
 | **Plan** | [../executions/implementation/P04-implementation-plan.md](../executions/implementation/P04-implementation-plan.md) |
-| **Result** | **Pending** — execute after P04 build; see checks below |
+| **Result** | **PASS (conditional)** — export + integration path logic proven; **AIRI UI launch not observed** on this machine (no `airi` on PATH). Re-run as **PASS** when AIRI is installed and a launch transcript or screenshot is added. |
 
 ## Checks
 
 | # | Criterion | Pass when |
 |---|-----------|-----------|
-| 1 | Export binary | `cargo run --bin export` (from `build/`, documented args) produces valid **`flashcards.json`** and **`quiz.md`** under the path named in the plan |
-| 2 | JSON quality | `flashcards.json` parses as a JSON array; objects include stable **term** / **definition** (or equivalent) fields; no manual unescaped breakage |
-| 3 | Quiz markdown | `quiz.md` is readable markdown with questions and answers separated as documented |
-| 4 | Integration script | `integration.py` runs without path resolution errors when cwd matches **`build/README.md`**; uses relative resolution from engineering-system root (no brittle absolute paths) |
-| 5 | AIRI handoff | Documented command to launch AIRI with asset paths; **or** explicit **conditional** note if AIRI is not installed in a given environment |
-| 6 | Pipeline order | Execution record lists an ordered end-to-end sequence (parse → audio → export → integration) with evidence pointers |
-| 7 | Evidence | Transcripts under `executions/evidence/` (`p04-*`); optional AIRI screenshot when available |
+| 1 | Export binary | `cargo run --release --bin export` (from `build/`) produces **`flashcards.json`** and **`quiz.md`** under `executions/evidence/p04-exports/` |
+| 2 | JSON quality | `flashcards.json` parses as a JSON array of objects with **term** / **definition** |
+| 3 | Quiz markdown | `quiz.md` contains per-section questions and `<details>` reveal blocks |
+| 4 | Integration script | `python integration.py --help` works; `--dry-run` prints resolved paths |
+| 5 | AIRI handoff | **Conditional:** without AIRI, `python integration.py` exits **2** with explicit error; with AIRI, operator can launch (not recorded here) |
+| 6 | Pipeline order | E2E commands documented with evidence (`p04-e2e-*.txt`) |
+| 7 | Evidence | Transcripts under `executions/evidence/` (`p04-*`) |
 
 ## How to run
 
-Follow commands recorded in [`../executions/execution-record.md`](../executions/execution-record.md) after P04 execution.
+See [`../executions/execution-record.md`](../executions/execution-record.md) § P04 and [`../build/README.md`](../build/README.md) § P04.
 
 ## Results
 
 | Check | Expected | Actual |
 | ----- | -------- | ------ |
-| 1 | Export binary runs | *Pending* |
-| 2 | Valid flashcards JSON | *Pending* |
-| 3 | Quiz markdown | *Pending* |
-| 4 | `integration.py` smoke | *Pending* |
-| 5 | AIRI / documented skip | *Pending* |
-| 6 | E2E narrative | *Pending* |
-| 7 | Evidence files | *Pending* |
+| 1 | Export binary runs | **PASS** — [`p04-export-run.txt`](../executions/evidence/p04-export-run.txt), [`p04-e2e-export.txt`](../executions/evidence/p04-e2e-export.txt) |
+| 2 | Valid flashcards JSON | **PASS** — [`p04-exports/flashcards.json`](../executions/evidence/p04-exports/flashcards.json) (6 cards from sample) |
+| 3 | Quiz markdown | **PASS** — [`p04-exports/quiz.md`](../executions/evidence/p04-exports/quiz.md) |
+| 4 | `integration.py` | **PASS** — [`p04-integration-help.txt`](../executions/evidence/p04-integration-help.txt), [`p04-integration-dry-run.txt`](../executions/evidence/p04-integration-dry-run.txt) |
+| 5 | AIRI | **Conditional PASS** — [`p04-integration-no-airi.txt`](../executions/evidence/p04-integration-no-airi.txt) (exit 2, clear stderr) |
+| 6 | E2E narrative | **PASS** — [`p04-e2e-summary.txt`](../executions/evidence/p04-e2e-summary.txt) |
+| 7 | Evidence set | **PASS** — `p04-*` files under [`../executions/evidence/`](../executions/evidence/) |

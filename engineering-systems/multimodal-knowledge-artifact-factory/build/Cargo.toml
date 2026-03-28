@@ -2,7 +2,7 @@
 name = "mkaf_md_parse"
 version = "0.1.0"
 edition = "2021"
-description = "P01–P03: Markdown parse CLI + Dioxus knowledge viewer (multimodal-knowledge-artifact-factory)"
+description = "P01–P04: Markdown parse CLI + Dioxus viewer + study export (multimodal-knowledge-artifact-factory)"
 default-run = "mkaf_md_parse"
 
 [lib]
@@ -13,10 +13,16 @@ path = "src/lib.rs"
 # `desktop` adds the WebView stack. With `default-features = false`, `#[component]` / `rsx!` / `LaunchBuilder` are missing.
 dioxus = { version = "=0.7.3", optional = true, features = ["desktop"] }
 pulldown-cmark = "0.11"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
 
 [features]
 default = []
 viewer = ["dep:dioxus"]
+
+[[bin]]
+name = "export"
+path = "src/bin/export.rs"
 
 [[bin]]
 name = "knowledge_viewer"

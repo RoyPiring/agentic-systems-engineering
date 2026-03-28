@@ -13,7 +13,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 | Problem framing | Why multimodal, local delivery matters | `business-context.md` |
 | Architectural judgment | Parse → voice → UI → assembly, with ADRs | `architecture.md`, `architecture/adr/` |
 | Delivery discipline | Phased implementation with runnable `build/` | `implementation.md` |
-| Validation rigor | Checks, commands, and proof paths | `validation.md`, `validation/P01-validation.md`, `validation/P02-validation.md`, `validation/P03-validation.md` |
+| Validation rigor | Checks, commands, and proof paths | `validation.md`, `validation/P01-validation.md` … `validation/P04-validation.md` |
 
 ## Intended audience
 
@@ -32,8 +32,8 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 ## System summary
 
 - **Problem:** Markdown knowledge stays hard to reuse as audio, UI, or packaged study assets.
-- **Scope:** **P01–P03** shipped in this folder (parse, stub-audio bridge, Dioxus viewer); **P04** (export + AIRI integration) has a committed [implementation plan](./executions/implementation/P04-implementation-plan.md) and is **not executed** yet.
-- **Outcome:** Runnable **P01–P03** trail with ADRs, per-project plans, execution record, and validation — **P04** completes multimodal assembly per that plan.
+- **Scope:** **P01–P04** implemented in this folder: parse, stub-audio bridge, Dioxus viewer, **`export`** study assets + **`integration.py`** AIRI bridge. **AIRI** desktop launch is operator-dependent; validation is **PASS (conditional)** until AIRI is proven locally.
+- **Outcome:** End-to-end local pipeline through static exports and path handoff; see [validation/P04-validation.md](./validation/P04-validation.md).
 - **Constraints:** Local compute, explicit cost/time posture; no paid API calls in scope for the core story.
 
 ## Repository artifacts
@@ -44,7 +44,7 @@ Research and specs often stay stuck in flat text. This system shows how to turn 
 - `architecture/adr/` — decision records
 - `implementation.md` — phased delivery narrative
 - `validation.md` — rollup; per-project files under `validation/`
-- `build/` — Rust crate (P01 CLI + P03 `knowledge_viewer` behind `--features viewer`; P04 adds `export` binary per plan), `tts_inference.py` (P02); P04 adds `integration.py` when built, samples
+- `build/` — Rust crate (P01 CLI, P03 `knowledge_viewer` with `--features viewer`, P04 `export` binary), `tts_inference.py` (P02), `integration.py` (P04), samples
 - `executions/` — execution record, `implementation/` (per-project plans), `evidence/` (transcripts)
 
 ## Cross-system references

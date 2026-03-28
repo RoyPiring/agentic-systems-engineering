@@ -64,9 +64,9 @@
 
 ## Done when
 
-- [ ] Phases 1–3 satisfied with observable artifacts and transcripts.
-- [ ] Phase 4 evidence and per-project validation **PASS** (or conditional per AIRI availability).
-- [ ] System rollups updated.
+- [x] Phases 1–3 satisfied with observable artifacts and transcripts.
+- [x] Phase 4 evidence and per-project validation **PASS (conditional)** (AIRI UI not observed on build host).
+- [x] System rollups updated.
 
 ## Next
 

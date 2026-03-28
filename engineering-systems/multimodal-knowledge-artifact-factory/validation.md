@@ -7,7 +7,7 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 | P01 | [executions/implementation/P01-implementation-plan.md](./executions/implementation/P01-implementation-plan.md) | [validation/P01-validation.md](./validation/P01-validation.md) | **PASS** |
 | P02 | [executions/implementation/P02-implementation-plan.md](./executions/implementation/P02-implementation-plan.md) | [validation/P02-validation.md](./validation/P02-validation.md) | **PASS** |
 | P03 | [executions/implementation/P03-implementation-plan.md](./executions/implementation/P03-implementation-plan.md) | [validation/P03-validation.md](./validation/P03-validation.md) | **PASS** |
-| P04 | [executions/implementation/P04-implementation-plan.md](./executions/implementation/P04-implementation-plan.md) | [validation/P04-validation.md](./validation/P04-validation.md) | **Pending** |
+| P04 | [executions/implementation/P04-implementation-plan.md](./executions/implementation/P04-implementation-plan.md) | [validation/P04-validation.md](./validation/P04-validation.md) | **PASS (conditional)** |
 
 ## Summary
 
@@ -17,7 +17,7 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 
 **P03:** Dioxus **Knowledge Viewer** (`knowledge_viewer` binary, feature `viewer`); shared parser in `build/src/lib.rs`; **Play Narration** maps sections to P02 WAV paths. **PASS** — [validation/P03-validation.md](./validation/P03-validation.md).
 
-**P04:** Export binary + `integration.py` + AIRI handoff — **Pending**; see [validation/P04-validation.md](./validation/P04-validation.md).
+**P04:** **`export`** binary + **`integration.py`** + documented AIRI handoff — **PASS (conditional)** (AIRI UI not launched here); see [validation/P04-validation.md](./validation/P04-validation.md).
 
 ## Expected vs actual
 
@@ -30,11 +30,11 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 | P02 edge | No `H:`/`P:` lines | **PASS** — warning stderr [`p02-edge-empty-stderr.txt`](./executions/evidence/p02-edge-empty-stderr.txt) | — |
 | P03 lib golden | Parser stdout stable for P02 | **PASS** — [`p03-cargo-test-lib.txt`](./executions/evidence/p03-cargo-test-lib.txt) | — |
 | P03 viewer | Dioxus desktop + narration map | **PASS** — source + [`p03-viewer-build.txt`](./executions/evidence/p03-viewer-build.txt) | — |
-| P04 export + AIRI | `export` binary, `integration.py`, E2E evidence | **Pending** | — |
+| P04 export + AIRI | `export` binary, `integration.py`, E2E evidence | **PASS (conditional)** — [`p04-export-run.txt`](./executions/evidence/p04-export-run.txt), [`p04-e2e-summary.txt`](./executions/evidence/p04-e2e-summary.txt); AIRI launch N/A | — |
 
 ## Evidence
 
-- [Execution record](./executions/execution-record.md) — P01–P04 summary (P04 execution pending)  
+- [Execution record](./executions/execution-record.md) — P01–P04 summary  
 - [executions/evidence/](./executions/evidence/) — transcripts, P02 audio listing, P03 build notes  
 
 ## Negative cases
@@ -52,7 +52,7 @@ Local-only; no secrets in tree; parser path has no network calls.
 
 | Item | Note |
 | ---- | ---- |
-| Tooling | $0 (local Rust; P02 stub uses stdlib Python only; P03 viewer is local Dioxus desktop) |
+| Tooling | $0 (local Rust; P02 stub uses stdlib Python only; P03 viewer is local Dioxus desktop; P04 `integration.py` is stdlib Python) |
 
 ## Reproduce
 
