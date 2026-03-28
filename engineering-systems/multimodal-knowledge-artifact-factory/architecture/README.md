@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../../README.md) · [All Systems](../../../../engineering-systems/README.md) · [Home](../../../../README.md)
+
 # Architecture scaffold
 
 This folder is the **canonical place** for architecture evidence alongside root `architecture.md`:

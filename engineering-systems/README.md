@@ -1,14 +1,15 @@
-# Engineering Systems Index — Agentic Systems Engineering
+> ← [Home](../README.md)
 
-This index lists all engineering systems in this repository with a one-line scope summary.
+# Engineering Systems — Full Index
+
+All engineering systems in this repository. Each system has five required documents: README, business-context, architecture, implementation, validation.
 
 ## Systems
 
-| System | Scope | Status |
-|---|---|---|
-| multimodal-knowledge-artifact-factory | P01–P04 local pipeline; evidence **`p01/`…`p04/`**; **`case-study/`**; optional **`artifacts/`** | **Status:** keep in sync with **`implementation.md`** and **`validation.md`** before merge |
+| # | System | Scope | Tech Stack | Status |
+|---|--------|-------|-----------|--------|
+| 1 | [multimodal-knowledge-artifact-factory](./multimodal-knowledge-artifact-factory/) | Local pipeline: markdown → parse → audio → Dioxus viewer → study exports | Rust, Python, Dioxus | ✅ P01–P04 |
 
-## Adding a System
+## How systems are added
 
-Systems are added via feature branch PR following the portfolio build workflow.
-Each system must have all five required documents before it appears in this index.
+Systems enter via feature branch and pull request. The PR must pass CI (markdown lint, link check, structure validation) and the review-gate checklist before merge. See [CONTRIBUTING.md](../CONTRIBUTING.md) for the full process.

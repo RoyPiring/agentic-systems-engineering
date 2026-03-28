@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # Implementation
 
 How this system is phased from a working **parse path** through media and UI. Per-project plans live in [`executions/implementation/`](./executions/implementation/) (`P0X-implementation-plan.md`); run evidence lives in [`executions/evidence/`](./executions/evidence/). **Operators** should start with [`user-guides/README.md`](./user-guides/README.md) and [`user-guides/SERIES-user-guide.md`](./user-guides/SERIES-user-guide.md). This page is the rolling **system** view.

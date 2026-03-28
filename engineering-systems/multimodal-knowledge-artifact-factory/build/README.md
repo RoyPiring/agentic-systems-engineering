@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # Build
 
 Application code, scripts, configs, and infrastructure-as-code produced while executing the series (**P01–P04**).

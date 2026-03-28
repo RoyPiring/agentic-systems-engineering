@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # Case study — Multimodal Knowledge Artifact Factory
 
 **Scenario:** Run the **full shipped series** (P01 → P02 → P04, optional P03) using committed data under [`data/`](./data/), and confirm the system behaves **by design** for this path.

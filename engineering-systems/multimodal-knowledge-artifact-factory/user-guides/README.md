@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # User guides — Multimodal Knowledge Artifact Factory
 
 These guides are for people who want to **use** this system on their own machine. You do **not** need to read implementation plans or validation proofs first.

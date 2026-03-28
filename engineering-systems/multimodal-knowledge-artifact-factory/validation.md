@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # Validation
 
 Roll-up of proof for this engineering system. Start with the status table, then open each per-project file for detail.
@@ -61,3 +63,23 @@ Install Rust, clone this system, follow [P01-validation.md](./validation/P01-val
 ## Limits
 
 P01 scope is parse + stdout + error path; list bodies are not fully enumerated as separate `P:` lines (see sample transcript). Optional: regenerate evidence after toolchain upgrades using the same commands from `build/`.
+
+## Reproducibility
+
+| Field | Value |
+|-------|-------|
+| OS | Windows 11 |
+| Rust | stable — see `executions/evidence/p01/p01-cargo-build.txt` for version |
+| Python | 3.10+ |
+| Last verified | 2026-03-28 |
+| Cargo.lock pinned | Yes — `build/Cargo.lock` |
+| Reproduce from | Clone → `cd build/` → follow [P01-validation.md](./validation/P01-validation.md) |
+
+## Metrics
+
+| Phase | Approx. execution time | Input | Output |
+|-------|:---------------------:|-------|--------|
+| P01 — Parse | ~2s | 1 markdown sample | Structured `H{n}:`/`P:` stdout |
+| P02 — Audio | ~3s | P01 stdout | WAV chunks under `p02/audio/` |
+| P03 — Viewer | build ~30s, run instant | P01 sample + P02 WAVs | Dioxus desktop window |
+| P04 — Export | ~1s | P01 sample | `flashcards.json` + `quiz.md` |

@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # Architecture
 
 ## System Intent
@@ -83,3 +85,9 @@ flowchart TB
 - **Target:** $0 recurring (P00 cost lock).
 - **Drivers:** Optional one-time VibeVoice weight download (~3GB) for neural TTS; **stub** P02 is near-zero marginal cost; electricity and amortized hardware only.
 - **Guardrails:** No paid API calls in scope; document actual resource use after P02–P04 runs.
+
+## Dependency management
+
+- **Rust:** `Cargo.lock` pinned at `build/Cargo.lock`. Audit with `cargo audit`.
+- **Python:** `requirements-p02.txt` under `build/`. Pin with `pip freeze` before extending.
+- **Supply chain:** No transitive dependency had a known CVE at time of validation. Re-audit before extending the dependency surface.

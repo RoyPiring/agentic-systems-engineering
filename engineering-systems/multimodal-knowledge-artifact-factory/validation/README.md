@@ -1,3 +1,5 @@
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../../engineering-systems/README.md) · [Home](../../../README.md)
+
 # Per-project validation
 
 Flat files **`P01-validation.md` … `P04-validation.md`** in this folder. The system roll-up is [`../validation.md`](../validation.md).
