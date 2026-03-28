@@ -2,7 +2,7 @@
 
 **Date:** 2026-03-27
 **Type:** Engineering System — Update
-**PR:** _(fill number after open — use `.github/pull-requests/PR_BODY_MULTIMODAL_P03_FILLED.md` with `gh pr create --body-file …`)_
+**PR:** #4
 
 ### Summary
 
