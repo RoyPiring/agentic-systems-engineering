@@ -18,8 +18,10 @@
 - [ ] No vault-internal paths or governance references remain
 - [ ] Execution record updated in `executions/execution-record.md` for **each completed project**
 - [ ] Per-project plans in `executions/implementation/` (`P0X-implementation-plan.md`); run transcripts in `executions/evidence/`
-- [ ] Changelog entry created in `.github/changelog/` (copy from `CHANGELOG_ENTRY_TEMPLATE.md`; name `YYYY-MM-DD-<slug>.md`)
+- [ ] Changelog entry created in `.github/changelog/` (copy from `CHANGELOG_ENTRY_TEMPLATE.md`; name `YYYY-MM-DD-<slug>.md` or `YYYY-MM-DD-<slug>-p0X.md` for incremental slices)
 - [ ] Mermaid diagram(s) in `architecture.md` render in GitHub preview
+- [ ] `.github/workflows/` jobs pass on this branch (documentation lint / link check / structure validation as configured)
+- [ ] `.github/ISSUE_TEMPLATE/` present if this repo accepts public issues (bug / feature paths)
 
 ### Evidence Summary
 

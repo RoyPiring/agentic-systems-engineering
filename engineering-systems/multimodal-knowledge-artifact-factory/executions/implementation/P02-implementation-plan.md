@@ -64,4 +64,4 @@
 
 ## Next
 
-**P03** (Dioxus / interactive view) will consume text + audio artifacts; keep paths stable and documented under `executions/evidence/`.
+**P03** — [P03-implementation-plan.md](./P03-implementation-plan.md): Dioxus interactive view consumes text + audio artifacts; keep paths stable under `executions/evidence/`.

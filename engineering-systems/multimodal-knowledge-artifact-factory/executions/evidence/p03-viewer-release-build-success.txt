@@ -1,0 +1,14 @@
+P03 — successful **release** build of `knowledge_viewer` (after Dioxus `Cargo.toml` fix)
+
+Environment: Windows, MSVC. Full path to `target/` under this repo hit **LNK1104** when linking some crates’ build scripts; build succeeded with a **short** target directory.
+
+Commands (PowerShell, from `build/`):
+
+    $env:CARGO_TARGET_DIR = "C:\t\mkaf-tgt"
+    cargo build --release --features viewer --bin knowledge_viewer
+
+Transcript (incremental rebuild):
+
+    Finished `release` profile [optimized] target(s) in 0.57s
+
+First full build after the feature fix took ~2 minutes; artifacts land under `%CARGO_TARGET_DIR%\release\knowledge_viewer.exe` (or run with `cargo run --release --features viewer --bin knowledge_viewer` using the same env var).

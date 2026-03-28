@@ -1,0 +1,24 @@
+P03 — Dioxus **knowledge_viewer** binary
+
+**Cargo.toml:** `dioxus` uses **default crate features** plus `features = ["desktop"]`. Using `default-features = false` without also enabling `macro` / `launch` breaks `#[component]`, `rsx!`, and `LaunchBuilder`.
+
+Build (from `build/`, requires WebView2 on Windows):
+
+    cargo build --release --features viewer --bin knowledge_viewer
+
+**Windows LNK1104** (cannot open `build_script_build-….exe`) sometimes appears when the full path to `target/` is very long. Mitigations: `cargo clean`, exclude the tree from real-time antivirus, clone to a shorter path, or set a short target dir for that session, for example (PowerShell):
+
+    $env:CARGO_TARGET_DIR = "C:\t\mkaf-tgt"
+    cargo build --release --features viewer --bin knowledge_viewer
+
+Run (cwd must stay `build/` so sample + audio paths resolve; use the same `CARGO_TARGET_DIR` if you relied on it for the build):
+
+    cargo run --release --features viewer --bin knowledge_viewer
+
+Expected: window titled **Knowledge Viewer**; sections from `samples/complex-sample.md`; **Play Narration** prints a line to the terminal such as:
+
+    [Knowledge Viewer] Play Narration -> ..\executions\evidence\p02-audio\p02-chunk-0000.wav
+
+Section index `i` maps to `p02-chunk-{i:04}.wav` when that file exists; otherwise the first sorted chunk path is used so the control stays demonstrable.
+
+Note: Some Windows environments return MSVC `LNK1104` while linking `build_script` helpers for the desktop dependency graph (path length, antivirus, or concurrent locks). If that happens, retry after `cargo clean`, exclude the repo from real-time scanning, or build from a shorter path. CI for this repo does not yet compile the viewer binary.

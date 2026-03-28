@@ -2,7 +2,23 @@
 name = "mkaf_md_parse"
 version = "0.1.0"
 edition = "2021"
-description = "P01: parse local Markdown into structured header/paragraph output (multimodal-knowledge-artifact-factory)"
+description = "P01–P03: Markdown parse CLI + Dioxus knowledge viewer (multimodal-knowledge-artifact-factory)"
+default-run = "mkaf_md_parse"
+
+[lib]
+path = "src/lib.rs"
 
 [dependencies]
+# `default-features = true` (implicit) so `macro`, `launch`, `html`, `signals`, etc. are enabled;
+# `desktop` adds the WebView stack. With `default-features = false`, `#[component]` / `rsx!` / `LaunchBuilder` are missing.
+dioxus = { version = "=0.7.3", optional = true, features = ["desktop"] }
 pulldown-cmark = "0.11"
+
+[features]
+default = []
+viewer = ["dep:dioxus"]
+
+[[bin]]
+name = "knowledge_viewer"
+path = "src/bin/knowledge_viewer.rs"
+required-features = ["viewer"]
