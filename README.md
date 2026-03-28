@@ -37,7 +37,7 @@ Each engineering system starts with a real-world problem and works backward to t
 
 | System | What It Demonstrates | Status |
 |---|---|---|
-| multimodal-knowledge-artifact-factory | P01–P04: parse CLI, stub-audio bridge, Dioxus **Knowledge Viewer**, **`export`** + **`integration.py`** (AIRI handoff); ADRs + validation per phase | In flight on feature branch — full series implemented; **P04** validation **PASS (conditional)** until AIRI proven locally; merge when PR green |
+| multimodal-knowledge-artifact-factory | Full series **P01–P04**: parse → stub WAV → Dioxus viewer (optional MD path) → exports + AIRI handoff; **`case-study/`** pack | Match **`implementation.md`** on this branch; AIRI desktop launch remains operator-dependent |
 
 ## Project Library Source
 

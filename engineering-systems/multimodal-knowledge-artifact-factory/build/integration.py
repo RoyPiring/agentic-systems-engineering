@@ -46,8 +46,8 @@ def main() -> int:
     args = ap.parse_args()
 
     root = engineering_system_root()
-    p02 = root / "executions" / "evidence" / "p02-audio"
-    p04 = root / "executions" / "evidence" / "p04-exports"
+    p02 = root / "executions" / "evidence" / "p02" / "audio"
+    p04 = root / "executions" / "evidence" / "p04" / "exports"
     viewer_src = root / "build" / "src" / "bin" / "knowledge_viewer.rs"
     viewer_bin = viewer_release_binary(root)
 

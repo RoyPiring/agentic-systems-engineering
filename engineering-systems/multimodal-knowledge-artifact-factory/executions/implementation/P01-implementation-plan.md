@@ -22,7 +22,7 @@ Ship a **Rust** CLI under `build/` that reads Markdown, parses with **pulldown-c
 
 | Step | Complete when |
 | ---- | ------------- |
-| Rust available | Versions saved to [`../evidence/rust-toolchain.txt`](../evidence/rust-toolchain.txt) |
+| Rust available | Versions saved to [`../evidence/p01/rust-toolchain.txt`](../evidence/p01/rust-toolchain.txt) |
 | Layout | All Cargo work happens from [`build/`](../../build/) |
 
 ## Phase 2 — Build
@@ -46,12 +46,12 @@ Ship a **Rust** CLI under `build/` that reads Markdown, parses with **pulldown-c
 | Item | Complete when |
 | ---- | ------------- |
 | Summary | [Execution record](../execution-record.md) updated for P01 |
-| Evidence | Run logs / transcripts in [`../evidence/`](../evidence/) |
+| Evidence | Run logs / transcripts in [`../evidence/p01/`](../evidence/p01/) |
 | Validation | [P01 validation](../../validation/P01-validation.md) shows **PASS** |
 
 ## Done when
 
-- [x] `cargo build` / `cargo run` verified with transcripts under [`../evidence/`](../evidence/) (`p01-cargo-build.txt`, `complex-sample-run.txt`, `p01-negative-missing-file.txt`).
+- [x] `cargo build` / `cargo run` verified with transcripts under [`../evidence/p01/`](../evidence/p01/) (`p01-cargo-build.txt`, `complex-sample-run.txt`, `p01-negative-missing-file.txt`).
 - [x] Validation **PASS** and system docs aligned.
 
 ## Next

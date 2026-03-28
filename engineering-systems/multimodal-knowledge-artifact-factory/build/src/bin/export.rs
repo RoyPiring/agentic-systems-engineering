@@ -32,7 +32,7 @@ fn run() -> Result<(), String> {
     let out_dir: PathBuf = args
         .next()
         .map(PathBuf::from)
-        .unwrap_or_else(|| PathBuf::from("../executions/evidence/p04-exports"));
+        .unwrap_or_else(|| PathBuf::from("../executions/evidence/p04/exports"));
 
     fs::create_dir_all(&out_dir).map_err(|e| format!("create {}: {e}", out_dir.display()))?;
 

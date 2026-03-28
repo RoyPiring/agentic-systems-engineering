@@ -5,9 +5,7 @@
 
 ## Standard five (portfolio)
 
-**Logical architecture** (`02`) and **deployment / technology** (`03`) are different views—same idea as separating application vs technology layers in TOGAF-style playbooks. Full spec and TOGAF mapping table:
-
-`02-BUILD/07-GitHub-Protifilo/00-template-systems-engineering/02-system-templates/scaffold-architecture-README.md` → **Standard diagram set (five views)**.
+**Logical architecture** (`02`) and **deployment / technology** (`03`) are different views—same idea as separating application vs technology layers in TOGAF-style playbooks. Together with context (`01`), roadmap (`04`), and data flow (`05`), they form the **standard five-view** diagram set for this system.
 
 | File | View |
 |------|------|

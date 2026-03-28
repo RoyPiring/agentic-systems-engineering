@@ -5,11 +5,11 @@
 | **System** | multimodal-knowledge-artifact-factory |
 | **Last updated** | 2026-03 |
 | **Series guide (filename only)** | `P04-Integrate_AIRI_for_Multimodal_Study_Artifact_Assembly.md` |
-| **Depends on** | P01 **PASS** — parse + `lib` model; P02 **PASS** — `executions/evidence/p02-audio/*.wav`; P03 **PASS** — `knowledge_viewer` + section ↔ audio mapping ([ADR-004](../../architecture/adr/ADR-004-vibevoice-tts-and-airi-multimodal-assembly.md)) |
+| **Depends on** | P01 **PASS** — parse + `lib` model; P02 **PASS** — `executions/evidence/p02/audio/*.wav`; P03 **PASS** — `knowledge_viewer` + section ↔ audio mapping ([ADR-004](../../architecture/adr/ADR-004-vibevoice-tts-and-airi-multimodal-assembly.md)) |
 
 ## Outcome
 
-- **Static exports** — Rust **`export`** binary under `build/` (`cargo run --bin export` with documented args) writes **`flashcards.json`** (JSON array of term/definition objects) and **`quiz.md`** (questions derived from section headings / structure) into a documented directory under **`executions/evidence/`** (for example `executions/evidence/p04-exports/`).
+- **Static exports** — Rust **`export`** binary under `build/` (`cargo run --bin export` with documented args) writes **`flashcards.json`** (JSON array of term/definition objects) and **`quiz.md`** (questions derived from section headings / structure) into a documented directory under **`executions/evidence/`** (for example `executions/evidence/p04/exports/`).
 - **Integration script** — **`build/integration.py`** resolves **relative** paths from the engineering-system root to: P02 WAVs, P03 viewer artifact paths (binary and/or source as documented), and P04 export outputs; documents environment variables or CLI flags used to launch **AIRI** (or the operator’s equivalent local command).
 - **End-to-end narrative** — Repeatable command sequence (parser → TTS stub → optional viewer build → export → integration) captured in the execution record with transcripts under **`executions/evidence/`** (`p04-*` prefix).
 - **Validation** — **`validation/P04-validation.md`** at **PASS** (or **PASS (conditional)** with explicit rationale if AIRI UI cannot be reproduced in CI) when this phase is accepted; system rollups updated.
@@ -38,7 +38,7 @@
 | Step | Complete when |
 | ---- | ------------- |
 | 2.1 | **`build/integration.py`** exists; **`python --version`** compatible with **`build/README.md`** |
-| 2.2 | Script resolves paths to **`executions/evidence/p02-audio/`**, P04 export dir, and P03-related paths (viewer binary under `build/target/...` and/or `src/bin/knowledge_viewer.rs` as **documentation** anchors — no secrets) |
+| 2.2 | Script resolves paths to **`executions/evidence/p02/audio/`**, P04 export dir, and P03-related paths (viewer binary under `build/target/...` and/or `src/bin/knowledge_viewer.rs` as **documentation** anchors — no secrets) |
 | 2.3 | Documented invocation of **AIRI** (executable name, config file, or env vars — whatever the operator’s install requires); script fails with a **clear message** if AIRI is not on `PATH` / expected location |
 | 2.4 | Smoke: `python integration.py --help` (or dry-run flag if implemented) and one real run transcript in **`executions/evidence/`** when AIRI is available |
 
@@ -47,7 +47,7 @@
 | Step | Complete when |
 | ---- | ------------- |
 | 3.1 | From documented cwd: run P01 CLI on sample → regenerate or reuse P01 stdout for P02 as needed |
-| 3.2 | Run P02 stub pipeline → WAVs present under **`executions/evidence/p02-audio/`** |
+| 3.2 | Run P02 stub pipeline → WAVs present under **`executions/evidence/p02/audio/`** |
 | 3.3 | Run **`export`** → **`flashcards.json`** + **`quiz.md`** refreshed |
 | 3.4 | Run **`integration.py`** → AIRI launches **or** documented **skip** with honest validation note |
 | 3.5 | Optional screenshot or log of AIRI showing assembled assets under **`executions/evidence/`** when feasible |

@@ -19,15 +19,15 @@ Microsoft’s public **VibeVoice-TTS** quick path is **not** guaranteed from the
 | 4 | Chunking | Multiple chunks; boundaries visible in log |
 | 5 | Audio | Playable `.wav` per chunk; unique names |
 | 6 | Edge | Empty structured input → warning, no WAV |
-| 7 | Evidence | Transcripts + listing under `executions/evidence/` |
+| 7 | Evidence | Transcripts + listing under `executions/evidence/p02/` (WAVs under `p02/audio/` when generated) |
 
 ## How to run
 
 From `build/`:
 
 ```bash
-cargo run --release -- samples/complex-sample.md 1> ../executions/evidence/p01-stdout-for-p02.txt
-python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.txt
+cargo run --release -- samples/complex-sample.md 1> ../executions/evidence/p01/p01-stdout-for-p02.txt
+python tts_inference.py --from-file ../executions/evidence/p01/p01-stdout-for-p02.txt
 ```
 
 (On PowerShell, `1>` keeps parser **stdout** only in the file; or pipe: `cargo run --release -- samples/complex-sample.md | python tts_inference.py --stdin`.)
@@ -36,11 +36,11 @@ python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.tx
 
 | Check | Expected | Actual |
 | ----- | -------- | ------ |
-| Python | 3.10+ recorded | **PASS** — [`p02-python-version.txt`](../executions/evidence/p02-python-version.txt) |
+| Python | 3.10+ recorded | **PASS** — [`p02-python-version.txt`](../executions/evidence/p02/p02-python-version.txt) |
 | Baseline | Default path without extra installs | **PASS** — [`requirements-p02.txt`](../build/requirements-p02.txt), script in [`build/tts_inference.py`](../build/tts_inference.py) |
-| Handoff + chunk | Chunks from P1 stdout | **PASS** — [`p01-stdout-for-p02.txt`](../executions/evidence/p01-stdout-for-p02.txt), [`p02-pipeline-run.txt`](../executions/evidence/p02-pipeline-run.txt) |
-| Audio | WAV files on disk | **PASS** — [`p02-audio/`](../executions/evidence/p02-audio/), [`p02-audio-listing.txt`](../executions/evidence/p02-audio-listing.txt) |
-| Edge | Empty input handled | **PASS** — [`p02-edge-empty-stderr.txt`](../executions/evidence/p02-edge-empty-stderr.txt) |
+| Handoff + chunk | Chunks from P1 stdout | **PASS** — [`p01-stdout-for-p02.txt`](../executions/evidence/p01/p01-stdout-for-p02.txt), [`p02-pipeline-run.txt`](../executions/evidence/p02/p02-pipeline-run.txt) |
+| Audio | WAV files on disk | **PASS** — [`p02/audio/`](../executions/evidence/p02/audio/), [`p02-audio-listing.txt`](../executions/evidence/p02/p02-audio-listing.txt) |
+| Edge | Empty input handled | **PASS** — [`p02-edge-empty-stderr.txt`](../executions/evidence/p02/p02-edge-empty-stderr.txt) |
 
 ## Delivery
 

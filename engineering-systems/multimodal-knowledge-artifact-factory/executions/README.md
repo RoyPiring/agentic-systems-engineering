@@ -4,7 +4,7 @@
 | ---- | ---- |
 | [execution-record.md](./execution-record.md) | Short summary of what ran for each project (vs the plan) |
 | [implementation/](./implementation/) | Per-project **plans** (`P0X-implementation-plan.md`) |
-| [evidence/](./evidence/) | Run artifacts only (logs, transcripts, toolchain capture) |
+| [evidence/](./evidence/) | Run artifacts only (logs, transcripts, toolchain capture). Layout: **`p01/`** … **`p04/`** per project; optional **`p02/audio/`** (WAV), **`p04/exports/`** (JSON/quiz). |
 
 | Project | Plan | Record | Validation |
 | ------- | ---- | ------ | ---------- |

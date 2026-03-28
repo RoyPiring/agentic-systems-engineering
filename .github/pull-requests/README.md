@@ -2,7 +2,7 @@
 
 **Canonical PR scaffold:** [`PR_TEMPLATE.md`](./PR_TEMPLATE.md) — copy into the GitHub PR description, or use it to author a new `PR_BODY_*_FILLED.md`.
 
-**Filled bodies (CLI / `gh`):** `PR_BODY_MULTIMODAL_P01_FILLED.md`, `PR_BODY_MULTIMODAL_P02_FILLED.md`, `PR_BODY_MULTIMODAL_P03_FILLED.md`, …
+**Filled bodies (CLI / `gh`):** `PR_BODY_MULTIMODAL_P01_FILLED.md`, `PR_BODY_MULTIMODAL_P02_FILLED.md`, `PR_BODY_MULTIMODAL_P03_FILLED.md`, `PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md`, …
 
 This repo **does not** use `.github/pull_request_template.md`. That avoids two diverging copies; GitHub will not auto-inject a body — paste from here or use `--body-file` below.
 
@@ -10,14 +10,14 @@ This repo **does not** use `.github/pull_request_template.md`. That avoids two d
 
 ```bash
 gh pr create --base main --head feature/multimodal-knowledge-artifact-factory-p03 \
-  --title "feat(multimodal-knowledge-artifact-factory/P03): Dioxus Knowledge Viewer" \
-  --body-file .github/pull-requests/PR_BODY_MULTIMODAL_P03_FILLED.md
+  --title "feat(multimodal-knowledge-artifact-factory): full series — P04 + case study" \
+  --body-file .github/pull-requests/PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md
 ```
 
 Refresh an open PR description:
 
 ```bash
-gh pr edit <n> --body-file .github/pull-requests/PR_BODY_MULTIMODAL_P03_FILLED.md
+gh pr edit <n> --body-file .github/pull-requests/PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md
 ```
 
 **Same change set — also complete:**
@@ -26,4 +26,4 @@ gh pr edit <n> --body-file .github/pull-requests/PR_BODY_MULTIMODAL_P03_FILLED.m
 2. **Workflows** — `.github/workflows/` (e.g. docs lint on `**/*.md`) green before merge.
 3. **Issue templates** — `.github/ISSUE_TEMPLATE/` for bug / feature reports (optional for private repos; recommended for public portfolio).
 
-See vault **PORTFOLIO-BUILD-SOP** Steps **66**, **72**, **73**.
+Align changelog, body file, and CI with the same change set before merge (portfolio workflow Steps 66, 72, 73).

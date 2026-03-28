@@ -28,7 +28,7 @@ interactive views, and study-ready exports—without recurring cloud spend.
 | Metric | Target | Validation Method |
 | --- | --- | --- |
 | Parse fidelity | Parsed structure matches markdown intent; errors surfaced with context | P01 execution record + sample files |
-| Audio output | Playable **`.wav`** chunks from P01 text, locally, without cloud TTS APIs (stub or neural) | P02 validation + `executions/evidence/p02-audio/` |
+| Audio output | Playable **`.wav`** chunks from P01 text, locally, without cloud TTS APIs (stub or neural) | P02 validation + `executions/evidence/p02/audio/` |
 | Interactive UI | Dioxus **Knowledge Viewer** over parsed sections + P02 audio path mapping | P03 validation + `build/` runbook |
 | Multimodal assembly | AIRI consumes exports; companion workflow demonstrable | P04 validation + execution record (conditional PASS allowed if AIRI absent) |
 | Cost lock | **$0** recurring; only local compute + known one-time ~3GB model pull | Document in `validation.md` |

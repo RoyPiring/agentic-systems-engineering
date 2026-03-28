@@ -13,7 +13,7 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 
 **P01:** Rust CLI under `build/` builds and runs; structured `H{n}:` / `P:` output and error path verified. Evidence: [`executions/evidence/`](./executions/evidence/) (toolchain, build log, sample run, negative run).
 
-**P02:** `tts_inference.py` — P01 structured text → chunked **stub** WAV (mono 16-bit PCM 22050 Hz) under `executions/evidence/p02-audio/`; empty-input edge documented. Neural VibeVoice-TTS-1.5B not integrated (upstream public inference disabled/removed). **PASS** — see [validation/P02-validation.md](./validation/P02-validation.md).
+**P02:** `tts_inference.py` — P01 structured text → chunked **stub** WAV (mono 16-bit PCM 22050 Hz) under `executions/evidence/p02/audio/`; empty-input edge documented. Neural VibeVoice-TTS-1.5B not integrated (upstream public inference disabled/removed). **PASS** — see [validation/P02-validation.md](./validation/P02-validation.md).
 
 **P03:** Dioxus **Knowledge Viewer** (`knowledge_viewer` binary, feature `viewer`); shared parser in `build/src/lib.rs`; **Play Narration** maps sections to P02 WAV paths. **PASS** — [validation/P03-validation.md](./validation/P03-validation.md).
 
@@ -23,26 +23,26 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 
 | Check | Expected | Actual | Δ |
 | ----- | -------- | -------- | --- |
-| P01 build | Success from `build/` | **PASS** — [`p01-cargo-build.txt`](./executions/evidence/p01-cargo-build.txt) | — |
-| P01 sample | `H*` / `P:` output | **PASS** — [`complex-sample-run.txt`](./executions/evidence/complex-sample-run.txt) | — |
-| P01 bad path | Non-zero exit | **PASS** — exit 1 in [`p01-negative-missing-file.txt`](./executions/evidence/p01-negative-missing-file.txt) | — |
-| P02 pipeline | Chunks + `.wav` from P01 stdout | **PASS** — [`p02-pipeline-run.txt`](./executions/evidence/p02-pipeline-run.txt), [`p02-audio-listing.txt`](./executions/evidence/p02-audio-listing.txt) | — |
-| P02 edge | No `H:`/`P:` lines | **PASS** — warning stderr [`p02-edge-empty-stderr.txt`](./executions/evidence/p02-edge-empty-stderr.txt) | — |
-| P03 lib golden | Parser stdout stable for P02 | **PASS** — [`p03-cargo-test-lib.txt`](./executions/evidence/p03-cargo-test-lib.txt) | — |
-| P03 viewer | Dioxus desktop + narration map | **PASS** — source + [`p03-viewer-build.txt`](./executions/evidence/p03-viewer-build.txt) | — |
-| P04 export + AIRI | `export` binary, `integration.py`, E2E evidence | **PASS (conditional)** — [`p04-export-run.txt`](./executions/evidence/p04-export-run.txt), [`p04-e2e-summary.txt`](./executions/evidence/p04-e2e-summary.txt); AIRI launch N/A | — |
+| P01 build | Success from `build/` | **PASS** — [`p01-cargo-build.txt`](./executions/evidence/p01/p01-cargo-build.txt) | — |
+| P01 sample | `H*` / `P:` output | **PASS** — [`complex-sample-run.txt`](./executions/evidence/p01/complex-sample-run.txt) | — |
+| P01 bad path | Non-zero exit | **PASS** — exit 1 in [`p01-negative-missing-file.txt`](./executions/evidence/p01/p01-negative-missing-file.txt) | — |
+| P02 pipeline | Chunks + `.wav` from P01 stdout | **PASS** — [`p02-pipeline-run.txt`](./executions/evidence/p02/p02-pipeline-run.txt), [`p02-audio-listing.txt`](./executions/evidence/p02/p02-audio-listing.txt) | — |
+| P02 edge | No `H:`/`P:` lines | **PASS** — warning stderr [`p02-edge-empty-stderr.txt`](./executions/evidence/p02/p02-edge-empty-stderr.txt) | — |
+| P03 lib golden | Parser stdout stable for P02 | **PASS** — [`p03-cargo-test-lib.txt`](./executions/evidence/p03/p03-cargo-test-lib.txt) | — |
+| P03 viewer | Dioxus desktop + narration map | **PASS** — source + [`p03-viewer-build.txt`](./executions/evidence/p03/p03-viewer-build.txt) | — |
+| P04 export + AIRI | `export` binary, `integration.py`, E2E evidence | **PASS (conditional)** — [`p04-export-run.txt`](./executions/evidence/p04/p04-export-run.txt), [`p04-e2e-summary.txt`](./executions/evidence/p04/p04-e2e-summary.txt); AIRI launch N/A | — |
 
 ## Evidence
 
 - [Execution record](./executions/execution-record.md) — P01–P04 summary  
-- [executions/evidence/](./executions/evidence/) — transcripts, P02 audio listing, P03 build notes  
+- [executions/evidence/](./executions/evidence/) — per-project folders **`p01/`**…**`p04/`** (transcripts; P02 WAVs under **`p02/audio/`** when generated; P04 exports under **`p04/exports/`**)  
 
 ## Negative cases
 
 | Scenario | Result |
 | -------- | ------ |
-| P01 missing input | **PASS** — non-zero exit, error on stderr ([`p01-negative-missing-file.txt`](./executions/evidence/p01-negative-missing-file.txt)) |
-| P02 empty structured input | **PASS** — warning on stderr, no WAV ([`p02-edge-empty-stderr.txt`](./executions/evidence/p02-edge-empty-stderr.txt)) |
+| P01 missing input | **PASS** — non-zero exit, error on stderr ([`p01-negative-missing-file.txt`](./executions/evidence/p01/p01-negative-missing-file.txt)) |
+| P02 empty structured input | **PASS** — warning on stderr, no WAV ([`p02-edge-empty-stderr.txt`](./executions/evidence/p02/p02-edge-empty-stderr.txt)) |
 
 ## Security (P01)
 

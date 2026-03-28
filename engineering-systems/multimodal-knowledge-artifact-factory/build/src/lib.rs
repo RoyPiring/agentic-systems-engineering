@@ -192,7 +192,7 @@ mod tests {
         let md = include_str!("../samples/complex-sample.md");
         let blocks = parse_markdown_blocks(md);
         let actual = format_blocks_like_cli(&blocks, "samples/complex-sample.md");
-        let golden = include_str!("../../executions/evidence/p01-stdout-for-p02.txt");
+        let golden = include_str!("../../executions/evidence/p01/p01-stdout-for-p02.txt");
         let actual_n = actual.replace("\r\n", "\n");
         let golden_n = golden.replace("\r\n", "\n");
         assert_eq!(

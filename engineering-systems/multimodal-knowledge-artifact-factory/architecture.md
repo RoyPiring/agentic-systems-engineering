@@ -41,9 +41,9 @@ flowchart TB
 |---|---|---|
 | Markdown ingestion | Parse CommonMark into a structured internal representation | Trust boundary: only local files the operator selects |
 | Audio bridge (P02) | Chunk/strip P01 text → **`.wav`** (default **stub** PCM; neural VibeVoice optional) | Stub: no model; neural path: GPU/RAM; no external API in **core** story |
-| Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer** |
+| Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer**; default markdown `samples/complex-sample.md`, **optional first CLI arg** overrides source file |
 | AIRI integration (**P04**) | Assemble multimodal study artifacts; **`build/integration.py`** maps paths and invokes AIRI per operator setup | Desktop app boundary; local only; **PASS (conditional)** if AIRI not on PATH |
-| Export layer (**P04**) | **`export`** binary → flashcard JSON + quiz markdown under `executions/evidence/p04-exports/` | Filesystem output under operator control; **shipped** |
+| Export layer (**P04**) | **`export`** binary → flashcard JSON + quiz markdown under `executions/evidence/p04/exports/` | Filesystem output under operator control; **shipped** |
 
 ## Key decisions (ADRs)
 

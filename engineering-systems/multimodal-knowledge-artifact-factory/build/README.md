@@ -28,15 +28,15 @@ Microsoft’s **VibeVoice-TTS-1.5B** “quick try” is **disabled** in the upst
 From this directory:
 
 ```bash
-# Save P01 stdout, then generate WAV chunks under executions/evidence/p02-audio/
-cargo run --release -- samples/complex-sample.md > ../executions/evidence/p01-stdout-for-p02.txt
-python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.txt
+# Save P01 stdout, then generate WAV chunks under executions/evidence/p02/audio/
+cargo run --release -- samples/complex-sample.md > ../executions/evidence/p01/p01-stdout-for-p02.txt
+python tts_inference.py --from-file ../executions/evidence/p01/p01-stdout-for-p02.txt
 
 # Or pipe directly
 cargo run --release -- samples/complex-sample.md | python tts_inference.py --stdin
 ```
 
-- **Output:** `../executions/evidence/p02-audio/p02-chunk-0000.wav`, … (unique names per chunk).
+- **Output:** `../executions/evidence/p02/audio/p02-chunk-0000.wav`, … (unique names per chunk).
 - **Stub WAV format:** mono **16-bit PCM**, **22050 Hz** (valid files for players / downstream tests).
 - **Optional deps:** `requirements-p02.txt` documents that stub mode needs no packages.
 
@@ -54,6 +54,9 @@ cargo run --release -- samples/complex-sample.md
 # Desktop viewer (separate binary)
 cargo build --release --features viewer --bin knowledge_viewer
 cargo run --release --features viewer --bin knowledge_viewer
+
+# Optional: load a different markdown file (path relative to build/ or absolute)
+cargo run --release --features viewer --bin knowledge_viewer -- ../case-study/data/script.md
 ```
 
 **Windows:** If the viewer build fails with MSVC **LNK1104** on `build_script_build-….exe`, try `cargo clean`, a shorter clone path, antivirus exclusion for the repo, or a short target directory for that shell only, for example `$env:CARGO_TARGET_DIR = "C:\t\mkaf-tgt"` (PowerShell) before `cargo build`.
@@ -61,8 +64,8 @@ cargo run --release --features viewer --bin knowledge_viewer
 - **Dioxus in `Cargo.toml`:** use `dioxus = { version = "0.7.3", optional = true, features = ["desktop"] }` — keep **default** crate features enabled so `macro` / `launch` / `html` / `signals` are available. Turning **`default-features = false`** on `dioxus` without adding those features breaks `#[component]`, `rsx!`, and `LaunchBuilder`.
 
 - **Crate layout:** `src/lib.rs` — shared `parse_markdown_blocks` / `blocks_to_sections` / `list_p02_wavs_sorted`; `src/main.rs` — P01 CLI; `src/bin/knowledge_viewer.rs` — Dioxus app.
-- **Data:** Loads `samples/complex-sample.md`; maps **Play Narration** to sorted files under `../executions/evidence/p02-audio/` (run P02 first so `.wav` files exist).
-- **Evidence:** See [`../executions/evidence/p03-*.txt`](../executions/evidence/) for commands and notes.
+- **Data:** Default markdown is `samples/complex-sample.md`. **Optional first CLI argument** overrides that path (e.g. case-study `script.md`). Maps **Play Narration** to sorted files under `../executions/evidence/p02/audio/` — run P02 on the **same** markdown first so section order matches chunk order.
+- **Evidence:** See [`../executions/evidence/p03/`](../executions/evidence/p03/) for commands and notes (`p03-*.txt`).
 
 ## P04 — Study exports (`export`) + AIRI bridge (`integration.py`)
 
@@ -76,11 +79,11 @@ From this directory:
 cargo build --release --bin export
 cargo run --release --bin export
 # Optional: custom input and output directory (paths relative to cwd)
-cargo run --release --bin export -- samples/complex-sample.md ../executions/evidence/p04-exports
+cargo run --release --bin export -- samples/complex-sample.md ../executions/evidence/p04/exports
 ```
 
 - **Default input:** `samples/complex-sample.md`
-- **Default output directory:** `../executions/evidence/p04-exports/`
+- **Default output directory:** `../executions/evidence/p04/exports/`
 - **Writes:** `flashcards.json` (array of `{ "term", "definition" }` per parsed section) and `quiz.md` (one question block per section; answers inside `<details>` for self-testing).
 
 ### Integration script (Python)
