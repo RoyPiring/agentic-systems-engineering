@@ -1,0 +1,3 @@
+Placeholder (not referenced by validation transcripts).
+
+“Empty structured stdout” is not a separate golden file here — use stdin with no `H`/`P` lines or an empty pipe. Evidence for the warning path: [`p02-edge-empty-stderr.txt`](./p02-edge-empty-stderr.txt).
