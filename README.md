@@ -37,7 +37,7 @@ Each engineering system starts with a real-world problem and works backward to t
 
 | System | What It Demonstrates | Status |
 |---|---|---|
-| multimodal-knowledge-artifact-factory | P01: governed Markdown parsing CLI, architecture + validation trail | Published — P01 merged 2026-03-26 |
+| multimodal-knowledge-artifact-factory | Full series **P01–P04**: parse → stub WAV → Dioxus viewer (optional MD path) → exports + AIRI handoff; **`case-study/`** pack | Match **`implementation.md`** on this branch; AIRI desktop launch remains operator-dependent |
 
 ## Project Library Source
 

@@ -8,7 +8,7 @@ This document curates the top engineering systems in this repository for fast re
 
 | System | One-Line Summary | Why It's Featured |
 |---|---|---|
-| multimodal-knowledge-artifact-factory | Markdown → structured outline CLI (P01); ADRs and validation artifacts on `main` | First published system in this domain; end-to-end evidence for P01 |
+| multimodal-knowledge-artifact-factory | **P01–P04** multimodal pipeline; per-project evidence folders; **`case-study/`** | First system; status rows track **`implementation.md`** / **`validation.md`** on the active branch |
 
 ## Navigation
 

@@ -1,0 +1,14 @@
+P04 Phase 1 — export binary (from `build/`, cwd = `build/`)
+
+Commands:
+  cargo build --release --bin export
+  cargo run --release --bin export
+
+Observed stdout:
+  wrote ../executions/evidence/p04-exports\flashcards.json
+  wrote ../executions/evidence/p04-exports\quiz.md
+  sections: 6
+
+Optional args: `cargo run --release --bin export -- <input.md> [output_dir]`
+Default input: `samples/complex-sample.md`
+Default output dir: `../executions/evidence/p04-exports`

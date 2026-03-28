@@ -1,0 +1,24 @@
+   Compiling mkaf_md_parse v0.1.0 (C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GITHUB-BUILDS\agentic-systems-engineering\engineering-systems\multimodal-knowledge-artifact-factory\build)
+    Finished `release` profile [optimized] target(s) in 0.56s
+     Running `target\release\mkaf_md_parse.exe samples/complex-sample.md`
+--- structured extract: samples/complex-sample.md ---
+
+H1: Multimodal pipeline overview
+P: This document exercises multiple heading levels, plain paragraphs, lists, and a block quote so the P01 parser can separate structural blocks.
+
+H2: Nested topic: ingestion
+P: Markdown is the trust boundary for local research notes. The parser should surface headings and body text without mixing adjacent sections.
+
+H3: Detail level three
+P: Short paragraph after a deep heading.
+
+H2: Lists and structure
+P: A block quote should not confuse paragraph detection when quotes contain multiple lines.
+
+H2: Code block (informational)
+P: The following fenced block is structural markdown; P01 focuses on headings and paragraphs, not code-block extraction.
+
+H2: Closing section
+P: Final paragraph for smoke tests: soft breaks
+and inline strong should land inside one P when they share a paragraph.
+

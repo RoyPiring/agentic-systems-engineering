@@ -15,7 +15,7 @@ flowchart TB
   end
   subgraph pipeline["Local pipeline"]
     PARSE["Parse\npulldown-cmark"]
-    AUDIO["TTS\nVibeVoice"]
+    AUDIO["Audio\nP02 stub / TTS"]
     UI["Views\nDioxus"]
     ASSEMBLE["Assembly\nAIRI"]
   end
@@ -40,10 +40,10 @@ flowchart TB
 | Component | Responsibility | Boundary |
 |---|---|---|
 | Markdown ingestion | Parse CommonMark into a structured internal representation | Trust boundary: only local files the operator selects |
-| VibeVoice TTS | Generate local narrations from text segments | GPU/RAM; no external API in core path |
-| Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer** |
-| AIRI integration | Assemble multimodal study artifacts and companion workflows | Desktop app boundary; local only |
-| Export layer | Emit static assets (e.g. flashcard JSON, quiz markdown) | Filesystem output under operator control |
+| Audio bridge (P02) | Chunk/strip P01 text → **`.wav`** (default **stub** PCM; neural VibeVoice optional) | Stub: no model; neural path: GPU/RAM; no external API in **core** story |
+| Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer**; default markdown `samples/complex-sample.md`, **optional first CLI arg** overrides source file |
+| AIRI integration (**P04**) | Assemble multimodal study artifacts; **`build/integration.py`** maps paths and invokes AIRI per operator setup | Desktop app boundary; local only; **PASS (conditional)** if AIRI not on PATH |
+| Export layer (**P04**) | **`export`** binary → flashcard JSON + quiz markdown under `executions/evidence/p04/exports/` | Filesystem output under operator control; **shipped** |
 
 ## Key decisions (ADRs)
 
@@ -66,7 +66,8 @@ flowchart TB
 
 | Failure Mode | Blast Radius | Detection | Mitigation |
 |---|---|---|---|
-| VibeVoice model missing or OOM | No audio output | Startup error, process exit | Document min RAM/GPU; graceful error message; CPU path if available |
+| Neural TTS model missing or OOM | No neural audio | Startup error, process exit | Stub path proves pipeline without weights; document min RAM/GPU for neural |
+| Desktop UI link / toolchain (P03) | Viewer fails to build or start | Compile or WebView errors | WebView2 on Windows; MSVC **LNK1104** mitigations in `build/README.md` (short `CARGO_TARGET_DIR`, etc.) |
 | Malformed markdown | Downstream steps starved or wrong structure | Parse errors, empty AST | Strict parse reporting; fail fast with file/line context |
 | AIRI not running or wrong version | P04 assembly fails | Integration test / connector error | Version matrix in validation; clear prereq in execution record |
 | Oversized input files | Slow parse, UI freeze | Latency metrics, memory | Stream parse where possible; document max recommended size |
@@ -80,5 +81,5 @@ flowchart TB
 ## Cost architecture
 
 - **Target:** $0 recurring (P00 cost lock).
-- **Drivers:** One-time VibeVoice weight download (~3GB); electricity and amortized hardware only.
-- **Guardrails:** No paid API calls in scope; document actual resource use after P02/P04 runs.
+- **Drivers:** Optional one-time VibeVoice weight download (~3GB) for neural TTS; **stub** P02 is near-zero marginal cost; electricity and amortized hardware only.
+- **Guardrails:** No paid API calls in scope; document actual resource use after P02–P04 runs.

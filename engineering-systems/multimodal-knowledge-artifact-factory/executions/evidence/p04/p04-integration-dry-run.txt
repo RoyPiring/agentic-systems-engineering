@@ -1,0 +1,7 @@
+P04 Phase 2 — integration.py --dry-run (from `build/`)
+
+Command:
+  python integration.py --dry-run
+
+Observed: prints engineering_system_root, p02_audio, p04_exports, viewer paths.
+When AIRI is not on PATH: stderr messages error: AIRI not found; exit code 0 (dry-run allows path check without launch).

@@ -1,0 +1,5 @@
+    Finished `release` profile [optimized] target(s) in 0.19s
+     Running `target\release\export.exe`
+wrote ../executions/evidence/p04-exports\flashcards.json
+wrote ../executions/evidence/p04-exports\quiz.md
+sections: 6

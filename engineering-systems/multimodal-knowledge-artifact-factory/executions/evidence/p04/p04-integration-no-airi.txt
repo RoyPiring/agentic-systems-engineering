@@ -1,0 +1,11 @@
+P04 — integration.py without --dry-run when AIRI absent (from `build/`)
+
+Command:
+  python integration.py
+
+Observed: same path map as dry-run; then:
+  error: AIRI not found ('airi' not on PATH). Install AIRI or set AIRI_EXECUTABLE to the full path.
+
+Exit code: 2
+
+This documents the expected failure mode until an operator installs AIRI and sets PATH or AIRI_EXECUTABLE.

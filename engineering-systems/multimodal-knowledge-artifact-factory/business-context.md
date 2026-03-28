@@ -18,7 +18,7 @@ interactive views, and study-ready exports—without recurring cloud spend.
 ## Objectives
 
 - Ingest structured markdown and parse it into a usable internal representation (P01).
-- Generate **local** audio narrations with VibeVoice (P02).
+- Generate **local** audio artifacts from structured text (P02) — shipped default is a **stdlib stub WAV** path; neural **VibeVoice** remains optional when a supported stack exists (see `build/README.md`).
 - Deliver **interactive knowledge views** with Dioxus (P03).
 - Assemble **multimodal study artifacts** via AIRI integration (P04).
 - Maintain **$0 recurring** cost: no paid APIs in the core path; one-time model footprint only.
@@ -28,29 +28,28 @@ interactive views, and study-ready exports—without recurring cloud spend.
 | Metric | Target | Validation Method |
 | --- | --- | --- |
 | Parse fidelity | Parsed structure matches markdown intent; errors surfaced with context | P01 execution record + sample files |
-| Audio output | Narration files produced locally without cloud TTS APIs | P02 execution record + artifacts |
-| Interactive UI | Navigable Dioxus views over parsed content | P03 execution record + build/run proof |
-| Multimodal assembly | AIRI consumes exports; companion workflow demonstrable | P04 execution record |
+| Audio output | Playable **`.wav`** chunks from P01 text, locally, without cloud TTS APIs (stub or neural) | P02 validation + `executions/evidence/p02/audio/` |
+| Interactive UI | Dioxus **Knowledge Viewer** over parsed sections + P02 audio path mapping | P03 validation + `build/` runbook |
+| Multimodal assembly | AIRI consumes exports; companion workflow demonstrable | P04 validation + execution record (conditional PASS allowed if AIRI absent) |
 | Cost lock | **$0** recurring; only local compute + known one-time ~3GB model pull | Document in `validation.md` |
 | Time box | ~**60 minutes** effort guidance per project (series design point) | Execution notes honesty |
 
 ## Constraints
 
-- **Budget:** **$0 recurring**; no paid API calls in scope. One-time VibeVoice model download (~**3GB**)
-  and local RAM/GPU expectations apply.
+- **Budget:** **$0 recurring**; no paid API calls in scope. **Neural** VibeVoice weights (~**3GB**)
+  and RAM/GPU expectations apply only if you attach that stack; the **default stub** P02 path uses **stdlib Python only**.
 - **Time:** Series sized for **beginner** depth; **four** projects, ~**60 minutes** each as authored in
   the source spec.
 - **Organizational:** Portfolio / lab context—no production SLA, multi-tenant product, or org-wide
   rollout claims.
-- **Technical:** **Rust** toolchain, **Dioxus 0.7.3**, **pulldown-cmark 0.11**, local **VibeVoice**
-  and **AIRI** desktop; development on a **local workstation** (Cursor/VS Code-class IDE).
+- **Technical:** **Rust** toolchain, **Dioxus 0.7.3** (desktop viewer), **pulldown-cmark 0.11**, **Python 3.10+** for P02 bridge, optional **VibeVoice** / **AIRI** when integrated; development on a **local workstation** (Cursor/VS Code-class IDE).
 
 ## Scope
 
 ### In Scope
 
 - Local pipeline execution from markdown through structured parsing.
-- VibeVoice text-to-speech for local narrations.
+- Local audio generation from structured parser output (default **stub** WAV in the shipped build; neural TTS optional).
 - Dioxus-based interactive knowledge views.
 - AIRI self-hosted companion for multimodal assembly workflows.
 - Static study exports (e.g. flashcard JSON, quiz markdown) where the series defines them.

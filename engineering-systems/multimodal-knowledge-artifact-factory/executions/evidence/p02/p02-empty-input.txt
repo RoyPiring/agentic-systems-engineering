@@ -1,0 +1,3 @@
+Placeholder (not referenced by validation transcripts).
+
+For the P02 empty-input edge case, run `tts_inference.py` with stdin or a file that contains **no** `H{n}:` / `P:` lines. Captured stderr for that scenario: [`p02-edge-empty-stderr.txt`](./p02-edge-empty-stderr.txt).

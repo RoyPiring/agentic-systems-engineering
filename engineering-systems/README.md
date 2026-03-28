@@ -6,7 +6,7 @@ This index lists all engineering systems in this repository with a one-line scop
 
 | System | Scope | Status |
 |---|---|---|
-| multimodal-knowledge-artifact-factory | Local-first multimodal study pipeline; P01 Rust CLI parses Markdown to structured outline (`pulldown-cmark`) | Published 2026-03-26 — P01 on `main`; P02–P04 planned |
+| multimodal-knowledge-artifact-factory | P01–P04 local pipeline; evidence **`p01/`…`p04/`**; **`case-study/`**; optional **`artifacts/`** | **Status:** keep in sync with **`implementation.md`** and **`validation.md`** before merge |
 
 ## Adding a System
 

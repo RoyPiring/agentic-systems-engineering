@@ -10,7 +10,7 @@ Usage (from ``build/``)::
 
     cargo run --release -- samples/complex-sample.md | python tts_inference.py --stdin
 
-    python tts_inference.py --from-file ../executions/evidence/p01-stdout-for-p02.txt
+    python tts_inference.py --from-file ../executions/evidence/p01/p01-stdout-for-p02.txt
 """
 
 from __future__ import annotations
@@ -132,8 +132,8 @@ def main() -> None:
     )
     ap.add_argument(
         "--output-dir",
-        default="../executions/evidence/p02-audio",
-        help="directory for p02-chunk-NNNN.wav (default: ../executions/evidence/p02-audio)",
+        default="../executions/evidence/p02/audio",
+        help="directory for p02-chunk-NNNN.wav (default: ../executions/evidence/p02/audio)",
     )
     ap.add_argument(
         "--max-chunk-chars",

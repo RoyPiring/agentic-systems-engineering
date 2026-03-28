@@ -11,7 +11,7 @@
 
 - **`build/tts_inference.py`** — Python bridge from P01 structured lines to **chunked** synthesis. **Shipped default:** `--backend stub` (stdlib **mono PCM WAV**, no PyTorch/HF) because [microsoft/VibeVoice](https://github.com/microsoft/VibeVoice) **removed/disabled public TTS-1.5B quick try** (see their README). **`--backend vibevoice`** is reserved and exits with an explicit message until a supported neural stack is integrated by an operator.
 - **Chunked inference** — Feeds **stripped** plain text derived from the P01 stream (no raw `##` / `**` artifacts in spoken input); chunks respect `--max-chunk-chars` (default 400).
-- **Audible proof** — One or more **`.wav`** files under **`executions/evidence/p02-audio/`** with **unique names** (`p02-chunk-NNNN.wav`); run transcripts under **`executions/evidence/`** (`p02-pipeline-run.txt`, etc.).
+- **Audible proof** — One or more **`.wav`** files under **`executions/evidence/p02/audio/`** with **unique names** (`p02-chunk-NNNN.wav`); run transcripts under **`executions/evidence/p02/`** (`p02-pipeline-run.txt`, etc.).
 
 ## Roadmap
 
@@ -26,7 +26,7 @@
 
 | Step | Complete when |
 | ---- | ------------- |
-| 1.1 | Python **3.10+**; `python --version` captured in [`../evidence/`](../evidence/) (`p02-python-version.txt`) |
+| 1.1 | Python **3.10+**; `python --version` captured in [`../evidence/p02/`](../evidence/p02/) (`p02-python-version.txt`) |
 | 1.2 | **`requirements-p02.txt`** in [`build/`](../../build/) documents deps (**stub** needs none); optional `build/.venv` for future neural stacks |
 | 1.3 | **`tts_inference.py`** in [`build/`](../../build/) next to `Cargo.toml`; **`--backend stub`** runs without extra packages |
 | 1.4 | Neural VibeVoice-1.5B: **deferred** — upstream TTS path unavailable; stub proves pipeline (see validation notes) |
@@ -43,7 +43,7 @@
 
 | Step | Complete when |
 | ---- | ------------- |
-| 3.1 | Each chunk produces a **`.wav`** with a **unique** filename (index or timestamp); files live under **`executions/evidence/`** (e.g. `p02-audio/` subfolder) |
+| 3.1 | Each chunk produces a **`.wav`** with a **unique** filename (index or timestamp); files live under **`executions/evidence/`** (e.g. `p02/audio/` subfolder) |
 | 3.2 | **Stub:** mono **16-bit PCM**, **22050 Hz** (documented in `build/README.md` and script) |
 | 3.3 | At least one **negative or edge** case exercised (e.g. empty chunk, single very short input) and logged |
 

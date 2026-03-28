@@ -19,7 +19,7 @@ Root `architecture.md` should keep the **overview** (intent, summary Mermaid, co
 | `diagrams/04-roadmap-phases.mmd`         | Delivery phases (e.g. P01–P04)                                     |
 | `diagrams/05-data-flow.mmd`              | Information / artifact flow between parts                          |
 
-Portfolio-wide wording and TOGAF-style mapping: `02-BUILD/07-GitHub-Protifilo/00-template-systems-engineering/02-system-templates/scaffold-architecture-README.md`.
+**TOGAF-style split:** logical architecture (**`02`**) and deployment / technology (**`03`**) are different views—application vs technology layers in standard enterprise architecture playbooks.
 
 ## Naming
 

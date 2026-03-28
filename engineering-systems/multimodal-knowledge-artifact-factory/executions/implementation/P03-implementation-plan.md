@@ -5,14 +5,14 @@
 | **System** | multimodal-knowledge-artifact-factory |
 | **Last updated** | 2026-03 |
 | **Series guide (filename only)** | `P03-Build_Interactive_Knowledge_Views_with_Dioxus.md` |
-| **Depends on** | P01 **PASS** — structured parse CLI; P02 **PASS** — `executions/evidence/p02-audio/*.wav` (see [ADR-003](../../architecture/adr/ADR-003-dioxus-for-interactive-knowledge-views.md)) |
+| **Depends on** | P01 **PASS** — structured parse CLI; P02 **PASS** — `executions/evidence/p02/audio/*.wav` (see [ADR-003](../../architecture/adr/ADR-003-dioxus-for-interactive-knowledge-views.md)) |
 
 ## Outcome
 
 - **Dioxus 0.7.3** desktop app under `build/` with window title **Knowledge Viewer**, runnable via `cargo run` (default binary or explicit `--bin` once split).
 - **Shared parse model** — markdown sections available to the UI as Rust data (refactor parser from a single `main.rs` into a `lib` target or module as needed so the CLI binary and UI binary both compile).
 - **Rendered sections** — headings and paragraph text from parsed markdown appear in the UI (sample path or embedded fixture aligned with P01 sample).
-- **Multimodal hook** — per-section control (e.g. **Play Narration**) that resolves to the correct **local** `.wav` under `executions/evidence/p02-audio/` (or documented relative path from the running app’s cwd).
+- **Multimodal hook** — per-section control (e.g. **Play Narration**) that resolves to the correct **local** `.wav` under `executions/evidence/p02/audio/` (or documented relative path from the running app’s cwd).
 - **Evidence** — build/run transcripts and at least one UI capture under `executions/evidence/` (e.g. `p03-*` files or a `p03-ui/` folder); execution record and validation updated to **PASS** when accepted.
 
 ## Roadmap
@@ -46,7 +46,7 @@
 | Step | Complete when |
 | ---- | ------------- |
 | 3.1 | Control appears beside (or under) each logical section |
-| 3.2 | Handler resolves **correct** relative path into `../executions/evidence/p02-audio/` (from `build/` cwd) or documents the cwd contract if different |
+| 3.2 | Handler resolves **correct** relative path into `../executions/evidence/p02/audio/` (from `build/` cwd) or documents the cwd contract if different |
 | 3.3 | Click logs intended path or triggers playback **without** freezing the UI thread |
 
 ## Phase 4 — Closeout
@@ -66,4 +66,4 @@
 
 ## Next
 
-**P04** (AIRI multimodal assembly) will consume the UI + audio artifacts; keep paths under `executions/evidence/` stable and documented.
+**P04** — follow [P04-implementation-plan.md](./P04-implementation-plan.md); keep `executions/evidence/p02/audio/` and export paths stable and documented.

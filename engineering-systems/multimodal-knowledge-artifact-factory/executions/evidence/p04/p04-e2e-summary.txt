@@ -1,0 +1,10 @@
+P04 Phase 3 — end-to-end transcript pointers (from `build/`)
+
+Order run on this machine:
+  1. cargo run --release -- samples/complex-sample.md > ../executions/evidence/p04-e2e-p01-stdout.txt
+  2. python tts_inference.py --from-file ../executions/evidence/p04-e2e-p01-stdout.txt --output-dir ../executions/evidence/p02-audio
+     → transcript: p04-e2e-p02.txt
+  3. cargo run --release --bin export
+     → transcript: p04-e2e-export.txt
+
+AIRI launch: not executed here (no `airi` on PATH). See p04-integration-no-airi.txt.
