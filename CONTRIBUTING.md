@@ -31,6 +31,19 @@ This is a **portfolio repository**, not a collaborative open-source project. It 
 
 PR descriptions come from `.github/pull-requests/` under **`YYYY-MM-DD-<engineering-system-folder>/`**: one PR that day → `PR_BODY.md`; several PRs that day for the same system → `PR_BODY_P01.md`, `PR_BODY_P02.md`, … (see `.github/pull-requests/README.md` and `.github/SLICE_LAYOUT.md`). Pair with `changelog/<same-folder>/CHANGELOG.md` and optional `code-review/<same-folder>/`. Example: `gh pr create --body-file .github/pull-requests/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY.md`.
 
+## `.github/` layout (maintainers)
+
+There is **no** `README.md` inside `.github/` on purpose — GitHub would render it when browsing that folder and it is easy to mistake for the **repository** homepage. The repo landing page is always the root [`README.md`](./README.md).
+
+| Area | Role |
+| ---- | ---- |
+| [SLICE_LAYOUT.md](.github/SLICE_LAYOUT.md) | Index: date + system folders → PR body, changelog, code-review |
+| [pull-requests/](.github/pull-requests/) | `PR_TEMPLATE.md`, dated folders, `PR_BODY.md` / `PR_BODY_P01.md`, … |
+| [changelog/](.github/changelog/) | `CHANGELOG_ENTRY_TEMPLATE.md`, dated `CHANGELOG.md` folders |
+| [code-review/](.github/code-review/) | `codereview.md`, `CHECKLIST.md`, per-slice hubs |
+| [workflows/](.github/workflows/) | Docs lint (markdownlint + lychee + structure), optional AI PR stub |
+| [ISSUE_TEMPLATE/](.github/ISSUE_TEMPLATE/) | Bug / feature forms |
+
 ## Issues
 
 Bug reports and gap/enhancement requests are welcome via GitHub Issues using the templates in `.github/ISSUE_TEMPLATE/`.
