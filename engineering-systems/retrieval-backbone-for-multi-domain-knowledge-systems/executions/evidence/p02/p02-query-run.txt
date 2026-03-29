@@ -1,0 +1,20 @@
+# p02-query-run.txt — P02 citation-aware query (evidence)
+# Date: 2026-03-29
+# Host: operator Windows; cwd: build/
+# Command: .\venv\Scripts\python.exe query_pipeline.py --query "What is the sample document about? Answer in one sentence."
+
+Answer
+------
+[Source: sample.md] The sample document appears to be about exercising Markdown ingestion for a retrieval backbone.
+
+Citations
+---------
+  [1] node_id=a50226c1-bcba-41b2-bc67-d6c5064b686f score=0.6276
+      file: sample.md
+      text: Sample corpus - P01 smoke  This file exercises Markdown ingestion for the retrieval backbone.  Section A  Vector databases store embeddings for similarity search. Qdrant is used locally in this series.  Section B  Ollama runs nomic-embed-text for embeddings without cloud API k...
+  [2] node_id=3aa00a34-ae59-49ba-917a-8ee41e838f37 score=0.6276
+      file: sample.md
+      text: Sample corpus - P01 smoke  This file exercises Markdown ingestion for the retrieval backbone.  Section A  Vector databases store embeddings for similarity search. Qdrant is used locally in this series.  Section B  Ollama runs nomic-embed-text for embeddings without cloud API k...
+  [3] node_id=7d9dd341-6abc-40fe-bcf8-febd73ad8cbb score=0.5974
+      file: README.md
+      text: Sample data (P01)  Place at least one .md or .pdf file here before running ingest.py (see P01 implementation plan).  Use only content you may commit or keep local-only (add filenames to .gitignore if private).

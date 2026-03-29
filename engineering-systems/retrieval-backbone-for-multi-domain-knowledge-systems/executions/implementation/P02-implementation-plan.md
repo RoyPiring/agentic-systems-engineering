@@ -90,9 +90,9 @@ pip install llama-index llama-index-vector-stores-qdrant llama-index-llms-ollama
 
 ## Done when
 
-- [ ] Phases 1–4 satisfied with proof in **`execution-record.md`** and **`executions/evidence/p02/`**
-- [ ] **`validation/P02-validation.md`** **PASS**
-- [ ] System rollups updated
+- [x] Phases 1–4 satisfied with proof in **`execution-record.md`** and **`executions/evidence/p02/`**
+- [x] **`validation/P02-validation.md`** **PASS**
+- [x] System rollups updated
 
 ## Next
 

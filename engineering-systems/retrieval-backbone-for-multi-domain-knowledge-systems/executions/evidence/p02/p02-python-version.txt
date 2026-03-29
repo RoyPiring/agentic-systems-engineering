@@ -1,0 +1,7 @@
+# Python interpreter used for P01/P02 venv (evidence)
+# Date: 2026-03-29
+# Command: build\venv\Scripts\python.exe --version
+
+Python 3.13.11
+
+# Plan target was 3.12; 3.13 used on validation host. Re-run on 3.12 in CI or a second machine if strict parity is required.

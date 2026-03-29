@@ -24,13 +24,14 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 
 ## P02 — Citation-aware retrieval pipeline
 
-**Status:** **Implementation started** (2026-03-29) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems-p02`.
+**Status:** **Executed** (2026-03-29) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems-p02`.
 
 ### What ran
 
 | Step | Command / artifact |
 | --- | --- |
 | Code | `build/query_pipeline.py` — `Settings` → **Ollama** LLM (`llama3.2`) + **Ollama** embed (`nomic-embed-text`); `VectorStoreIndex.from_vector_store` + `as_query_engine(similarity_top_k=3, text_qa_template=…)`; stdout **Answer** / **Citations** |
-| Deps | `build/requirements.txt` adds **`llama-index-llms-ollama`** |
+| Deps | `pip install -r build/requirements.txt` (vector store **≥0.10** for qdrant-client **1.17+**); see `p02-pip-freeze.txt` |
+| Models | `ollama pull llama3.2` (in addition to P01 `nomic-embed-text`) |
 
-**Operator next:** Follow **[user-guides/P02-user-guide.md](../user-guides/P02-user-guide.md)** — `pip install -r build/requirements.txt` (cwd `build/`), `ollama pull llama3.2`, ensure Qdrant + P01 collection, then `python query_pipeline.py --query "…"`. Save transcripts under `executions/evidence/p02/` and set **`validation/P02-validation.md`** to **PASS** when accepted.
+**Evidence:** `executions/evidence/p02/` — `p02-query-run.txt`, `p02-ollama-list.txt`, `p02-curl-qdrant.txt`, `p02-qdrant-collection.txt`, `p02-pip-freeze.txt`, `p02-python-version.txt`. Operator runbook: **`user-guides/P02-user-guide.md`**. Validation: **`validation/P02-validation.md`** **PASS**.

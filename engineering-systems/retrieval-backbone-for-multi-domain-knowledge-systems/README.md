@@ -6,7 +6,7 @@
 
 **Approach:** Four-phase **Python** path: **Unstructured + Qdrant** ingestion → **LlamaIndex + Ollama** citation-aware retrieval → **Firecrawl** web integration → **Ragas** evaluation and service-shaped packaging—**$0 recurring** API posture by default.
 
-**Outcome:** (In progress.) **P01** is **executed** and [validated](./validation/P01-validation.md) **PASS**; **P02** query path and [operator runbook](./user-guides/P02-user-guide.md) are in-repo with [validation](./validation/P02-validation.md) **Pending** until evidence is captured.
+**Outcome:** (In progress.) **P01** and **P02** are **executed** and [validated](./validation/P01-validation.md) / [P02 validated](./validation/P02-validation.md) **PASS**; operators: [P01 user guide](./user-guides/P01-user-guide.md) · [P02 user guide](./user-guides/P02-user-guide.md).
 
 ---
 
@@ -51,7 +51,7 @@
 ## System Summary
 
 - **Problem:** Fragmented RAG stacks without shared indexing, citations, or quality measurement.
-- **Scope:** P01–P04 as defined in [implementation.md](./implementation.md); **P01** **PASS**; **P02** implementation + user guide landed, validation **Pending**; **P03–P04** planned.
+- **Scope:** P01–P04 as defined in [implementation.md](./implementation.md); **P01**–**P02** **PASS**; **P03–P04** planned.
 - **Outcome:** End-to-end retrieval backbone with evidence per phase (target state).
 - **Constraints:** Local-first defaults; **$0 recurring** API spend in the default path; no production cloud claims.
 

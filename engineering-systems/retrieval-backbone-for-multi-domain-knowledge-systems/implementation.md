@@ -31,7 +31,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 | **Output** | Answer + **Citations** (source nodes); evidence under [`executions/evidence/p02/`](./executions/evidence/p02/) |
 | **Depends on** | P01 **PASS** |
 
-**Status:** **In progress** — query CLI and [P02 user guide](./user-guides/P02-user-guide.md) landed; operator run + evidence still required. [validation/P02-validation.md](./validation/P02-validation.md) **Pending**.
+**Status:** **Executed** — [validation/P02-validation.md](./validation/P02-validation.md) **PASS** (2026-03-29); evidence in [`executions/evidence/p02/`](./executions/evidence/p02/); [P02 user guide](./user-guides/P02-user-guide.md).
 
 ### P03 — Live web content (Firecrawl)
 

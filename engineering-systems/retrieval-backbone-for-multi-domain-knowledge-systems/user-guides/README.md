@@ -18,7 +18,7 @@
 | Phase | Guide | Status |
 | --- | --- | --- |
 | P01 | [P01-user-guide.md](./P01-user-guide.md) | **Ready** (validated path documented) |
-| P02 | [P02-user-guide.md](./P02-user-guide.md) | **Ready** (runbook; validation **Pending** until evidence) |
+| P02 | [P02-user-guide.md](./P02-user-guide.md) | **Ready** ([validation](../validation/P02-validation.md) **PASS**) |
 | P03 | `P03-user-guide.md` | Not created yet |
 | P04 | `P04-user-guide.md` | Not created yet |
 | Series | [SERIES-user-guide.md](./SERIES-user-guide.md) | In progress — P01–P02 linked |

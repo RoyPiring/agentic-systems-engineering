@@ -2,6 +2,8 @@
 
 # User guide — P02: Citation-aware retrieval (LlamaIndex and Ollama)
 
+**Validation:** [P02-validation.md](../validation/P02-validation.md) **PASS** (2026-03-29) — evidence under [`../executions/evidence/p02/`](../executions/evidence/p02/).
+
 ## What you get
 
 **`build/query_pipeline.py`** loads the **existing** Qdrant collection from **P01** (default **`multi_domain_docs`**), runs a **LlamaIndex** query engine with **Ollama** for both **embeddings** and **LLM** synthesis, and prints an **Answer** plus a **Citations** section (retrieved node ids, scores, file metadata, text snippets). No OpenAI keys are used when `Settings` are set as in the script.
