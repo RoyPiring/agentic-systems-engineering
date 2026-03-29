@@ -40,7 +40,7 @@ Every system follows the same engineering standard:
 |------|-------------------|------------|:----:|
 | **Recruiter** | Assess role or team fit from this portfolio | This README — systems table + how systems are built | 30 sec |
 | **Hiring manager** | Judge problem framing and architectural judgment | [Engineering systems](./engineering-systems/README.md) → open a system → **`business-context.md`** → **`architecture.md`** | 2 min |
-| **Engineer** | Run a system locally and reproduce results | Pick a system under [Engineering systems](./engineering-systems/README.md), then **`user-guides/`** (per-phase runbooks) | 15–60 min |
+| **Engineer** | Understand how a system is designed and delivered — peer-level technical read | Pick a system under [Engineering systems](./engineering-systems/README.md) → **`architecture.md`** → **`implementation.md`** → **`executions/`** (record, plans, evidence) | 15–45 min |
 | **Operator** | Operate, hand off, or verify against committed proof | Same system folder → **`user-guides/`**, **`validation.md`** (PASS rows + limitations), and **`executions/evidence/`** | 15–45 min |
 
 ---
