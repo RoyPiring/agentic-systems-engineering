@@ -35,3 +35,9 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 | Models | `ollama pull llama3.2` (in addition to P01 `nomic-embed-text`) |
 
 **Evidence:** `executions/evidence/p02/` — `p02-query-run.txt`, `p02-ollama-list.txt`, `p02-curl-qdrant.txt`, `p02-qdrant-collection.txt`, `p02-pip-freeze.txt`, `p02-python-version.txt`. Operator runbook: **`user-guides/P02-user-guide.md`**. Validation: **`validation/P02-validation.md`** **PASS**.
+
+## P03 — Live web content (Firecrawl)
+
+**Status:** **Planned** — implementation plan: [`executions/implementation/P03-implementation-plan.md`](./implementation/P03-implementation-plan.md). Series guide: **`P03-Live_Web_Content_Integration_Firecrawl.md`** (Project Library).
+
+**Evidence (target):** `executions/evidence/p03/` — to be filled after execution (Firecrawl health, crawl sample, Qdrant delta, web-grounded query + URL citations). Validation: **`validation/P03-validation.md`** **Pending** until closeout.

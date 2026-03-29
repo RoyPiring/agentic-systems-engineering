@@ -4,7 +4,7 @@
 | ----- | ----- |
 | System | `retrieval-backbone-for-multi-domain-knowledge-systems` |
 | Date | 2026-03-28 |
-| Series guide (vault, filename only) | `P02-Citation-Aware_Retrieval_Pipeline_LlamaIndex_and_Ollama.md` |
+| Series guide (filename only) | `P02-Citation-Aware_Retrieval_Pipeline_LlamaIndex_and_Ollama.md` |
 | Depends on | P01 validation **PASS**; Qdrant **`multi_domain_docs`** populated; chunk metadata compatible with citation display |
 
 ## Outcome
