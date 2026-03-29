@@ -29,7 +29,7 @@
 - [x] No private-workspace paths in reader-facing portfolio text
 - [x] Execution record — [`executions/execution-record.md`](../../../engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/execution-record.md) **P03** section
 - [x] Evidence — [`executions/evidence/p03/`](../../../engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/evidence/p03/)
-- [x] Changelog: second **`##` section** in [CHANGELOG.md](../../changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) (same folder as P02 — **2026-03-29** slice) — *paste PR link into P03 section after open*
+- [x] Changelog: second **`##` section** in [CHANGELOG.md](../../changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) — **PR [#8](https://github.com/RoyPiring/agentic-systems-engineering/pull/8)** linked in P03 section and repo-root [CHANGELOG.md](../../../CHANGELOG.md)
 - [ ] **CI:** Documentation Quality workflow green on this PR
 - [x] Issue templates present (existing `.github/ISSUE_TEMPLATE/`)
 
@@ -53,4 +53,4 @@ gh pr create --base main --head feature/retrieval-backbone-for-multi-domain-know
   --body-file .github/pull-requests/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P03.md
 ```
 
-After the PR exists, add **PR #** and link in the **P03** section of [CHANGELOG.md](../../changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) and under **2026-03-29** in the repo-root **`CHANGELOG.md`**.
+**PR:** [#8](https://github.com/RoyPiring/agentic-systems-engineering/pull/8) — changelog entries updated on the feature branch.
