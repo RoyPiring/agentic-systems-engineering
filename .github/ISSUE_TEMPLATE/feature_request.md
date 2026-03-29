@@ -12,7 +12,7 @@ about: Flag a gap found during build or a system enhancement
 
 ## System / Series
 
-<!-- Which engineering system or Project Library series -->
+<!-- Which engineering system under engineering-systems/ (folder name or public title) -->
 
 ## Description
 

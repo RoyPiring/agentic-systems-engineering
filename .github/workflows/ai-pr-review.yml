@@ -37,11 +37,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          # This step will run a Python or bash script to diff against main,
-          # send diff + .github/code-review/CHECKLIST.md to the LLM,
-          # and post the review as a comment via the gh CLI.
-          # 
-          # Example (requires `gh` CLI which is pre-installed):
-          # gh pr comment $PR_NUMBER --body "Automated AI Review passed. View logs locally."
-          echo "Automated review stub — add specific LLM curl/python call here."
-          gh pr comment $PR_NUMBER --body "🤖 **AI PR Review Triggered** - The pipeline has verified the diff against \`.github/code-review/CHECKLIST.md\`."
+          # Wire LLM here: diff against base + system prompt from:
+          #   .github/code-review/codereview.md  (code-reviewer — plan alignment, code quality)
+          #   .github/code-review/CHECKLIST.md   (portfolio binary / rated gates)
+          # gh pr comment $PR_NUMBER --body-file review-output.md
+          echo "Automated review stub — attach codereview.md + CHECKLIST.md to the model context."
+          BODY="**AI PR Review (stub)** — Review against [.github/code-review/codereview.md](https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/.github/code-review/codereview.md) and [.github/code-review/CHECKLIST.md](https://github.com/${{ github.repository }}/blob/${{ github.head_ref }}/.github/code-review/CHECKLIST.md)."
+          gh pr comment "$PR_NUMBER" --body "$BODY"

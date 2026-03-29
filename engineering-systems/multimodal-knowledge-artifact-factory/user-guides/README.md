@@ -36,7 +36,7 @@ Almost every command in these guides expects your terminal’s **current folder*
 - **Case study + real voice for `script.md`:** [Case study RUNBOOK](../case-study/RUNBOOK.md) for P01→P04 (+ optional viewer with **`script.md`** path, **`artifacts/`** export copies). P02 stub = beeps only. For **spoken MP3** of that script, see [P02 — Real spoken audio](./P02-user-guide.md) and [`../case-study/data/audio/README.md`](../case-study/data/audio/README.md).
 
 **5. If paths in another doc don’t match**  
-Some learning-vault copies of the project use names like `execution/` (singular) or `initiatives/...`. This GitHub folder uses **`executions/`** (plural) and lives under **`engineering-systems/`**. **`integration.py`** env vars → [`../build/README.md`](../build/README.md) § P04.
+Some mirrors or older copies of this project use folder names like `execution/` (singular) or `initiatives/...`. **This repository** uses **`executions/`** (plural) under **`engineering-systems/<slug>/`**. **`integration.py`** env vars → [`../build/README.md`](../build/README.md) § P04.
 
 ---
 

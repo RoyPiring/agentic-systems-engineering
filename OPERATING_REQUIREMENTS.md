@@ -25,6 +25,6 @@ A system is eligible for publication when:
 - [ ] All five required documents exist: README, business-context, architecture, implementation, validation
 - [ ] Validation includes expected AND observed results
 - [ ] At least two failure modes are documented
-- [ ] No internal vault paths or governance references remain
+- [ ] No private-workspace paths or internal governance references in reader-facing portfolio text
 - [ ] Claude Sonnet evidence review gate: PASS
 - [ ] PR opened from feature branch with changelog entry

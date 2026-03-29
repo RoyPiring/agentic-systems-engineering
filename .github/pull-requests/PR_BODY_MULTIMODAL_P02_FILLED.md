@@ -6,7 +6,7 @@
 
 ### Source
 
-- Project Library Series: Multimodal Knowledge Artifact Factory
+- Source specification: Multimodal Knowledge Artifact Factory
 - **Projects in this PR:** P02 only (P01 already on `main`)
 
 ### Review Gate Checklist
@@ -15,7 +15,7 @@
 - [x] README supports 90-second orientation
 - [x] Tradeoffs and failure modes are visible (where applicable)
 - [x] Validation includes expected **and** actual/observed results for **each project in this PR**
-- [x] No vault-internal paths or governance references remain
+- [x] No private-workspace paths or internal governance references in reader-facing text
 - [x] Execution record updated in `executions/execution-record.md` for **each completed project**
 - [x] Per-project plans in `executions/implementation/`; run transcripts in `executions/evidence/`
 - [x] Changelog: `.github/changelog/2026-03-26-multimodal-knowledge-artifact-factory-p02.md`
@@ -30,7 +30,7 @@
 
 ### Gaps Identified
 
-Neural VibeVoice TTS: optional when upstream/stack supports it; vault gap-log holds detail if needed.
+Neural VibeVoice TTS: optional when upstream/stack supports it; residual notes tracked outside this PR if needed.
 
 ### Verify
 

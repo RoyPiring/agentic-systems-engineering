@@ -2,6 +2,8 @@
 
 **Canonical PR scaffold:** [`PR_TEMPLATE.md`](./PR_TEMPLATE.md) — copy into the GitHub PR description, or use it to author a new `PR_BODY_*_FILLED.md`.
 
+**Code review brief:** [`../code-review/codereview.md`](../code-review/codereview.md) (**code-reviewer** agent — plan alignment, code quality, severity-rated findings). Portfolio doc gates: [`../code-review/CHECKLIST.md`](../code-review/CHECKLIST.md).
+
 **Filled bodies (CLI / `gh`):** `PR_BODY_MULTIMODAL_P01_FILLED.md`, `PR_BODY_MULTIMODAL_P02_FILLED.md`, `PR_BODY_MULTIMODAL_P03_FILLED.md`, `PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md`, …
 
 This repo **does not** use `.github/pull_request_template.md`. That avoids two diverging copies; GitHub will not auto-inject a body — paste from here or use `--body-file` below.
