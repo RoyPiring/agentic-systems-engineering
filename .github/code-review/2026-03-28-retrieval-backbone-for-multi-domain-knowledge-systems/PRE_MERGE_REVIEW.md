@@ -71,3 +71,5 @@
 | Suggestion | 1 | Optional screenshot under `executions/evidence/p01/` when convenient |
 
 **Verdict:** **Ready to open PR** to `main` after changelog + PR body are attached and CI green.
+
+**Session sign-off (2026-03-28):** Re-checked against [codereview.md](../codereview.md) + [CHECKLIST.md](../CHECKLIST.md); portfolio `.github` markdownlint clean for changed paths; **0 Critical / 0 Important** unchanged.
