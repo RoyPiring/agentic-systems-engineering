@@ -14,12 +14,12 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 
 | | |
 | --- | --- |
-| **Plan** | [executions/implementation/P01-implementation-plan.md](./executions/implementation/P01-implementation-plan.md) *(placeholder until P01 kickoff)* |
-| **Goal** | Parse documents with **Unstructured**, chunk and embed, upsert to **Qdrant** with stable metadata |
-| **Inputs** | Operator-supplied sample corpus under `build/` (paths TBD in plan) |
-| **Output** | Indexed collection; repeatable ingest script or module |
+| **Plan** | [executions/implementation/P01-implementation-plan.md](./executions/implementation/P01-implementation-plan.md) |
+| **Goal** | Parse **Markdown/PDF** with **Unstructured**, embed with **Ollama** `nomic-embed-text`, index into **Qdrant** collection **`multi_domain_docs`** |
+| **Inputs** | Samples under [`build/data/`](./build/data/) · script [`build/ingest.py`](./build/ingest.py) |
+| **Output** | Running local Qdrant + repeatable ingest; evidence under [`executions/evidence/p01/`](./executions/evidence/p01/) |
 
-**Status:** **Planned** — [validation/P01-validation.md](./validation/P01-validation.md) **Pending**.
+**Status:** **Ready to execute** (plan authored) — [validation/P01-validation.md](./validation/P01-validation.md) **Pending** until run.
 
 ### P02 — Citation-aware retrieval (LlamaIndex + Ollama)
 

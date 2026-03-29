@@ -6,7 +6,7 @@
 
 **Approach:** Four-phase **Python** path: **Unstructured + Qdrant** ingestion → **LlamaIndex + Ollama** citation-aware retrieval → **Firecrawl** web integration → **Ragas** evaluation and service-shaped packaging—**$0 recurring** API posture by default.
 
-**Outcome:** (In progress.) Scaffold + requirements + architecture on this branch; **P01** execution and validation **Pending**.
+**Outcome:** (In progress.) **P01** [implementation plan](./executions/implementation/P01-implementation-plan.md) is ready to execute; validation **Pending** until ingest runs.
 
 ---
 

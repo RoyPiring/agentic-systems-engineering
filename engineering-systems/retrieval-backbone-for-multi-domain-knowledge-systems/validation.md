@@ -13,7 +13,7 @@ Roll-up of proof for this engineering system. Each per-project file moves from *
 
 ## Validation summary
 
-No phase has been executed on this branch yet. Success criteria are defined in [business-context.md](./business-context.md); architecture constraints are in [architecture.md](./architecture.md).
+**P01:** [Implementation plan](./executions/implementation/P01-implementation-plan.md) is ready; [P01 validation](./validation/P01-validation.md) stays **Pending** until ingest runs and evidence is captured. **P02–P04** not started. Success criteria for the system: [business-context.md](./business-context.md); boundaries: [architecture.md](./architecture.md).
 
 ## Expected vs actual
 
