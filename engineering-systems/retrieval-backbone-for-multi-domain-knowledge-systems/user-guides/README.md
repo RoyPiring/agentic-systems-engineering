@@ -20,4 +20,4 @@ This system is **pre-P01** on this branch: operator runbooks (`P01-user-guide.md
 | P02 | `P02-user-guide.md` | Not created yet |
 | P03 | `P03-user-guide.md` | Not created yet |
 | P04 | `P04-user-guide.md` | Not created yet |
-| Series | `SERIES-user-guide.md` | Not created yet |
+| Series | [SERIES-user-guide.md](./SERIES-user-guide.md) | Placeholder until P01–P04 are runnable |

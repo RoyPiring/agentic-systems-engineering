@@ -51,5 +51,6 @@
 - `architecture/diagrams/` (`.mmd` sources), `architecture/adr/`
 - `executions/` — plans, execution record, `evidence/p01/` … `p04/`
 - `validation/P01-validation.md` … `P04-validation.md`
-- `user-guides/` — operator runbooks (filled as phases complete)
+- `user-guides/` — operator runbooks (filled as phases complete); `SERIES-user-guide.md` is a placeholder until the series is runnable end-to-end
+- `case-study/` — scenario scaffold (requirements, runbook, `data/`); flesh out when the **full series** is validated (**by-design** proof)
 - `build/` — runnable code and configs (populated starting with **P01**)

@@ -61,6 +61,8 @@ flowchart TB
 | --- | --- | --- |
 | ADR-001 | Local Ollama + Qdrant for zero recurring API posture | [ADR-001-local-ollama-qdrant-zero-recurring-cost.md](./architecture/adr/ADR-001-local-ollama-qdrant-zero-recurring-cost.md) |
 | ADR-002 | LlamaIndex as orchestration layer | [ADR-002-llamaindex-orchestration-layer.md](./architecture/adr/ADR-002-llamaindex-orchestration-layer.md) |
+| ADR-003 | Unstructured for heterogeneous document ingest | [ADR-003-unstructured-for-heterogeneous-document-ingest.md](./architecture/adr/ADR-003-unstructured-for-heterogeneous-document-ingest.md) |
+| ADR-004 | Ragas for retrieval quality measurement | [ADR-004-ragas-for-retrieval-quality-measurement.md](./architecture/adr/ADR-004-ragas-for-retrieval-quality-measurement.md) |
 
 ## Tradeoffs
 
@@ -69,6 +71,8 @@ flowchart TB
 | Local Ollama + Qdrant | No API keys for default path, reproducible | RAM/CPU, model management | Chosen — matches cost lock ([ADR-001](./architecture/adr/ADR-001-local-ollama-qdrant-zero-recurring-cost.md)) |
 | Hosted OpenAI / Pinecone | Less ops burden | Recurring cost, data egress | Rejected as **default** — violates series cost posture |
 | Raw SDK-only (no LlamaIndex) | Minimal abstraction | More glue code, harder citation patterns | Rejected — LlamaIndex chosen for pipeline composition ([ADR-002](./architecture/adr/ADR-002-llamaindex-orchestration-layer.md)) |
+| Ad hoc parsers per MIME type | No Unstructured dependency | Fragmented coverage, fragile PDF/HTML | Rejected — Unstructured as canonical ingest ([ADR-003](./architecture/adr/ADR-003-unstructured-for-heterogeneous-document-ingest.md)) |
+| Human-only or ad hoc eval | Simple to start | Not reproducible across runs | Rejected for P04 story — Ragas baseline ([ADR-004](./architecture/adr/ADR-004-ragas-for-retrieval-quality-measurement.md)) |
 
 ## Failure modes
 

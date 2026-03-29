@@ -12,3 +12,5 @@ Summaries in root `architecture.md` should link here; keep the ADR body as the s
 | --- | --- |
 | [ADR-001](./ADR-001-local-ollama-qdrant-zero-recurring-cost.md) | Local Ollama and Qdrant for zero recurring API cost |
 | [ADR-002](./ADR-002-llamaindex-orchestration-layer.md) | LlamaIndex as the retrieval orchestration layer |
+| [ADR-003](./ADR-003-unstructured-for-heterogeneous-document-ingest.md) | Unstructured for heterogeneous document ingest |
+| [ADR-004](./ADR-004-ragas-for-retrieval-quality-measurement.md) | Ragas for retrieval and answer quality measurement |
