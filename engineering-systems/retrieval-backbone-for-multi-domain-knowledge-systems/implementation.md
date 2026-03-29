@@ -2,7 +2,7 @@
 
 # Implementation
 
-Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). Operators: [`user-guides/P01-user-guide.md`](./user-guides/P01-user-guide.md) · index [`user-guides/README.md`](./user-guides/README.md).
+Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). **Operators:** start at [`user-guides/README.md`](./user-guides/README.md) and [`user-guides/SERIES-user-guide.md`](./user-guides/SERIES-user-guide.md); per phase: [P01 user guide](./user-guides/P01-user-guide.md) · [P02 user guide](./user-guides/P02-user-guide.md).
 
 ## Strategy
 
@@ -31,7 +31,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 | **Output** | Answer + **Citations** (source nodes); evidence under [`executions/evidence/p02/`](./executions/evidence/p02/) |
 | **Depends on** | P01 **PASS** |
 
-**Status:** **In progress** — query CLI landed; operator run + evidence still required. [validation/P02-validation.md](./validation/P02-validation.md) **Pending**.
+**Status:** **In progress** — query CLI and [P02 user guide](./user-guides/P02-user-guide.md) landed; operator run + evidence still required. [validation/P02-validation.md](./validation/P02-validation.md) **Pending**.
 
 ### P03 — Live web content (Firecrawl)
 

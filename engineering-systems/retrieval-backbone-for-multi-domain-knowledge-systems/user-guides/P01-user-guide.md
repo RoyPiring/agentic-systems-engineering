@@ -98,4 +98,4 @@ Pass-through arguments are forwarded to `ingest.py` (for example `.\run_ingest_w
 
 ## Next step
 
-After **P01** is green, use the indexed collection for citation-aware retrieval in **P02** (see [SERIES-user-guide.md](./SERIES-user-guide.md); **P02-user-guide.md** when published).
+After **P01** is green, use the indexed collection for citation-aware retrieval in **P02** — [P02 — Citation-aware retrieval](./P02-user-guide.md) · [Series order](./SERIES-user-guide.md).

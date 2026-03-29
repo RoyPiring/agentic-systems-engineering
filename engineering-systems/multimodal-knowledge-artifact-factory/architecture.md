@@ -46,6 +46,7 @@ flowchart TB
 | Dioxus UI | Present navigable, interactive knowledge views | **P03:** `knowledge_viewer` binary under `build/` (feature `viewer`); desktop target; window **Knowledge Viewer**; default markdown `samples/complex-sample.md`, **optional first CLI arg** overrides source file |
 | AIRI integration (**P04**) | Assemble multimodal study artifacts; **`build/integration.py`** maps paths and invokes AIRI per operator setup | Desktop app boundary; local only; **PASS (conditional)** if AIRI not on PATH |
 | Export layer (**P04**) | **`export`** binary → flashcard JSON + quiz markdown under `executions/evidence/p04/exports/` | Filesystem output under operator control; **shipped** |
+| Operator runbooks | Per-phase **`user-guides/P0X-user-guide.md`** aligned with commands and evidence under **`executions/evidence/p0X/`** | Same trust boundary as local execution; transcripts must not contain secrets |
 
 ## Key decisions (ADRs)
 

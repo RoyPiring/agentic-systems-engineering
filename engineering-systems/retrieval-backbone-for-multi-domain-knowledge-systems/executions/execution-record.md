@@ -33,4 +33,4 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 | Code | `build/query_pipeline.py` — `Settings` → **Ollama** LLM (`llama3.2`) + **Ollama** embed (`nomic-embed-text`); `VectorStoreIndex.from_vector_store` + `as_query_engine(similarity_top_k=3, text_qa_template=…)`; stdout **Answer** / **Citations** |
 | Deps | `build/requirements.txt` adds **`llama-index-llms-ollama`** |
 
-**Operator next:** `pip install -r build/requirements.txt` (cwd `build/`), `ollama pull llama3.2`, ensure Qdrant + P01 collection, then `python query_pipeline.py --query "…"`. Save transcripts under `executions/evidence/p02/` and set **`validation/P02-validation.md`** to **PASS** when accepted.
+**Operator next:** Follow **[user-guides/P02-user-guide.md](../user-guides/P02-user-guide.md)** — `pip install -r build/requirements.txt` (cwd `build/`), `ollama pull llama3.2`, ensure Qdrant + P01 collection, then `python query_pipeline.py --query "…"`. Save transcripts under `executions/evidence/p02/` and set **`validation/P02-validation.md`** to **PASS** when accepted.

@@ -29,7 +29,7 @@ Runnable artifacts live here—not in the narrative docs at the engineering-syst
 
 | Path | Purpose |
 | --- | --- |
-| `query_pipeline.py` | Load **`multi_domain_docs`** from Qdrant; **Ollama** `llama3.2` + `nomic-embed-text`; print **Answer** + **Citations** ([plan](../executions/implementation/P02-implementation-plan.md)) |
+| `query_pipeline.py` | Load **`multi_domain_docs`** from Qdrant; **Ollama** `llama3.2` + `nomic-embed-text`; print **Answer** + **Citations** ([plan](../executions/implementation/P02-implementation-plan.md), [operator guide](../user-guides/P02-user-guide.md)) |
 
 **Run query:** cwd **`build/`**, venv active, **Qdrant** + **Ollama** running, P01 ingest completed once. Then:
 

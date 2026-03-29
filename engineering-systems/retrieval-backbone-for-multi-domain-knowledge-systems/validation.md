@@ -11,9 +11,20 @@ Roll-up of proof for this engineering system. Each per-project file moves from *
 | P03 | [executions/implementation/P03-implementation-plan.md](./executions/implementation/P03-implementation-plan.md) | [validation/P03-validation.md](./validation/P03-validation.md) | **Pending** |
 | P04 | [executions/implementation/P04-implementation-plan.md](./executions/implementation/P04-implementation-plan.md) | [validation/P04-validation.md](./validation/P04-validation.md) | **Pending** |
 
+## Operator runbooks (evidence pairing)
+
+Each phase that records **`executions/evidence/p0X/`** transcripts should follow the matching runbook so commands and filenames stay consistent with [implementation plans](./executions/implementation/) and validation.
+
+| Project | User guide |
+| --- | --- |
+| P01 | [user-guides/P01-user-guide.md](./user-guides/P01-user-guide.md) |
+| P02 | [user-guides/P02-user-guide.md](./user-guides/P02-user-guide.md) |
+| P03 | *when published* |
+| P04 | *when published* |
+
 ## Validation summary
 
-**P01:** [P01 validation](./validation/P01-validation.md) **PASS** with transcripts under [`executions/evidence/p01/`](./executions/evidence/p01/). **P02:** [`build/query_pipeline.py`](./build/query_pipeline.py) added; [P02 validation](./validation/P02-validation.md) still **Pending** until operator evidence. **P03–P04** not started. Success criteria for the system: [business-context.md](./business-context.md); boundaries: [architecture.md](./architecture.md).
+**P01:** [P01 validation](./validation/P01-validation.md) **PASS** with transcripts under [`executions/evidence/p01/`](./executions/evidence/p01/). **P02:** [`build/query_pipeline.py`](./build/query_pipeline.py) and [P02 user guide](./user-guides/P02-user-guide.md) are in-repo; [P02 validation](./validation/P02-validation.md) stays **Pending** until operator evidence per that guide. **P03–P04** not started. Success criteria for the system: [business-context.md](./business-context.md); boundaries: [architecture.md](./architecture.md).
 
 ## Expected vs actual
 
@@ -26,7 +37,7 @@ Roll-up of proof for this engineering system. Each per-project file moves from *
 
 ## Evidence artifacts
 
-Transcripts and logs will live under [`executions/evidence/p01/`](./executions/evidence/p01/) … `p04/` (and other per-phase folders under `executions/evidence/` as phases complete).
+Transcripts and logs live under [`executions/evidence/p01/`](./executions/evidence/p01/) … **`p04/`**. Capture them using the steps and suggested filenames in **`user-guides/P0X-user-guide.md`** for each phase (portfolio standard—see [Multimodal Knowledge Artifact Factory](../multimodal-knowledge-artifact-factory/validation.md) for a fully closed example).
 
 ## Negative testing
 
