@@ -38,6 +38,15 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 
 ## P03 — Live web content (Firecrawl)
 
-**Status:** **Planned** — implementation plan: [`executions/implementation/P03-implementation-plan.md`](./implementation/P03-implementation-plan.md). Series guide: **`P03-Live_Web_Content_Integration_Firecrawl.md`** (Project Library).
+**Status:** **Executed** (2026-03-29) — plan: [`executions/implementation/P03-implementation-plan.md`](./implementation/P03-implementation-plan.md). **`build/ingest_web.py`** (Firecrawl v1 scrape/crawl → **`source_url`** → Qdrant append; **`--synthetic-evidence`** when Firecrawl unavailable) and **`build/query_pipeline.py`** **`source_url`** citations. Operator runbook: [`user-guides/P03-user-guide.md`](../user-guides/P03-user-guide.md).
 
-**Evidence (target):** `executions/evidence/p03/` — to be filled after execution (Firecrawl health, crawl sample, Qdrant delta, web-grounded query + URL citations). Validation: **`validation/P03-validation.md`** **Pending** until closeout.
+### What ran — P03
+
+| Step | Command / artifact |
+| --- | --- |
+| Qdrant | Operator-local container on **6333** (e.g. `qdrant-p03-evidence`); see `p03-qdrant-collections.json`, `p03-qdrant-after-web.txt` |
+| Ingest | `python ingest_web.py --synthetic-evidence` (no Firecrawl); optional `--dry-run` — `p03-ingest-web-synthetic.txt`, `p03-ingest-web-dry-run.txt` |
+| Query | `python query_pipeline.py --query "…PEP 405…PYPREFIX…"` — `p03-query-web-citation.txt` (**`source_url:`** in Citations) |
+| Firecrawl | Not running on host — `p03-firecrawl-health.txt` (see [validation.md](../validation.md) **Limitations**) |
+
+**Evidence:** `executions/evidence/p03/` — **`README.md`**, transcripts above, **`p03-pip-freeze.txt`**. Validation: **`validation/P03-validation.md`** **PASS**.

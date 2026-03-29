@@ -14,4 +14,6 @@ Same folder name as [pull-requests/](../pull-requests/) and [changelog/](../chan
 
 **Master index:** [SLICE_LAYOUT.md](../SLICE_LAYOUT.md)
 
+**Example — two PRs same day / same system:** [2026-03-29 retrieval hub](./2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/README.md) (P02 [PR #7](https://github.com/RoyPiring/agentic-systems-engineering/pull/7) + P03 follow-on; P03 validation **PASS**).
+
 **Automation:** [.github/workflows/ai-pr-review.yml](../workflows/ai-pr-review.yml) only posts an LLM stub **comment** when `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set. There is **no** keyless script that executes this checklist — reviewers use the markdown briefs locally or in the IDE. [.github/workflows/docs-lint.yml](../workflows/docs-lint.yml) enforces markdown + links + required system files.

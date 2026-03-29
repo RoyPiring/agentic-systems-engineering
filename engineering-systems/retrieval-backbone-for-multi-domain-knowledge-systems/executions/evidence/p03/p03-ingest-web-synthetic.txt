@@ -1,0 +1,4 @@
+LLM is explicitly disabled. Using MockLLM.
+Synthetic-evidence mode: 1 document (no Firecrawl).
+  [1] source_url='https://docs.python.org/3/using/cmdline.html#environment-variables' chars=412
+Web documents indexed into Qdrant (append).

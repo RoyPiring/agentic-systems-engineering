@@ -1,0 +1,12 @@
+Answer
+------
+According to the context, PEP 405 describes virtual environments. [Source: https://docs.python.org/3/using/cmdline.html#environment-variables]
+
+The PYPREFIX prefix is used when building the standard library extensions for a self-contained installation.
+
+Citations
+---------
+  [1] node_id=5448da6a-96a5-4709-b401-450b54283b3c score=0.6082
+      file: https://docs.python.org/3/using/cmdline.html#environment-variables
+      source_url: https://docs.python.org/3/using/cmdline.html#environment-variables
+      text: # Python environment variables  The **PYPREFIX** prefix is used when building the standard library extensions for a self-contained installation. Virtual environments are described in **PEP 405**; the ``pyvenv.cfg`` file records configuration for an isolated interpreter tree.  ...

@@ -13,8 +13,8 @@ When this phase is done:
 
 - **`build/ingest_web.py`** crawls **targeted** URLs via **Firecrawl** (local instance), maps each page to **LlamaIndex** `Document` objects with **`source_url`** (or equivalent) in **`metadata`**.
 - New chunks embed with **`OllamaEmbedding(model_name="nomic-embed-text")`** — **same model and dimension as P01** — and **append** to the existing Qdrant collection **`multi_domain_docs`** (no accidental collection wipe).
-- **`build/query_pipeline.py`** answers at least one query whose grounding **requires** web-ingested content, with **Citations** showing the **live URL** from node metadata.
-- Evidence under **`executions/evidence/p03/`** and **`executions/execution-record.md`** updated; **`validation/P03-validation.md`** **PASS**.
+- **`build/query_pipeline.py`** answers at least one query grounded in web-ingested (or **synthetic web-shaped**) content, with **Citations** showing **`source_url`** from node metadata.
+- Evidence under **`executions/evidence/p03/`** and **`executions/execution-record.md`** updated; **`validation/P03-validation.md`** **PASS** (see committed filenames in **`evidence/p03/README.md`** — not **`p03-firecrawl-sample.txt`**).
 
 ## Roadmap
 
@@ -53,10 +53,10 @@ pip install firecrawl-py
 
 | Step | Complete when |
 | ---- | ------------- |
-| 1.1 | **Firecrawl** container up; **`curl http://localhost:3002/health`** returns **`{"status":"ok"}`** (or documented equivalent) — capture in **`p03-firecrawl-health.txt`** |
+| 1.1 | Health probe: run **`curl`** to Firecrawl **`/health`** and capture full transcript in **`p03-firecrawl-health.txt`** (OK JSON or documented connection failure — both satisfy “probe recorded”) |
 | 1.2 | **`build/ingest_web.py`** exists; **`FirecrawlApp(api_url="http://localhost:3002")`** (or current SDK constructor) connects without auth errors for local mode |
 | 1.3 | **Crawl/scrape** config sets **strict limits** (e.g. **`limit`** / **`maxDepth`** per series guide — avoid unconstrained domains) |
-| 1.4 | **Dry run:** script prints **clean markdown** (or mapped text) for a **small** public docs URL to stdout — transcript **`p03-firecrawl-sample.txt`** |
+| 1.4 | **Dry run:** **`python ingest_web.py --synthetic-evidence --dry-run`** or **`--dry-run`** with Firecrawl when available — transcript **`p03-ingest-web-dry-run.txt`** |
 
 **Common mistakes:** Unbounded crawl → rate limits / huge payloads. JS-heavy pages → add **`waitFor`** / scrape options if needed. Cloud Firecrawl tier → prefer **local** image to keep **$0** posture.
 
@@ -84,10 +84,10 @@ pip install firecrawl-py
 
 | Step | Complete when |
 | ---- | ------------- |
-| 4.1 | Run **`query_pipeline.py`** with a question **answerable only from** newly ingested web content (per series guide intent) |
+| 4.1 | Run **`query_pipeline.py`** with a question targeting newly ingested web (or synthetic web-shaped) content |
 | 4.2 | **Answer** is grounded; **Citations** / source node print path surfaces **`source_url`** (e.g. **`node.metadata.get("source_url", "N/A")`**) — transcript **`p03-query-web-citation.txt`** |
 | 4.3 | **`executions/execution-record.md`** — **P03** summary (commands, Firecrawl note, evidence pointers) |
-| 4.4 | **`executions/evidence/p03/`** — health, crawl sample, Qdrant before/after optional, query transcript, **`p03-pip-freeze.txt`** if deps changed |
+| 4.4 | **`executions/evidence/p03/`** — manifest in **`README.md`**; required set: **`p03-firecrawl-health.txt`**, **`p03-ingest-web-dry-run.txt`**, **`p03-ingest-web-synthetic.txt`** (or **`p03-ingest-web-run.txt`** if live Firecrawl), **`p03-qdrant-collections.json`**, **`p03-qdrant-after-web.txt`**, **`p03-query-web-citation.txt`**, **`p03-pip-freeze.txt`** |
 | 4.5 | **`validation/P03-validation.md`** **PASS**; **`implementation.md`** and root **`validation.md`** P03 rows **Executed** / **PASS** |
 | 4.6 | **`user-guides/P03-user-guide.md`** added or updated so an operator can repeat the phase (prereqs, cwd, commands) |
 

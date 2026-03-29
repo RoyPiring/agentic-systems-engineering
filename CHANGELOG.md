@@ -13,8 +13,18 @@ All notable changes to this portfolio are documented here in reverse-chronologic
 Citation-aware query pipeline (`query_pipeline.py`), LlamaIndex + Ollama + Qdrant; evidence `p02/*`, validation PASS; dependency alignment for qdrant-client 1.17+. Small multimodal doc alignment (operator runbooks / validation pairing).
 
 - **PR [#7](https://github.com/RoyPiring/agentic-systems-engineering/pull/7)**
-- [Changelog](.github/changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md)
-- [Pre-merge review](.github/code-review/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW.md)
+- [Changelog](.github/changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) (see **P02** section)
+- [Pre-merge review — P02](.github/code-review/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW.md)
+- [PR body — P02](.github/pull-requests/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY.md)
+
+### Retrieval Backbone — Multi-Domain Knowledge (P03)
+
+Web ingest (`ingest_web.py`, Firecrawl v1, Qdrant append, `source_url` citations); `--synthetic-evidence` when Firecrawl is unavailable; evidence `p03/*`, validation **PASS**. Domain indexes and multimodal cross-link updated.
+
+- **PR** *(add link after open)*
+- [Changelog](.github/changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) (see **P03** section)
+- [Pre-merge review — P03](.github/code-review/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW_P03.md)
+- [PR body — P03](.github/pull-requests/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P03.md)
 
 ---
 
@@ -38,7 +48,9 @@ Full series P01–P04 merged: local markdown pipeline through parse, TTS bridge,
 
 ---
 
-## 2026-03-27 — Multimodal (P03 — Knowledge Viewer)
+## 2026-03-27
+
+### Multimodal Knowledge Artifact Factory (P03 — Knowledge Viewer)
 
 Dioxus 0.7.3 desktop Knowledge Viewer: shared parser, section navigation, Play Narration → P02 WAV mapping. PR workflow and validation PASS.
 

@@ -26,7 +26,7 @@ Teams building retrieval-augmented workflows often assemble one-off pipelines pe
 | --- | --- | --- |
 | Indexed corpora | Markdown + PDF (+ HTML where in scope) discoverable in Qdrant with stable IDs | P01 validation + execution record |
 | Traceable answers | Retrieval steps expose chunk/source references usable for citations | P02 validation **PASS** (2026-03-29); [`validation/P02-validation.md`](./validation/P02-validation.md) + [`executions/evidence/p02/`](./executions/evidence/p02/) |
-| Web-augmented retrieval | Crawled pages join the same retrieval contract as file corpora | P03 validation |
+| Web-augmented retrieval | Web-shaped pages join the same retrieval contract as file corpora; citations expose **`source_url`** | P03 validation **PASS** (2026-03-29) — [`validation/P03-validation.md`](./validation/P03-validation.md) + [`executions/evidence/p03/README.md`](./executions/evidence/p03/README.md) |
 | Measured quality | Ragas (or documented equivalent) scores recorded for a fixed eval set | P04 validation |
 | Cost posture | No required paid third-party inference for the default path | Documented in `validation.md` |
 
@@ -85,3 +85,4 @@ Teams building retrieval-augmented workflows often assemble one-off pipelines pe
 - [Implementation phases](./implementation.md)
 - [Validation rollup](./validation.md)
 - [P02 operator runbook](./user-guides/P02-user-guide.md) (citation-aware query path)
+- [P03 operator runbook](./user-guides/P03-user-guide.md) (web ingest + **`source_url`** citations)

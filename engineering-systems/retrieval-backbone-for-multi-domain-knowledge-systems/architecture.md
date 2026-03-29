@@ -51,7 +51,7 @@ flowchart TB
 | Ingestion (P01) | Parse documents, chunk, embed, upsert to Qdrant | Trust boundary: operator-supplied paths and containers only |
 | Vector store | Durable chunk + metadata + vector index | Local Qdrant; no mandatory cloud control plane |
 | Retrieval (P02) | Query routing, retrieval fusion, citation surfaces | LlamaIndex orchestration; Ollama for local models |
-| Web integration (P03) | Fetch/normalize live pages into the same ingest contract | Firecrawl (self-hosted posture per series); rate and robots policy is operator responsibility |
+| Web integration (P03) | Fetch/normalize live pages into the same ingest contract via **`build/ingest_web.py`** (Firecrawl scrape/crawl when available; **`--synthetic-evidence`** uses the same metadata contract for validation without Firecrawl) | Firecrawl (self-hosted posture per series); rate and robots policy is operator responsibility |
 | Evaluation (P04) | Ragas metrics over fixed eval sets; packaging narrative | Read-only against indexed corpora; eval prompts documented |
 | Evidence | Execution record + transcripts under `executions/evidence/` | Filesystem artifacts the operator controls |
 | Operator runbooks | Per-phase **`user-guides/P0X-user-guide.md`** aligned with commands and suggested evidence filenames | Same trust boundary as local execution; transcripts must not contain secrets |
@@ -83,7 +83,7 @@ flowchart TB
 | LlamaIndex / Qdrant client pin skew | Query fails at retrieve (`QdrantClient` API mismatch) | **`AttributeError`** on missing client methods | Keep **`build/requirements.txt`** floors (vector store **≥0.10** with **qdrant-client 1.17+**); use fresh venv + `p02-pip-freeze.txt` as reference |
 | Ollama model missing | No generation / bad embeddings | Explicit errors from client | Pin model names in validation; document `ollama pull` in user guides |
 | Parser drift (Unstructured upgrade) | Chunk boundaries change, index quality shifts | Golden-file diff on sample corpus | Pin versions; re-run P01 validation after upgrades |
-| Crawler blocked or abusive (P03) | Stale or empty web slice | HTTP errors, empty documents | Respect robots.txt; backoff; keep web optional until P03 |
+| Crawler blocked or abusive (P03) | Stale or empty web slice | HTTP errors, empty documents; failed **`curl`** to Firecrawl **`/health`** | Respect robots.txt; backoff; document **`ingest_web.py --synthetic-evidence`** only as a **validation** stand-in, not a substitute for operator crawl policy |
 | Eval set too small (P04) | Misleading Ragas scores | Variance run-to-run | Document sample size limits; avoid over-claiming |
 
 ## Security

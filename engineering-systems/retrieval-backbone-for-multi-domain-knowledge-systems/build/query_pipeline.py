@@ -28,8 +28,9 @@ CITATION_AWARE_QA_TEMPLATE = PromptTemplate(
         "{context_str}\n"
         "---------------------\n"
         "You are a helpful assistant. Use only the context above to answer the question.\n"
-        "When you use information from the context, cite it explicitly using the document name "
-        "or identifier shown in the context (for example: [Source: filename]).\n"
+        "When you use information from the context, cite it explicitly using the document name, "
+        "file path, or source URL shown in the context (for example: [Source: filename] or "
+        "[Source: https://…]).\n"
         "If the context does not contain the answer, say you do not have enough information.\n"
         "Question: {query_str}\n"
         "Answer: "
@@ -115,12 +116,20 @@ def print_answer_and_citations(answer: str, source_nodes: list) -> None:
             except (TypeError, ValueError):
                 score_part = f" score={score!r}"
         meta = node.metadata or {}
-        file_name = meta.get("file_name") or meta.get("file_path") or meta.get("document_id", "unknown")
+        file_name = (
+            meta.get("file_name")
+            or meta.get("file_path")
+            or meta.get("source_url")
+            or meta.get("document_id", "unknown")
+        )
+        source_url = meta.get("source_url")
         snippet = node.get_content().strip().replace("\n", " ")
         if len(snippet) > 280:
             snippet = snippet[:277] + "..."
         print(f"  [{i}] node_id={node_id}{score_part}")
         print(f"      file: {file_name}")
+        if source_url:
+            print(f"      source_url: {source_url}")
         print(f"      text: {snippet}")
 
 

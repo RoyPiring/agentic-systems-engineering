@@ -1,0 +1,14 @@
+LLM is explicitly disabled. Using MockLLM.
+Synthetic-evidence mode: 1 document (no Firecrawl).
+  [1] source_url='https://docs.python.org/3/using/cmdline.html#environment-variables' chars=412
+
+--- dry-run preview (first doc) ---
+
+# Python environment variables
+
+The **PYPREFIX** prefix is used when building the standard library extensions for a
+self-contained installation. Virtual environments are described in **PEP 405**; the
+``pyvenv.cfg`` file records configuration for an isolated interpreter tree.
+
+This paragraph exists only in the synthetic P03 evidence document so queries can target
+web-style provenance without calling Firecrawl.

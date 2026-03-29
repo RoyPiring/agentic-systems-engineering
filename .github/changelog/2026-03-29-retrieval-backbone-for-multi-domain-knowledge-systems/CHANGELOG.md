@@ -19,3 +19,27 @@ Delivers **P02** for **retrieval-backbone-for-multi-domain-knowledge-systems**: 
 ### Evidence
 
 P02 **PASS** with transcripts under `engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/evidence/p02/` (`p02-query-run.txt`, `p02-ollama-list.txt`, `p02-curl-qdrant.txt`, `p02-qdrant-collection.txt`, `p02-pip-freeze.txt`, `p02-python-version.txt`) and rollup in `validation/P02-validation.md`.
+
+---
+
+## P03 — Live web content (Firecrawl)
+
+**PR:** *(add number after `gh pr create` — link here)*  
+**Type:** Engineering System — Incremental slice (same system folder as P01/P02 above)
+
+### Summary
+
+Delivers **P03**: **`build/ingest_web.py`** (firecrawl-py **v1**, scrape or bounded crawl → LlamaIndex **`Document`** with **`source_url`** → append Qdrant **`multi_domain_docs`**; **`nomic-embed-text`** parity with P01). **`--synthetic-evidence`** for validation when Firecrawl is unreachable. **`firecrawl-py`** in **`requirements.txt`**. Evidence **`executions/evidence/p03/`**; **`validation/P03-validation.md`** **PASS** (2026-03-29). Operator **[P03 user guide](../../../engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/user-guides/P03-user-guide.md)**; rollups and domain discovery (**`README.md`**, **`ROADMAP.md`**, **`engineering-systems/README.md`**) for slot **#1** through P03. **Multimodal** **`validation.md`**: related-system pointer to retrieval limitations.
+
+### Projects (this PR)
+
+- P01 — prerequisite; **PASS** on `main`
+- P02 — prerequisite; **PASS** on `main`
+- P03 — Live web ingest — **shipped in this PR**
+- P04 — not in this PR
+
+### Evidence
+
+P03 **PASS** with transcripts under `engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/evidence/p03/` (manifest **`evidence/p03/README.md`**) and rollup in `validation/P03-validation.md`. Committed files: **`p03-firecrawl-health.txt`**, **`p03-qdrant-collections.json`**, **`p03-qdrant-after-web.txt`**, **`p03-ingest-web-synthetic.txt`**, **`p03-ingest-web-dry-run.txt`**, **`p03-query-web-citation.txt`**, **`p03-pip-freeze.txt`**. Operator caveats in system **`validation.md`** (**Limitations → P03**). Optional live crawl: **`p03-ingest-web-run.txt`**.
+
+**PR body:** [PR_BODY_P03.md](../../pull-requests/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P03.md) · **Pre-merge:** [PRE_MERGE_REVIEW_P03.md](../../code-review/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW_P03.md)

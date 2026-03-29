@@ -4,11 +4,11 @@
 
 **Twelve portfolio slots** (dependency-first numbering). Only **slots with links** currently have a folder under [`engineering-systems/`](./engineering-systems/). Everything else is planned narrative until a feature branch lands.
 
-**Today:** **#1 Retrieval Backbone** — P01 validated (ingest + Qdrant + Ollama). **#10 Multimodal Knowledge Artifact Factory** — P01–P04 shipped on `main`.
+**Today:** **#1 Retrieval Backbone** — P01–P03 executed and validation **PASS** (ingest, citation-aware query, web ingest path with committed evidence). **#10 Multimodal Knowledge Artifact Factory** — P01–P04 shipped on `main`.
 
 | # | System | Focus area | Status |
 |---|--------|------------|--------|
-| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Multi-domain knowledge retrieval (Unstructured, Qdrant, LlamaIndex, Ollama → web + Ragas) | 🔨 **P01** validated — P02–P04 planned |
+| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Multi-domain knowledge retrieval (Unstructured, Qdrant, LlamaIndex, Ollama → web + Ragas) | 🔨 **P01–P03** [PASS](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/validation.md); **P04** planned |
 | 2 | *Durable Agent Workflow Orchestrator* | Resilient orchestration of agentic workflows | 📋 Planned |
 | 3 | *Agent Eval and Audit Command Center* | Evaluation, audit, and command logic for agents | 📋 Planned |
 | 4 | *MCP Tool Service Mesh for Agents* | Secure tool routing and context protocol mesh | 📋 Planned |

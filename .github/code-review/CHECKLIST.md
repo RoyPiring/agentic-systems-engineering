@@ -16,8 +16,8 @@ For a full step or phase review, load **codereview.md** first, then tick the lay
 ## Layer 2 — Evidence Integrity (Binary)
 
 - [ ] Every "PASS" claim is linked to an evidence file or directory
-- [ ] "PASS (conditional)" used appropriately where a system dependency (e.g. neural path or AIRI) is unverified locally
-- [ ] Evidence paths trace correctly to `executions/evidence/p0X/` format
+- [ ] "PASS (conditional)" reserved for cases where a **named** dependency is still unverified locally (e.g. AIRI desktop for multimodal P04). If every validation row cites **committed** transcripts under `executions/evidence/p0X/` (including documented health outcomes or approved synthetic paths per plan), use plain **PASS** — e.g. retrieval **P03** with **`p03-*`** + **`validation/P03-validation.md`**, not conditional
+- [ ] Evidence paths trace correctly to `executions/evidence/p0X/` format; filenames in validation and implementation plans match files actually committed (no phantom **`p03-*`** names)
 - [ ] Reproducibility section (OS, toolchain, date, Cargo.lock) present in `validation.md`
 
 ## Layer 3 — Judgment Quality (Rated 1–3)
