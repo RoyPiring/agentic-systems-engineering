@@ -1,4 +1,4 @@
-> ← [Multimodal Knowledge Artifact Factory](../../README.md) · [All Systems](../../../../engineering-systems/README.md) · [Home](../../../../README.md)
+> ← [Multimodal Knowledge Artifact Factory](../README.md) · [All Systems](../../README.md) · [Home](../../../README.md)
 
 # Architecture scaffold
 

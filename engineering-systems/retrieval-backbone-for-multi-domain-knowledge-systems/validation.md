@@ -26,7 +26,7 @@ Roll-up of proof for this engineering system. Each per-project file moves from *
 
 ## Evidence artifacts
 
-Transcripts and logs will live under [`executions/evidence/p01/`](./executions/evidence/p01/) … [`p04/`](./executions/evidence/p04/) per project.
+Transcripts and logs will live under [`executions/evidence/p01/`](./executions/evidence/p01/) … `p04/` (and other per-phase folders under `executions/evidence/` as phases complete).
 
 ## Negative testing
 
