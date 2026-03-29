@@ -1,0 +1,13 @@
+%% Logical topology
+flowchart TB
+  subgraph logical["Capabilities"]
+    ING[Ingestion Unstructured]
+    VEC[Vector index Qdrant]
+    RAG[Query + cite LlamaIndex]
+    WEB[Live fetch Firecrawl P03]
+    QA[Quality Ragas P04]
+  end
+  ING --> VEC
+  WEB --> ING
+  VEC --> RAG
+  RAG --> QA

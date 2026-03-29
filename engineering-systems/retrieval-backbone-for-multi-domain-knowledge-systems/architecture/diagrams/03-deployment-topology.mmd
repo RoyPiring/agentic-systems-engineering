@@ -1,0 +1,13 @@
+%% Local deployment topology
+flowchart TB
+  subgraph local["Operator machine"]
+    PY[Python 3.12 services]
+    DOCK[Docker Qdrant]
+    OLL[Ollama daemon]
+  end
+  subgraph optional["Phase-dependent"]
+    FC[Firecrawl self-hosted P03]
+  end
+  PY --> DOCK
+  PY --> OLL
+  PY --> FC

@@ -1,0 +1,16 @@
+# P01 negative / edge transcripts (2026-03-28)
+
+## Empty data directory
+# Command (from build/): .\venv\Scripts\python.exe ingest.py --data-dir empty_data_test
+# (directory existed with no .md/.pdf)
+
+ERROR: no .md or .pdf files under ...\build\empty_data_test
+# Exit code: 1
+
+## Unreachable Qdrant URL
+# Command: via subst R: -> build/, then R:\venv\Scripts\python.exe R:\ingest.py --qdrant-url http://127.0.0.1:19999
+
+Loaded 2 document nodes from ...\build\data.
+ERROR: cannot reach Qdrant at 'http://127.0.0.1:19999': [WinError 10061] No connection could be made because the target machine actively refused it
+Start Qdrant (e.g. docker run -p 6333:6333 qdrant/qdrant) and retry.
+# Exit code: 1 (from ingest main)

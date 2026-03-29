@@ -1,0 +1,20 @@
+# Transcript: P01 ingest (evidence)
+# Date: 2026-03-28
+#
+# Host: Windows. Long workspace path caused native DLL load failures when running:
+#   build\venv\Scripts\python.exe ingest.py
+# Mitigation: run_ingest_windows.ps1 (subst R: -> build/) per build/README.md.
+#
+# Command (from build/):
+#   powershell -NoProfile -ExecutionPolicy Bypass -File .\run_ingest_windows.ps1
+
+R:\venv\Lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: ...
+libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
+WARNING:root:'doc_id' is deprecated and 'id_' will be used instead
+WARNING:unstructured:libmagic is unavailable but assists in filetype detection. Please consider installing libmagic for better results.
+WARNING:root:'doc_id' is deprecated and 'id_' will be used instead
+LLM is explicitly disabled. Using MockLLM.
+Loaded 2 document nodes from ...\build\data.
+Vector indexing complete.
+
+# Exit code: 0

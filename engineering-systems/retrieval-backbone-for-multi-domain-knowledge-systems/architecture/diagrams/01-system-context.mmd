@@ -1,0 +1,16 @@
+%% System context — Retrieval backbone (local-first)
+flowchart TB
+  subgraph actors["Actors"]
+    OP[Operator / engineer]
+    AG[Downstream agents optional]
+  end
+  subgraph boundary["System boundary"]
+    IN[Documents + URLs]
+    IDX[Index + retrieve + cite]
+    EV[Eval + evidence]
+  end
+  OP --> IN
+  IN --> IDX
+  IDX --> AG
+  IDX --> EV
+  OP --> EV

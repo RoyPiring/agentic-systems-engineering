@@ -1,0 +1,13 @@
+%% Data flow
+flowchart LR
+  DOC[Files MD PDF HTML]
+  PARSE[Parse chunk embed]
+  QD[(Qdrant vectors)]
+  QRY[User query]
+  ANS[Answer + citations]
+  METRICS[Ragas scores]
+  DOC --> PARSE
+  PARSE --> QD
+  QRY --> QD
+  QD --> ANS
+  ANS --> METRICS

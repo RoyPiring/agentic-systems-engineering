@@ -15,7 +15,7 @@ This is a **portfolio repository**, not a collaborative open-source project. It 
    - `implementation.md`
    - `validation.md`
 4. CI must pass: markdown lint, link check, and structure validation
-5. Pull request opened against review-gate checklist (`.github/pull-requests/PR_TEMPLATE.md`)
+5. Pull request opened against review-gate checklist (`.github/pull-requests/PR_TEMPLATE.md`) with artifacts under the same dated slice as [`.github/SLICE_LAYOUT.md`](.github/SLICE_LAYOUT.md)
 6. Squash merge to `main`, tag, GitHub Release
 
 ## Naming conventions
@@ -29,7 +29,7 @@ This is a **portfolio repository**, not a collaborative open-source project. It 
 
 ## PR process
 
-PR descriptions come from `.github/pull-requests/` — either the blank `PR_TEMPLATE.md` or a pre-filled `PR_BODY_*_FILLED.md`. Use `gh pr create --body-file .github/pull-requests/PR_BODY_<name>.md` to paste directly.
+PR descriptions come from `.github/pull-requests/` under **`YYYY-MM-DD-<engineering-system-folder>/`**: one PR that day → `PR_BODY.md`; several PRs that day for the same system → `PR_BODY_P01.md`, `PR_BODY_P02.md`, … (see `.github/pull-requests/README.md` and `.github/SLICE_LAYOUT.md`). Pair with `changelog/<same-folder>/CHANGELOG.md` and optional `code-review/<same-folder>/`. Example: `gh pr create --body-file .github/pull-requests/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY.md`.
 
 ## Issues
 

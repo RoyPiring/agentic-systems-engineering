@@ -6,7 +6,7 @@
 
 ### Source
 
-- Project Library Series: Multimodal Knowledge Artifact Factory
+- Source specification: Multimodal Knowledge Artifact Factory
 - **Projects in this PR:** P01 only (P02–P04 not in this PR)
 
 ### Review Gate Checklist
@@ -15,10 +15,10 @@
 - [x] README supports 90-second orientation
 - [x] Tradeoffs and failure modes are visible (where applicable for P01)
 - [x] Validation includes expected **and** actual/observed results for **each project in this PR**
-- [x] No vault-internal paths or governance references remain
+- [x] No private-workspace paths or internal governance references in reader-facing text
 - [x] Execution record updated in `executions/execution-record.md` for **each completed project**
 - [x] Per-project plans in `executions/implementation/` (`P0X-implementation-plan.md`); run transcripts in `executions/evidence/`
-- [x] Changelog entry created in `.github/changelog/` (`2026-03-26-multimodal-knowledge-artifact-factory.md`)
+- [x] Changelog: [CHANGELOG.md](../../changelog/2026-03-26-multimodal-knowledge-artifact-factory/CHANGELOG.md) (P01 section — shared file for **2026-03-26**)
 - [x] Mermaid diagram(s) in `architecture.md` render in GitHub preview
 
 ### Evidence Summary

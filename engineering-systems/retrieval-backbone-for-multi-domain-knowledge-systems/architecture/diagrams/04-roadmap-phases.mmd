@@ -1,0 +1,5 @@
+%% Delivery phases
+flowchart LR
+  P01["P01 Ingest + Qdrant"] --> P02["P02 LlamaIndex + Ollama"]
+  P02 --> P03["P03 Firecrawl web"]
+  P03 --> P04["P04 Ragas + package"]

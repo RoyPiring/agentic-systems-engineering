@@ -1,0 +1,8 @@
+# Transcript: ollama list (P01 evidence)
+# Date: 2026-03-28
+
+NAME                       ID              SIZE      MODIFIED      
+nomic-embed-text:latest    0a109f422b47    274 MB    (run session)    
+qwen3:4b                   359d7dd4bcda    2.5 GB    2 weeks ago      
+gemma3:4b                  a2af6cc3eb7f    3.3 GB    2 weeks ago      
+qwen3:8b                   500a1f067a9f    5.2 GB    2 weeks ago      

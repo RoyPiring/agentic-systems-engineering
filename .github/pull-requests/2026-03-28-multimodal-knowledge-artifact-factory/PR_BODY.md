@@ -8,7 +8,7 @@
 
 ### Source
 
-- Project Library series: Multimodal Knowledge Artifact Factory
+- Source specification: Multimodal Knowledge Artifact Factory
 - **Projects in this PR:** **P01–P04** narrative closure + operator docs + case study (not an incremental P0X-only slice)
 
 ### Review Gate Checklist
@@ -17,10 +17,10 @@
 - [x] README supports 90-second orientation; links **`user-guides/`** and **`case-study/`**
 - [x] Tradeoffs and failure modes visible (stub TTS, AIRI conditional, Windows path caveats)
 - [x] Validation rollup + per-project **`validation/P0X-validation.md`** honest for shipped phases
-- [x] No vault-internal paths in reader-facing portfolio text
+- [x] No private-workspace paths in reader-facing portfolio text
 - [x] **`executions/execution-record.md`** and **`executions/implementation/`** aligned with evidence paths
 - [x] Evidence uses **`p01/`…`p04/`** layout (not flat-only legacy paths)
-- [x] Changelog: `.github/changelog/2026-03-28-multimodal-knowledge-artifact-factory-full-series.md`
+- [x] Changelog: [CHANGELOG.md](../../changelog/2026-03-28-multimodal-knowledge-artifact-factory/CHANGELOG.md)
 - [x] Mermaid in **`architecture.md`** renders in GitHub preview
 - [x] `.github/workflows/` — Documentation Quality workflow expected green
 - [x] `.github/ISSUE_TEMPLATE/` — bug / feature templates present

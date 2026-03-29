@@ -1,14 +1,15 @@
-## Multimodal Knowledge Artifact Factory — Added (P03)
+# Changelog — multimodal-knowledge-artifact-factory — 2026-03-27
 
-**Date:** 2026-03-27
+## P03 — Knowledge Viewer (Dioxus)
+
+**PR:** #4  
 **Type:** Engineering System — Update
-**PR:** #4
 
 ### Summary
 
 Shipped **P03** interactive **Knowledge Viewer** as a second Rust binary (`knowledge_viewer`) using **Dioxus 0.7.3** desktop, behind Cargo feature `viewer`. Parser logic moved to `build/src/lib.rs` so the P01 CLI and UI share one parse model; a unit test locks stdout against `executions/evidence/p01-stdout-for-p02.txt` for P02 compatibility. Per-section **Play Narration** logs mapped paths into `executions/evidence/p02-audio/`.
 
-### Projects
+### Projects (this PR)
 
 - P01: Markdown parse CLI (unchanged output contract)
 - P02: Stub TTS bridge (unchanged)

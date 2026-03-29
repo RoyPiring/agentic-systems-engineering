@@ -1,0 +1,5 @@
+# Transcript: Qdrant HTTP root (P01 evidence)
+# Date: 2026-03-28
+# Command: curl -s http://localhost:6333/
+
+{"title":"qdrant - vector search engine","version":"1.17.1","commit":"eabee371fda447974a94d29fbaa675a6a596cc7b"}
