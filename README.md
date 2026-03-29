@@ -10,14 +10,16 @@ Each engineering system starts with a real-world problem and works backward to t
 
 ## Systems
 
+Portfolio slots **1–12** match [ROADMAP.md](./ROADMAP.md). **Published folders** today: **#1** and **#10** under [`engineering-systems/`](./engineering-systems/).
+
 | # | System | What It Solves | Tech Stack | Status |
 |---|--------|---------------|-----------|--------|
-| 1–9 | *Planned* | | | 📋 |
-| 10 | [Multimodal Knowledge Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/) | Turn markdown research into local audio, interactive UI, and study exports — $0 recurring cost | Rust, Python, Dioxus | ✅ P01–P04 shipped |
-| 11 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama | 📋 Pre-P01 (in progress) |
-| 12 | *Planned* | | | 📋 |
+| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama | 🔨 **P01** validated — P02–P04 next |
+| 2–9 | *Planned* | See roadmap | — | 📋 |
+| 10 | [Multimodal Knowledge Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/) | Turn markdown research into local audio, interactive UI, and study exports — $0 recurring cost | Rust, Python, Dioxus | ✅ **P01–P04** on `main` |
+| 11–12 | *Planned* | See roadmap | — | 📋 |
 
-**1 of 12 systems shipped** on `main`; **Retrieval Backbone** is in flight on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems`. Full roadmap → [ROADMAP.md](./ROADMAP.md)
+**Summary:** **#10** is the first system **fully merged** to `main`. **#1** has **P01** complete with evidence and validation; integrate via PR from `feature/retrieval-backbone-for-multi-domain-knowledge-systems` when ready. Full grid → [ROADMAP.md](./ROADMAP.md) · [Engineering systems index](./engineering-systems/README.md)
 
 ---
 
@@ -39,7 +41,8 @@ Every system follows the same engineering standard:
 | **Recruiter** assessing role fit | This README — systems table + standards | 30 sec |
 | **Hiring manager** evaluating judgment | [business-context.md](./engineering-systems/multimodal-knowledge-artifact-factory/business-context.md) → [architecture.md](./engineering-systems/multimodal-knowledge-artifact-factory/architecture.md) | 2 min |
 | **Principal engineer** reviewing depth | [architecture.md](./engineering-systems/multimodal-knowledge-artifact-factory/architecture.md) → [validation.md](./engineering-systems/multimodal-knowledge-artifact-factory/validation.md) → [evidence/](./engineering-systems/multimodal-knowledge-artifact-factory/executions/evidence/) | 5 min |
-| **Operator** who wants to run it | [user-guides/](./engineering-systems/multimodal-knowledge-artifact-factory/user-guides/) | 15+ min |
+| **Operator** — Multimodal (full series) | [user-guides/](./engineering-systems/multimodal-knowledge-artifact-factory/user-guides/) | 15+ min |
+| **Operator** — Retrieval P01 (ingest + index) | [P01 user guide](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/user-guides/P01-user-guide.md) | 30–60 min |
 
 ---
 
