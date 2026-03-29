@@ -11,6 +11,17 @@ Roll-up of proof for this engineering system. Start with the status table, then 
 | P03 | [executions/implementation/P03-implementation-plan.md](./executions/implementation/P03-implementation-plan.md) | [validation/P03-validation.md](./validation/P03-validation.md) | **PASS** |
 | P04 | [executions/implementation/P04-implementation-plan.md](./executions/implementation/P04-implementation-plan.md) | [validation/P04-validation.md](./validation/P04-validation.md) | **PASS (conditional)** |
 
+## Operator runbooks (evidence pairing)
+
+Capture **`executions/evidence/p0X/`** using the matching runbook so commands and filenames stay consistent with [implementation](./implementation.md) and per-phase validation.
+
+| Project | User guide |
+| ------- | ---------- |
+| P01 | [user-guides/P01-user-guide.md](./user-guides/P01-user-guide.md) |
+| P02 | [user-guides/P02-user-guide.md](./user-guides/P02-user-guide.md) |
+| P03 | [user-guides/P03-user-guide.md](./user-guides/P03-user-guide.md) |
+| P04 | [user-guides/P04-user-guide.md](./user-guides/P04-user-guide.md) |
+
 ## Summary
 
 **P01:** Rust CLI under `build/` builds and runs; structured `H{n}:` / `P:` output and error path verified. Evidence: [`executions/evidence/`](./executions/evidence/) (toolchain, build log, sample run, negative run).

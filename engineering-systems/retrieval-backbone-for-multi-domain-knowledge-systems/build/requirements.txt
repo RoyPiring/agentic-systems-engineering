@@ -1,8 +1,11 @@
-# P01 — pin for reproducible ingest (refresh with pip freeze after upgrades)
-llama-index>=0.10.68,<0.13
-llama-index-readers-file>=0.1.0
-llama-index-embeddings-ollama>=0.1.2
-llama-index-vector-stores-qdrant>=0.2.0
+# P01–P02 — pin for reproducible ingest + RAG query (refresh with pip freeze after upgrades)
+# P02 note: qdrant-client 1.17+ requires llama-index-vector-stores-qdrant >=0.10 (gRPC query path).
+#           Resolver may install llama-index-core 0.14.x alongside llama-index 0.12.x meta — see executions/evidence/p02/p02-pip-freeze.txt.
+llama-index>=0.12.0,<0.14
+llama-index-readers-file>=0.4.0
+llama-index-embeddings-ollama>=0.6.0
+llama-index-llms-ollama>=0.6.0
+llama-index-vector-stores-qdrant>=0.10.0
 qdrant-client>=1.9.0,<2
 unstructured[md]>=0.12.0
 # Deep Windows paths: prebuilt wheel can hit DLL path limits; use pure wheel from sdist:

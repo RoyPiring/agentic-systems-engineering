@@ -12,5 +12,6 @@ Entries are grouped by **`YYYY-MM-DD-<engineering-system-folder>/`** — the sam
 | `2026-03-27-multimodal-knowledge-artifact-factory` | [CHANGELOG.md](./2026-03-27-multimodal-knowledge-artifact-factory/CHANGELOG.md) |
 | `2026-03-28-multimodal-knowledge-artifact-factory` | [CHANGELOG.md](./2026-03-28-multimodal-knowledge-artifact-factory/CHANGELOG.md) |
 | `2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems` | [CHANGELOG.md](./2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) |
+| `2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems` | [CHANGELOG.md](./2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) |
 
 The repo-root [CHANGELOG.md](../../CHANGELOG.md) stays a short **human digest** with links into these files.

@@ -10,7 +10,7 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 
 **Status:** **Executed** (2026-03-28) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems`.
 
-### What ran
+### What ran — P01
 
 | Step | Command / artifact |
 | --- | --- |
@@ -21,3 +21,17 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 | Deps | `pip install -r build/requirements.txt`; `charset-normalizer` rebuilt from sdist (`--no-binary charset-normalizer`) to avoid DLL **MAX_PATH** on this host |
 
 **Evidence:** `executions/evidence/p01/` — `p01-curl-qdrant.txt`, `p01-qdrant-collection.txt`, `p01-ollama-list.txt`, `p01-ingest-run.txt`, `p01-pip-freeze.txt`, `p01-python-version.txt`, `p01-negative-edge.txt`. Validation: **`validation/P01-validation.md`** **PASS**.
+
+## P02 — Citation-aware retrieval pipeline
+
+**Status:** **Executed** (2026-03-29) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems-p02`.
+
+### What ran — P02
+
+| Step | Command / artifact |
+| --- | --- |
+| Code | `build/query_pipeline.py` — `Settings` → **Ollama** LLM (`llama3.2`) + **Ollama** embed (`nomic-embed-text`); `VectorStoreIndex.from_vector_store` + `as_query_engine(similarity_top_k=3, text_qa_template=…)`; stdout **Answer** / **Citations** |
+| Deps | `pip install -r build/requirements.txt` (vector store **≥0.10** for qdrant-client **1.17+**); see `p02-pip-freeze.txt` |
+| Models | `ollama pull llama3.2` (in addition to P01 `nomic-embed-text`) |
+
+**Evidence:** `executions/evidence/p02/` — `p02-query-run.txt`, `p02-ollama-list.txt`, `p02-curl-qdrant.txt`, `p02-qdrant-collection.txt`, `p02-pip-freeze.txt`, `p02-python-version.txt`. Operator runbook: **`user-guides/P02-user-guide.md`**. Validation: **`validation/P02-validation.md`** **PASS**.

@@ -6,7 +6,7 @@
 
 **Approach:** Four-phase **Python** path: **Unstructured + Qdrant** ingestion → **LlamaIndex + Ollama** citation-aware retrieval → **Firecrawl** web integration → **Ragas** evaluation and service-shaped packaging—**$0 recurring** API posture by default.
 
-**Outcome:** (In progress.) **P01** is **executed** and [validated](./validation/P01-validation.md) **PASS**; operator steps: [user-guides/P01-user-guide.md](./user-guides/P01-user-guide.md).
+**Outcome:** (In progress.) **P01** and **P02** are **executed** and [validated](./validation/P01-validation.md) / [P02 validated](./validation/P02-validation.md) **PASS**; operators: [P01 user guide](./user-guides/P01-user-guide.md) · [P02 user guide](./user-guides/P02-user-guide.md).
 
 ---
 
@@ -17,7 +17,7 @@
 | Problem framing | Why a reusable, measured retrieval backbone matters | [business-context.md](./business-context.md) |
 | Architectural judgment | Ingest → retrieve → web augment → evaluate; ADRs | [architecture.md](./architecture.md), [architecture/adr/](./architecture/adr/) |
 | Delivery discipline | Phased plans under `executions/implementation/` | [implementation.md](./implementation.md) |
-| Validation rigor | Per-phase **PASS** / **Pending** with proof paths | [validation.md](./validation.md), [validation/P01-validation.md](./validation/P01-validation.md) … [validation/P04-validation.md](./validation/P04-validation.md) |
+| Validation rigor | Per-phase **PASS** / **Pending** with proof paths | [validation.md](./validation.md); **P01–P02** **PASS** ([P01](./validation/P01-validation.md), [P02](./validation/P02-validation.md)); P03–P04 pending |
 
 ---
 
@@ -29,13 +29,17 @@
 ![Qdrant collection multi_domain_docs — points after ingest](./executions/evidence/p01/p01-qdrant-dashboard.png)
 -->
 
+## Text proof (P02)
+
+*Citation-aware query output (Answer + source nodes) is captured in* [`executions/evidence/p02/p02-query-run.txt`](./executions/evidence/p02/p02-query-run.txt) *— see* [P02 validation](./validation/P02-validation.md).
+
 ---
 
 ## Intended Audience
 
 - **Recruiters and non-technical readers** — [business-context.md](./business-context.md)
 - **Hiring managers** — [business-context.md](./business-context.md) → [architecture.md](./architecture.md)
-- **Operators** — [user-guides/P01-user-guide.md](./user-guides/P01-user-guide.md) · [user-guides/README.md](./user-guides/README.md) (P02–P04 runbooks as they land)
+- **Operators** — [user-guides/README.md](./user-guides/README.md) · [P01](./user-guides/P01-user-guide.md) · [P02](./user-guides/P02-user-guide.md) · [Series order](./user-guides/SERIES-user-guide.md)
 - **Peer engineers** — [architecture.md](./architecture.md) → [validation.md](./validation.md) → [executions/evidence/](./executions/evidence/)
 
 ## How to read this
@@ -51,7 +55,7 @@
 ## System Summary
 
 - **Problem:** Fragmented RAG stacks without shared indexing, citations, or quality measurement.
-- **Scope:** P01–P04 as defined in [implementation.md](./implementation.md); **P01** executed and **PASS**; **P02–P04** planned.
+- **Scope:** P01–P04 as defined in [implementation.md](./implementation.md); **P01**–**P02** **PASS**; **P03–P04** planned.
 - **Outcome:** End-to-end retrieval backbone with evidence per phase (target state).
 - **Constraints:** Local-first defaults; **$0 recurring** API spend in the default path; no production cloud claims.
 
@@ -61,9 +65,9 @@
 - `architecture/diagrams/` (`.mmd` sources), `architecture/adr/`
 - `executions/` — plans, execution record, `evidence/p01/` … `p04/`
 - `validation/P01-validation.md` … `P04-validation.md`
-- `user-guides/` — **P01** [runbook](./user-guides/P01-user-guide.md); P02–P04 guides and full [series](./user-guides/SERIES-user-guide.md) narrative as phases complete
-- `case-study/` — scenario scaffold (requirements, runbook, `data/`); flesh out when the **full series** is validated (**by-design** proof)
-- `build/` — **`ingest.py`**, `requirements.txt`, `data/` samples (P01); P02+ scripts as phases land
+- `user-guides/` — [P01](./user-guides/P01-user-guide.md) · [P02](./user-guides/P02-user-guide.md) · [index](./user-guides/README.md) · [series](./user-guides/SERIES-user-guide.md); P03–P04 when validated
+- `case-study/` — scenario scaffold (requirements, runbook, `data/`); **R1/R2** verification rows filled (**P01**–**P02** **PASS**); **R3/R4** when P03–P04 validate
+- `build/` — **`ingest.py`**, **`query_pipeline.py`**, `requirements.txt`, `data/` samples (P01); further scripts as P03–P04 land
 
 ---
 

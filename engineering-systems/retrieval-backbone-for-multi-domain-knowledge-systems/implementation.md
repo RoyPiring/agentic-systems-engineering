@@ -2,7 +2,7 @@
 
 # Implementation
 
-Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). Operators: [`user-guides/P01-user-guide.md`](./user-guides/P01-user-guide.md) · index [`user-guides/README.md`](./user-guides/README.md).
+Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). **Operators:** start at [`user-guides/README.md`](./user-guides/README.md) and [`user-guides/SERIES-user-guide.md`](./user-guides/SERIES-user-guide.md); per phase: [P01 user guide](./user-guides/P01-user-guide.md) · [P02 user guide](./user-guides/P02-user-guide.md).
 
 ## Strategy
 
@@ -27,9 +27,11 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 | --- | --- |
 | **Plan** | [executions/implementation/P02-implementation-plan.md](./executions/implementation/P02-implementation-plan.md) |
 | **Goal** | LlamaIndex query pipeline over Qdrant with **Ollama** models; answers cite retrieved nodes |
+| **Inputs** | P01 index in **`multi_domain_docs`** · script [`build/query_pipeline.py`](./build/query_pipeline.py) |
+| **Output** | Answer + **Citations** (source nodes); evidence under [`executions/evidence/p02/`](./executions/evidence/p02/) |
 | **Depends on** | P01 **PASS** |
 
-**Status:** **Planned** — [validation/P02-validation.md](./validation/P02-validation.md) **Pending**.
+**Status:** **Executed** — [validation/P02-validation.md](./validation/P02-validation.md) **PASS** (2026-03-29); evidence in [`executions/evidence/p02/`](./executions/evidence/p02/); [P02 user guide](./user-guides/P02-user-guide.md).
 
 ### P03 — Live web content (Firecrawl)
 
@@ -55,7 +57,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 
 1. Bring up **Qdrant** and **Ollama** (documented per phase).
 2. Run **P01** ingest against sample data; capture evidence.
-3. Run **P02** queries; capture citations and failure cases.
+3. Run **P02** queries via **`build/query_pipeline.py`**; capture **Answer** / **Citations** under **`executions/evidence/p02/`** (see [P02 user guide](./user-guides/P02-user-guide.md)).
 4. Run **P03** crawl-to-index path; validate parity with file ingest.
 5. Run **P04** eval + packaging; record Ragas outputs and limitations.
 
@@ -68,6 +70,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 
 ## Reproducibility notes
 
-- **Python 3.12** (plan target) and pinned dependencies under `build/`; first full run recorded on **3.13.11** (see `executions/evidence/p01/p01-python-version.txt`).
+- **Python 3.12** (plan target) and pinned dependencies under `build/`; P01/P02 validation used **3.13.11** (`p01-python-version.txt`, `p02-python-version.txt`).
+- **`build/requirements.txt`:** **`llama-index-vector-stores-qdrant>=0.10.0`** is required with **qdrant-client 1.17+**; see comments in that file and **`p02-pip-freeze.txt`** for the resolved stack.
 - **Docker** for Qdrant unless using a documented native install.
-- **Ollama** models pinned by tag in validation artifacts once runs exist.
+- **Ollama** models: **`nomic-embed-text`** (P01+P02 embed) and **`llama3.2`** (P02 LLM default) — see `p02-ollama-list.txt`.

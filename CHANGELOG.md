@@ -6,6 +6,18 @@ All notable changes to this portfolio are documented here in reverse-chronologic
 
 ---
 
+## 2026-03-29
+
+### Retrieval Backbone — Multi-Domain Knowledge (P02)
+
+Citation-aware query pipeline (`query_pipeline.py`), LlamaIndex + Ollama + Qdrant; evidence `p02/*`, validation PASS; dependency alignment for qdrant-client 1.17+. Small multimodal doc alignment (operator runbooks / validation pairing).
+
+- **PR [#7](https://github.com/RoyPiring/agentic-systems-engineering/pull/7)**
+- [Changelog](.github/changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md)
+- [Pre-merge review](.github/code-review/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW.md)
+
+---
+
 ## 2026-03-28
 
 ### Retrieval Backbone — Multi-Domain Knowledge (P01)

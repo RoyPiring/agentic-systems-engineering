@@ -9,7 +9,7 @@
 | Project | Plan | Record | Validation | More evidence (examples) |
 | ------- | ---- | ------ | ---------- | ------------------------ |
 | P01 | `implementation/P01-implementation-plan.md` | `execution-record.md` (P01 section) | `../validation/P01-validation.md` | `evidence/p01/p01-*.txt` |
-| P02 | `implementation/P02-implementation-plan.md` | `execution-record.md` | `../validation/P02-validation.md` | `evidence/p02/` |
+| P02 | `implementation/P02-implementation-plan.md` | `execution-record.md` | `../validation/P02-validation.md` | `evidence/p02/p02-*.txt` (query run, ollama list, Qdrant curl, collection JSON, pip freeze, python version) |
 | P03 | `implementation/P03-implementation-plan.md` | `execution-record.md` | `../validation/P03-validation.md` | `evidence/p03/` |
 | P04 | `implementation/P04-implementation-plan.md` | `execution-record.md` | `../validation/P04-validation.md` | `evidence/p04/` |
 

@@ -1,0 +1,10 @@
+# Ollama models on validation host (evidence)
+# Date: 2026-03-29
+# Command: ollama list
+
+NAME                       ID              SIZE      MODIFIED          
+llama3.2:latest            a80c4f17acd5    2.0 GB    7 minutes ago        
+nomic-embed-text:latest    0a109f422b47    274 MB    About an hour ago    
+qwen3:4b                   359d7dd4bcda    2.5 GB    2 weeks ago          
+gemma3:4b                  a2af6cc3eb7f    3.3 GB    2 weeks ago          
+qwen3:8b                   500a1f067a9f    5.2 GB    2 weeks ago          

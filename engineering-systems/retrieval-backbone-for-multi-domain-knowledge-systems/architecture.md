@@ -6,7 +6,7 @@
 
 Deliver a **local-first**, **citation-aware** retrieval backbone that spans file corpora and (in later phases) crawled web pages, with **explicit quality measurement**—so downstream agentic workflows can depend on stable contracts for “what was retrieved” and “how good the answer was,” without mandatory cloud inference spend.
 
-**Diagram sources:** [`01-system-context.mmd`](./architecture/diagrams/01-system-context.mmd), [`02-architectural-topology.mmd`](./architecture/diagrams/02-architectural-topology.mmd), [`03-deployment-topology.mmd`](./architecture/diagrams/03-deployment-topology.mmd), [`04-roadmap-phases.mmd`](./architecture/diagrams/04-roadmap-phases.mmd), [`05-data-flow.mmd`](./architecture/diagrams/05-data-flow.mmd).
+**Canonical diagram sources (standard five):** [`01-system-context.mmd`](./architecture/diagrams/01-system-context.mmd), [`02-architectural-topology.mmd`](./architecture/diagrams/02-architectural-topology.mmd), [`03-deployment-topology.mmd`](./architecture/diagrams/03-deployment-topology.mmd), [`04-roadmap-phases.mmd`](./architecture/diagrams/04-roadmap-phases.mmd), [`05-data-flow.mmd`](./architecture/diagrams/05-data-flow.mmd).
 
 ## Architecture Overview
 
@@ -41,7 +41,7 @@ flowchart TB
 
 ## Supplemental artifacts (`architecture/` folder)
 
-- **`architecture/diagrams/`** — Reviewable Mermaid sources for context, logical topology, deployment, roadmap, and data flow.
+- **`architecture/diagrams/`** — Standard set: system context, **architectural (logical) topology**, **deployment (technology) topology**, roadmap phases, data flow (see [`architecture/diagrams/README.md`](./architecture/diagrams/README.md)); add exports under `exports/` if you publish static images.
 - **`architecture/adr/`** — ADRs with alternatives; summaries below link to full records.
 
 ## Components
@@ -54,6 +54,7 @@ flowchart TB
 | Web integration (P03) | Fetch/normalize live pages into the same ingest contract | Firecrawl (self-hosted posture per series); rate and robots policy is operator responsibility |
 | Evaluation (P04) | Ragas metrics over fixed eval sets; packaging narrative | Read-only against indexed corpora; eval prompts documented |
 | Evidence | Execution record + transcripts under `executions/evidence/` | Filesystem artifacts the operator controls |
+| Operator runbooks | Per-phase **`user-guides/P0X-user-guide.md`** aligned with commands and suggested evidence filenames | Same trust boundary as local execution; transcripts must not contain secrets |
 
 ## Key decisions (ADRs)
 
@@ -79,6 +80,7 @@ flowchart TB
 | Failure Mode | Blast Radius | Detection | Mitigation |
 | --- | --- | --- | --- |
 | Qdrant down or wrong collection | No retrieval | Connection errors, empty search | Health check script; document Docker bring-up in `build/README.md` as phases land |
+| LlamaIndex / Qdrant client pin skew | Query fails at retrieve (`QdrantClient` API mismatch) | **`AttributeError`** on missing client methods | Keep **`build/requirements.txt`** floors (vector store **≥0.10** with **qdrant-client 1.17+**); use fresh venv + `p02-pip-freeze.txt` as reference |
 | Ollama model missing | No generation / bad embeddings | Explicit errors from client | Pin model names in validation; document `ollama pull` in user guides |
 | Parser drift (Unstructured upgrade) | Chunk boundaries change, index quality shifts | Golden-file diff on sample corpus | Pin versions; re-run P01 validation after upgrades |
 | Crawler blocked or abusive (P03) | Stale or empty web slice | HTTP errors, empty documents | Respect robots.txt; backoff; keep web optional until P03 |
@@ -98,6 +100,6 @@ flowchart TB
 
 ## Dependency management
 
-- **Python:** Pin dependencies per phase under `build/` (requirements files to be added with **P01**).
+- **Python:** Pin dependencies under [`build/requirements.txt`](./build/requirements.txt) (**P01** ingest + **P02** query stack, including **`llama-index-llms-ollama`**); refresh with `pip freeze` when evidence is captured.
 - **Containers:** Pin Qdrant (and crawler) image tags in runbooks as they appear.
-- **Models:** Record Ollama tags used during validation.
+- **Models:** Record Ollama tags used during validation (`nomic-embed-text`, `llama3.2`, etc.); see per-phase [user guides](./user-guides/README.md).
