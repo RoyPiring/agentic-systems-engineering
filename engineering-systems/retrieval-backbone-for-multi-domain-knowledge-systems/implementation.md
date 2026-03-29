@@ -2,7 +2,7 @@
 
 # Implementation
 
-Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). Operators should watch [`user-guides/README.md`](./user-guides/README.md) as runbooks appear.
+Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). Operators: [`user-guides/P01-user-guide.md`](./user-guides/P01-user-guide.md) · index [`user-guides/README.md`](./user-guides/README.md).
 
 ## Strategy
 
@@ -19,7 +19,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 | **Inputs** | Samples under [`build/data/`](./build/data/) · script [`build/ingest.py`](./build/ingest.py) |
 | **Output** | Running local Qdrant + repeatable ingest; evidence under [`executions/evidence/p01/`](./executions/evidence/p01/) |
 
-**Status:** **Ready to execute** (plan authored) — [validation/P01-validation.md](./validation/P01-validation.md) **Pending** until run.
+**Status:** **Executed** — [validation/P01-validation.md](./validation/P01-validation.md) **PASS** (2026-03-28); evidence in [`executions/evidence/p01/`](./executions/evidence/p01/).
 
 ### P02 — Citation-aware retrieval (LlamaIndex + Ollama)
 
@@ -68,6 +68,6 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 
 ## Reproducibility notes
 
-- **Python 3.12** and pinned dependencies (added under `build/` with P01).
+- **Python 3.12** (plan target) and pinned dependencies under `build/`; first full run recorded on **3.13.11** (see `executions/evidence/p01/p01-python-version.txt`).
 - **Docker** for Qdrant unless using a documented native install.
 - **Ollama** models pinned by tag in validation artifacts once runs exist.

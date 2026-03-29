@@ -8,8 +8,16 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 
 ## P01 — Document ingestion and vector indexing
 
-**Status:** Plan ready (2026-03-28); **not executed** on this branch yet.
+**Status:** **Executed** (2026-03-28) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems`.
 
-**Intent:** Docker **Qdrant** on **6333**, **Ollama** `nomic-embed-text`, **`build/ingest.py`** + **`build/data/`** → collection **`multi_domain_docs`**.
+**What ran**
 
-**Evidence (when run):** add pointers here to `executions/evidence/p01/*.txt` (e.g. ingest stdout, `curl` Qdrant, `pip freeze`).
+| Step | Command / artifact |
+| --- | --- |
+| Qdrant | `docker run -d --name qdrant-p01 -p 6333:6333 -p 6334:6334 qdrant/qdrant:latest` (operator-local; not committed) |
+| Ollama | `ollama pull nomic-embed-text` |
+| Python | **3.13.11** venv under `build/venv` (plan target 3.12; see `p01-python-version.txt`) |
+| Ingest | Windows long-path mitigation: `build/run_ingest_windows.ps1` → `ingest.py`; collection **`multi_domain_docs`**; sample `build/data/sample.md` → **2** document nodes, exit **0** |
+| Deps | `pip install -r build/requirements.txt`; `charset-normalizer` rebuilt from sdist (`--no-binary charset-normalizer`) to avoid DLL **MAX_PATH** on this host |
+
+**Evidence:** `executions/evidence/p01/` — `p01-curl-qdrant.txt`, `p01-qdrant-collection.txt`, `p01-ollama-list.txt`, `p01-ingest-run.txt`, `p01-pip-freeze.txt`, `p01-python-version.txt`, `p01-negative-edge.txt`. Validation: **`validation/P01-validation.md`** **PASS**.

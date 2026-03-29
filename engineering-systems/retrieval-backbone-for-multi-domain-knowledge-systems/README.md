@@ -6,7 +6,7 @@
 
 **Approach:** Four-phase **Python** path: **Unstructured + Qdrant** ingestion → **LlamaIndex + Ollama** citation-aware retrieval → **Firecrawl** web integration → **Ragas** evaluation and service-shaped packaging—**$0 recurring** API posture by default.
 
-**Outcome:** (In progress.) **P01** [implementation plan](./executions/implementation/P01-implementation-plan.md) is ready to execute; validation **Pending** until ingest runs.
+**Outcome:** (In progress.) **P01** is **executed** and [validated](./validation/P01-validation.md) **PASS**; operator steps: [user-guides/P01-user-guide.md](./user-guides/P01-user-guide.md).
 
 ---
 
@@ -25,7 +25,7 @@
 
 - **Recruiters and non-technical readers** — [business-context.md](./business-context.md)
 - **Hiring managers** — [business-context.md](./business-context.md) → [architecture.md](./architecture.md)
-- **Operators** — [user-guides/README.md](./user-guides/README.md) (runbooks grow as phases complete)
+- **Operators** — [user-guides/P01-user-guide.md](./user-guides/P01-user-guide.md) · [user-guides/README.md](./user-guides/README.md) (P02–P04 runbooks as they land)
 - **Peer engineers** — [architecture.md](./architecture.md) → [validation.md](./validation.md) → [executions/evidence/](./executions/evidence/)
 
 ## How to read this
@@ -51,6 +51,6 @@
 - `architecture/diagrams/` (`.mmd` sources), `architecture/adr/`
 - `executions/` — plans, execution record, `evidence/p01/` … `p04/`
 - `validation/P01-validation.md` … `P04-validation.md`
-- `user-guides/` — operator runbooks (filled as phases complete); `SERIES-user-guide.md` is a placeholder until the series is runnable end-to-end
+- `user-guides/` — **P01** [runbook](./user-guides/P01-user-guide.md); P02–P04 guides and full [series](./user-guides/SERIES-user-guide.md) narrative as phases complete
 - `case-study/` — scenario scaffold (requirements, runbook, `data/`); flesh out when the **full series** is validated (**by-design** proof)
 - `build/` — runnable code and configs (populated starting with **P01**)

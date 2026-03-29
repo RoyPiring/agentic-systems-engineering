@@ -88,9 +88,9 @@ pip install llama-index llama-index-readers-file qdrant-client unstructured llam
 
 ## Done when
 
-- [ ] Phases 1–4 satisfied with proof in **`execution-record.md`** and **`executions/evidence/p01/`**
-- [ ] **`validation/P01-validation.md`** **PASS**
-- [ ] System rollups updated
+- [x] Phases 1–4 satisfied with proof in **`execution-record.md`** and **`executions/evidence/p01/`**
+- [x] **`validation/P01-validation.md`** **PASS**
+- [x] System rollups updated
 
 ## Next
 
