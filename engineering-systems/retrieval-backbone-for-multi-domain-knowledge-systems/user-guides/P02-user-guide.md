@@ -14,18 +14,18 @@
 2. **System root** — same as P01: `engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/` (contains `build/`, `user-guides/`, `executions/`).
 3. **Python venv under `build/`** — activate it, then install / refresh deps (includes the LLM integration):
 
-```bash
-cd build
-pip install -r requirements.txt
-```
+   ```bash
+   cd build
+   pip install -r requirements.txt
+   ```
 
 4. **Qdrant** — running at **`http://localhost:6333`** (or `QDRANT_URL`) with the P01 collection.
 5. **Ollama** — pull **both** models used by this phase:
 
-```bash
-ollama pull nomic-embed-text
-ollama pull llama3.2
-```
+   ```bash
+   ollama pull nomic-embed-text
+   ollama pull llama3.2
+   ```
 
 If your local tag differs, pass **`--llm-model`** / **`OLLAMA_LLM_MODEL`** (see Common options).
 

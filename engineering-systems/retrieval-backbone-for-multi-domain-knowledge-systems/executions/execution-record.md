@@ -10,7 +10,7 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 
 **Status:** **Executed** (2026-03-28) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems`.
 
-### What ran
+### What ran — P01
 
 | Step | Command / artifact |
 | --- | --- |
@@ -26,7 +26,7 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 
 **Status:** **Executed** (2026-03-29) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems-p02`.
 
-### What ran
+### What ran — P02
 
 | Step | Command / artifact |
 | --- | --- |
