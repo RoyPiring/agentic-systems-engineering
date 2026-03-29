@@ -17,7 +17,7 @@
 | Problem framing | Why a reusable, measured retrieval backbone matters | [business-context.md](./business-context.md) |
 | Architectural judgment | Ingest → retrieve → web augment → evaluate; ADRs | [architecture.md](./architecture.md), [architecture/adr/](./architecture/adr/) |
 | Delivery discipline | Phased plans under `executions/implementation/` | [implementation.md](./implementation.md) |
-| Validation rigor | Per-phase **PASS** / **Pending** with proof paths | [validation.md](./validation.md), [validation/P01-validation.md](./validation/P01-validation.md) … [validation/P04-validation.md](./validation/P04-validation.md) |
+| Validation rigor | Per-phase **PASS** / **Pending** with proof paths | [validation.md](./validation.md); **P01–P02** **PASS** ([P01](./validation/P01-validation.md), [P02](./validation/P02-validation.md)); P03–P04 pending |
 
 ---
 
@@ -28,6 +28,10 @@
 <!-- When captured, replace the paragraph above with:
 ![Qdrant collection multi_domain_docs — points after ingest](./executions/evidence/p01/p01-qdrant-dashboard.png)
 -->
+
+## Text proof (P02)
+
+*Citation-aware query output (Answer + source nodes) is captured in* [`executions/evidence/p02/p02-query-run.txt`](./executions/evidence/p02/p02-query-run.txt) *— see* [P02 validation](./validation/P02-validation.md).
 
 ---
 
@@ -62,7 +66,7 @@
 - `executions/` — plans, execution record, `evidence/p01/` … `p04/`
 - `validation/P01-validation.md` … `P04-validation.md`
 - `user-guides/` — [P01](./user-guides/P01-user-guide.md) · [P02](./user-guides/P02-user-guide.md) · [index](./user-guides/README.md) · [series](./user-guides/SERIES-user-guide.md); P03–P04 when validated
-- `case-study/` — scenario scaffold (requirements, runbook, `data/`); flesh out when the **full series** is validated (**by-design** proof)
+- `case-study/` — scenario scaffold (requirements, runbook, `data/`); **R1/R2** verification rows filled (**P01**–**P02** **PASS**); **R3/R4** when P03–P04 validate
 - `build/` — **`ingest.py`**, **`query_pipeline.py`**, `requirements.txt`, `data/` samples (P01); further scripts as P03–P04 land
 
 ---

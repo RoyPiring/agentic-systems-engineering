@@ -57,7 +57,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 
 1. Bring up **Qdrant** and **Ollama** (documented per phase).
 2. Run **P01** ingest against sample data; capture evidence.
-3. Run **P02** queries; capture citations and failure cases.
+3. Run **P02** queries via **`build/query_pipeline.py`**; capture **Answer** / **Citations** under **`executions/evidence/p02/`** (see [P02 user guide](./user-guides/P02-user-guide.md)).
 4. Run **P03** crawl-to-index path; validate parity with file ingest.
 5. Run **P04** eval + packaging; record Ragas outputs and limitations.
 
@@ -70,6 +70,7 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 
 ## Reproducibility notes
 
-- **Python 3.12** (plan target) and pinned dependencies under `build/`; first full run recorded on **3.13.11** (see `executions/evidence/p01/p01-python-version.txt`).
+- **Python 3.12** (plan target) and pinned dependencies under `build/`; P01/P02 validation used **3.13.11** (`p01-python-version.txt`, `p02-python-version.txt`).
+- **`build/requirements.txt`:** **`llama-index-vector-stores-qdrant>=0.10.0`** is required with **qdrant-client 1.17+**; see comments in that file and **`p02-pip-freeze.txt`** for the resolved stack.
 - **Docker** for Qdrant unless using a documented native install.
-- **Ollama** models pinned by tag in validation artifacts once runs exist.
+- **Ollama** models: **`nomic-embed-text`** (P01+P02 embed) and **`llama3.2`** (P02 LLM default) — see `p02-ollama-list.txt`.

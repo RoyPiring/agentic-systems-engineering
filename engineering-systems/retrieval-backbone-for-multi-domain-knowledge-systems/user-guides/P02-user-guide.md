@@ -32,7 +32,7 @@ If your local tag differs, pass **`--llm-model`** / **`OLLAMA_LLM_MODEL`** (see 
 ## Prerequisites (short list)
 
 - **P01** **PASS** and non-empty **`multi_domain_docs`** (or your override collection name).
-- **Python** 3.12+ with venv and **`build/requirements.txt`** installed (**`llama-index-llms-ollama`** required).
+- **Python** 3.12+ with venv and **`build/requirements.txt`** installed (**`llama-index-llms-ollama`** and **`llama-index-vector-stores-qdrant>=0.10.0`** required for typical **qdrant-client 1.17+** installs).
 - **Ollama** serving **`llama3.2`** and **`nomic-embed-text`**.
 - **No paid API keys** required on the default path.
 
@@ -65,6 +65,15 @@ python query_pipeline.py --query "What is described in the indexed sample docume
   - Cannot load index from collection → stderr; run P01 ingest first.
   - Ollama down or model missing → error from client during query; fix service / `ollama pull`.
 
+## Troubleshooting (dependency stack)
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| **`AttributeError: 'QdrantClient' object has no attribute 'search'`** during `query_engine.query` | **`llama-index-vector-stores-qdrant`** too old for your **`qdrant-client`** (common with **1.17+**) | Upgrade packages from current **`build/requirements.txt`**; prefer a **fresh venv**, then compare with committed **`executions/evidence/p02/p02-pip-freeze.txt`**. |
+| Pip **dependency conflict** warnings for **`llama-index-core`** | Meta **`llama-index`** and **core** resolved to different minor lines | If queries run, treat **`pip freeze`** as truth; rebuild venv when upgrading. |
+| Empty or nonsense retrieval | Embed model ≠ P01 ingest model | Use **`nomic-embed-text`** (or the same **`--embed-model`** as ingest). |
+| **WinError 32** / DLL path on ingest (P01) | Windows **`MAX_PATH`** / locked files | See [P01 user guide](./P01-user-guide.md) and **`build/README.md`** (`run_ingest_windows.ps1`). |
+
 ## Outputs
 
 - **Terminal only** by default; redirect or copy into evidence files (below).
@@ -73,13 +82,16 @@ python query_pipeline.py --query "What is described in the indexed sample docume
 
 When documenting a run for **[P02 validation](../validation/P02-validation.md)**, save transcripts under **`executions/evidence/p02/`** using names aligned with the implementation plan, for example:
 
-| File | Suggested content |
+| File | Content |
 | --- | --- |
-| `p02-query-run.txt` | Full stdout/stderr from one or more representative **`query_pipeline.py`** runs |
+| `p02-query-run.txt` | Stdout (and stderr if any) from **`query_pipeline.py`** |
 | `p02-ollama-list.txt` | `ollama list` showing **`llama3.2`** and **`nomic-embed-text`** |
-| `p02-pip-freeze.txt` | Optional: `pip freeze` from the same venv after `pip install -r requirements.txt` |
+| `p02-curl-qdrant.txt` | `curl` (or equivalent) **`GET /`** against Qdrant HTTP |
+| `p02-qdrant-collection.txt` | **`GET /collections/multi_domain_docs`** JSON snapshot |
+| `p02-pip-freeze.txt` | `pip freeze` after **`pip install -r requirements.txt`** |
+| `p02-python-version.txt` | `python --version` from the same venv |
 
-See [`executions/evidence/p02/README.md`](../executions/evidence/p02/README.md) for the folder intent.
+See [`executions/evidence/p02/README.md`](../executions/evidence/p02/README.md) — these files are **committed** for the portfolio **PASS** run (2026-03-29).
 
 ## Proof and deeper detail
 

@@ -39,3 +39,5 @@ python query_pipeline.py --query "What topics appear in the sample corpus?"
 ```
 
 Optional env: `QDRANT_URL`, `QDRANT_COLLECTION`, `OLLAMA_EMBED_MODEL`, `OLLAMA_LLM_MODEL`, `RAG_QUERY`. Capture stdout under [`executions/evidence/p02/`](../executions/evidence/p02/) when closing validation.
+
+**P02 deps:** `requirements.txt` pins **`llama-index-vector-stores-qdrant>=0.10.0`** so **`query_pipeline.py`** works with **qdrant-client 1.17+**. If you see **`QdrantClient` has no attribute `search`**, recreate the venv and reinstall from this file — see [P02 user guide — Troubleshooting](../user-guides/P02-user-guide.md#troubleshooting-dependency-stack).

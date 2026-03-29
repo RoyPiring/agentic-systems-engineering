@@ -25,7 +25,7 @@ Teams building retrieval-augmented workflows often assemble one-off pipelines pe
 | Metric | Target | Validation Method |
 | --- | --- | --- |
 | Indexed corpora | Markdown + PDF (+ HTML where in scope) discoverable in Qdrant with stable IDs | P01 validation + execution record |
-| Traceable answers | Retrieval steps expose chunk/source references usable for citations | P02 validation |
+| Traceable answers | Retrieval steps expose chunk/source references usable for citations | P02 validation **PASS** (2026-03-29); [`validation/P02-validation.md`](./validation/P02-validation.md) + [`executions/evidence/p02/`](./executions/evidence/p02/) |
 | Web-augmented retrieval | Crawled pages join the same retrieval contract as file corpora | P03 validation |
 | Measured quality | Ragas (or documented equivalent) scores recorded for a fixed eval set | P04 validation |
 | Cost posture | No required paid third-party inference for the default path | Documented in `validation.md` |
@@ -82,4 +82,6 @@ Teams building retrieval-augmented workflows often assemble one-off pipelines pe
 
 - [System README](./README.md)
 - [Architecture](./architecture.md)
+- [Implementation phases](./implementation.md)
 - [Validation rollup](./validation.md)
+- [P02 operator runbook](./user-guides/P02-user-guide.md) (citation-aware query path)

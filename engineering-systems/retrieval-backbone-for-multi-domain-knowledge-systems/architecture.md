@@ -80,6 +80,7 @@ flowchart TB
 | Failure Mode | Blast Radius | Detection | Mitigation |
 | --- | --- | --- | --- |
 | Qdrant down or wrong collection | No retrieval | Connection errors, empty search | Health check script; document Docker bring-up in `build/README.md` as phases land |
+| LlamaIndex / Qdrant client pin skew | Query fails at retrieve (`QdrantClient` API mismatch) | **`AttributeError`** on missing client methods | Keep **`build/requirements.txt`** floors (vector store **≥0.10** with **qdrant-client 1.17+**); use fresh venv + `p02-pip-freeze.txt` as reference |
 | Ollama model missing | No generation / bad embeddings | Explicit errors from client | Pin model names in validation; document `ollama pull` in user guides |
 | Parser drift (Unstructured upgrade) | Chunk boundaries change, index quality shifts | Golden-file diff on sample corpus | Pin versions; re-run P01 validation after upgrades |
 | Crawler blocked or abusive (P03) | Stale or empty web slice | HTTP errors, empty documents | Respect robots.txt; backoff; keep web optional until P03 |
