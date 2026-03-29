@@ -9,6 +9,7 @@ All engineering systems in this repository. Each system has five required docume
 | # | System | Scope | Tech Stack | Status |
 |---|--------|-------|-----------|--------|
 | 10 | [multimodal-knowledge-artifact-factory](./multimodal-knowledge-artifact-factory/) | Local pipeline: markdown → parse → audio → Dioxus viewer → study exports | Rust, Python, Dioxus | ✅ P01–P04 |
+| 11 | [retrieval-backbone-for-multi-domain-knowledge-systems](./retrieval-backbone-for-multi-domain-knowledge-systems/) | Citation-aware RAG: Unstructured + Qdrant → LlamaIndex + Ollama → Firecrawl → Ragas | Python, Qdrant, LlamaIndex, Ollama | 📋 Pre-P01 (scaffold + architecture) |
 
 ## How systems are added
 

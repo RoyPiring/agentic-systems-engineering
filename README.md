@@ -14,9 +14,10 @@ Each engineering system starts with a real-world problem and works backward to t
 |---|--------|---------------|-----------|--------|
 | 1–9 | *Planned* | | | 📋 |
 | 10 | [Multimodal Knowledge Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/) | Turn markdown research into local audio, interactive UI, and study exports — $0 recurring cost | Rust, Python, Dioxus | ✅ P01–P04 shipped |
-| 11–12 | *Planned* | | | 📋 |
+| 11 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama | 📋 Pre-P01 (in progress) |
+| 12 | *Planned* | | | 📋 |
 
-**1 of 12 systems shipped.** Full roadmap → [ROADMAP.md](./ROADMAP.md)
+**1 of 12 systems shipped** on `main`; **Retrieval Backbone** is in flight on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems`. Full roadmap → [ROADMAP.md](./ROADMAP.md)
 
 ---
 
