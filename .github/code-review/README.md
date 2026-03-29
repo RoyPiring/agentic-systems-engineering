@@ -2,9 +2,16 @@
 
 | File | Purpose |
 | ---- | -------- |
-| **[codereview.md](./codereview.md)** | **code-reviewer** agent: plan alignment, code quality, architecture, severity-rated findings. Use after major steps or before merge. |
-| **[CHECKLIST.md](./CHECKLIST.md)** | **agentic-systems-engineering** portfolio gates: public voice, breadcrumbs, evidence layout, ADR honesty (binary + rated checks). |
+| **[codereview.md](./codereview.md)** | **code-reviewer** agent: plan alignment, code quality, architecture, severity-rated findings. |
+| **[CHECKLIST.md](./CHECKLIST.md)** | Portfolio gates: public voice, breadcrumbs, evidence layout, ADR honesty. |
 
-**PR flow:** Authors use [pull-requests/PR_TEMPLATE.md](../pull-requests/PR_TEMPLATE.md). Reviewers (human or AI) use **codereview.md** for depth and **CHECKLIST.md** for repo-specific doc/evidence rules.
+## Per-slice folders: `YYYY-MM-DD-<engineering-system-folder>/`
 
-**Automation:** [.github/workflows/ai-pr-review.yml](../workflows/ai-pr-review.yml) may consume these files when a full LLM step is wired; today it references the checklist in PR comments.
+Same folder name as [pull-requests/](../pull-requests/) and [changelog/](../changelog/) for that **date + series**.
+
+- **`README.md`** — hub linking PR body file(s), changelog, and the canonical briefs above.
+- **`PRE_MERGE_REVIEW.md`** — optional; add when you record a pre-merge review (one file per slice, or split by project if needed).
+
+**Master index:** [SLICE_LAYOUT.md](../SLICE_LAYOUT.md)
+
+**Automation:** [.github/workflows/ai-pr-review.yml](../workflows/ai-pr-review.yml) references the root briefs; slice folders are for human-recorded outcomes.

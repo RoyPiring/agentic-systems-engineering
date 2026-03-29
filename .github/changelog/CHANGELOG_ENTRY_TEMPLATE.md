@@ -1,3 +1,5 @@
+> Save as `changelog/YYYY-MM-DD-<engineering-system-folder>/CHANGELOG.md` — folder name = `engineering-systems/<name>/`. If another project for that **same** system lands the **same** day, add a new `##` section to this file instead of a second changelog path ([SLICE_LAYOUT.md](../SLICE_LAYOUT.md)).
+
 ## [System Name] — [Added | Updated | Fixed]
 
 **Date:** YYYY-MM-DD

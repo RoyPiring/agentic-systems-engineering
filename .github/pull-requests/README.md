@@ -1,31 +1,43 @@
 # Pull request helpers
 
-**Canonical PR scaffold:** [`PR_TEMPLATE.md`](./PR_TEMPLATE.md) — copy into the GitHub PR description, or use it to author a new `PR_BODY_*_FILLED.md`.
+**Canonical PR scaffold:** [`PR_TEMPLATE.md`](./PR_TEMPLATE.md) — copy into the GitHub PR description, or use it to author bodies under a **date + system** folder.
 
-**Code review brief:** [`../code-review/codereview.md`](../code-review/codereview.md) (**code-reviewer** agent — plan alignment, code quality, severity-rated findings). Portfolio doc gates: [`../code-review/CHECKLIST.md`](../code-review/CHECKLIST.md).
+**Slice index (same folder name → changelog + code review):** [`../SLICE_LAYOUT.md`](../SLICE_LAYOUT.md)
 
-**Filled bodies (CLI / `gh`):** `PR_BODY_MULTIMODAL_P01_FILLED.md`, `PR_BODY_MULTIMODAL_P02_FILLED.md`, `PR_BODY_MULTIMODAL_P03_FILLED.md`, `PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md`, …
+**Code review brief:** [`../code-review/codereview.md`](../code-review/codereview.md) · Portfolio gates: [`../code-review/CHECKLIST.md`](../code-review/CHECKLIST.md).
 
-This repo **does not** use `.github/pull_request_template.md`. That avoids two diverging copies; GitHub will not auto-inject a body — paste from here or use `--body-file` below.
+## Folders: `YYYY-MM-DD-<engineering-system-folder>/`
 
-**Recommended CLI** (avoids broken escaping and stray tooling footers):
+Use the **exact** folder name of the system under `engineering-systems/` (e.g. `multimodal-knowledge-artifact-factory`). Multiple PRs the **same day** for the **same** system → multiple body files (`PR_BODY_P01.md`, …). A **single** PR that day → `PR_BODY.md`.
+
+| Folder | PR body file(s) | Changelog | Code review |
+| ------ | ---------------- | --------- | ----------- |
+| [`2026-03-26-multimodal-knowledge-artifact-factory/`](./2026-03-26-multimodal-knowledge-artifact-factory/) | `PR_BODY_P01.md`, `PR_BODY_P02.md` | [`CHANGELOG.md`](../changelog/2026-03-26-multimodal-knowledge-artifact-factory/CHANGELOG.md) | [`README`](../code-review/2026-03-26-multimodal-knowledge-artifact-factory/README.md) |
+| [`2026-03-27-multimodal-knowledge-artifact-factory/`](./2026-03-27-multimodal-knowledge-artifact-factory/) | `PR_BODY.md` | [`CHANGELOG.md`](../changelog/2026-03-27-multimodal-knowledge-artifact-factory/CHANGELOG.md) | [`README`](../code-review/2026-03-27-multimodal-knowledge-artifact-factory/README.md) |
+| [`2026-03-28-multimodal-knowledge-artifact-factory/`](./2026-03-28-multimodal-knowledge-artifact-factory/) | `PR_BODY.md` | [`CHANGELOG.md`](../changelog/2026-03-28-multimodal-knowledge-artifact-factory/CHANGELOG.md) | [`README`](../code-review/2026-03-28-multimodal-knowledge-artifact-factory/README.md) |
+| [`2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/`](./2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/) | `PR_BODY.md` | [`CHANGELOG.md`](../changelog/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) | [`PRE_MERGE`](../code-review/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW.md) |
+
+This repo **does not** use `.github/pull_request_template.md`.
+
+**Examples — `gh pr create --body-file`:**
 
 ```bash
+# Multimodal full series (one PR that day)
 gh pr create --base main --head feature/multimodal-knowledge-artifact-factory-p03 \
   --title "feat(multimodal-knowledge-artifact-factory): full series — P04 + case study" \
-  --body-file .github/pull-requests/PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md
+  --body-file .github/pull-requests/2026-03-28-multimodal-knowledge-artifact-factory/PR_BODY.md
 ```
-
-Refresh an open PR description:
 
 ```bash
-gh pr edit <n> --body-file .github/pull-requests/PR_BODY_MULTIMODAL_FULL_SERIES_FILLED.md
+# Retrieval P01
+gh pr create --base main --head feature/retrieval-backbone-for-multi-domain-knowledge-systems \
+  --title "feat(retrieval-backbone): P01 ingest + Qdrant" \
+  --body-file .github/pull-requests/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY.md
 ```
 
-**Same change set — also complete:**
+```bash
+# Same date + system, second PR (historical): use the numbered body file
+gh pr create --body-file .github/pull-requests/2026-03-26-multimodal-knowledge-artifact-factory/PR_BODY_P02.md
+```
 
-1. **Changelog** — `.github/changelog/YYYY-MM-DD-<slug>[-p0X].md` from [`../changelog/CHANGELOG_ENTRY_TEMPLATE.md`](../changelog/CHANGELOG_ENTRY_TEMPLATE.md); link it in the PR checklist.
-2. **Workflows** — `.github/workflows/` (e.g. docs lint on `**/*.md`) green before merge.
-3. **Issue templates** — `.github/ISSUE_TEMPLATE/` for bug / feature reports (optional for private repos; recommended for public portfolio).
-
-Align changelog, body file, and CI with the same change set before merge (portfolio workflow Steps 66, 72, 73).
+**Same change set — also complete:** `changelog/…/CHANGELOG.md`, CI green, issue templates as needed. See [SLICE_LAYOUT.md](../SLICE_LAYOUT.md).

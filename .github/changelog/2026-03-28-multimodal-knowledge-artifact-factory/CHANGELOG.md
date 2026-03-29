@@ -1,14 +1,15 @@
-## Multimodal Knowledge Artifact Factory — Updated
+# Changelog — multimodal-knowledge-artifact-factory — 2026-03-28
 
-**Date:** 2026-03-28
+## P01–P04 — Full series closure
+
+**PR:** #5  
 **Type:** Engineering System — Update
-**PR:** #5
 
 ### Summary
 
 Completes the **P01–P04** series on the multimodal feature branch: **P04** study exports and AIRI integration bridge, operator **`user-guides/`** (per-phase + series), evidence reorganized under **`executions/evidence/p01/`…`p04/`**, and a **`case-study/`** pack (requirements, data, runbook, optional narration audio) for end-to-end review. Domain root indexes (**`README.md`**, **`FEATURE_SYSTEMS.md`**, **`engineering-systems/README.md`**) describe the full shipped depth.
 
-### Projects
+### Projects (this PR)
 
 - P01: Scaffold pipeline and parse Markdown content
 - P02: Local audio narrations (stub WAV; optional Edge TTS for case study)

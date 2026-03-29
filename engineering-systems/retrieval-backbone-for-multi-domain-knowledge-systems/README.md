@@ -1,4 +1,4 @@
-> ← [All Systems](../README.md) · [Home](../../README.md)
+> ← [All Systems](../../engineering-systems/README.md) · [Home](../../README.md)
 
 # Retrieval Backbone — Multi-Domain Knowledge
 
@@ -18,6 +18,16 @@
 | Architectural judgment | Ingest → retrieve → web augment → evaluate; ADRs | [architecture.md](./architecture.md), [architecture/adr/](./architecture/adr/) |
 | Delivery discipline | Phased plans under `executions/implementation/` | [implementation.md](./implementation.md) |
 | Validation rigor | Per-phase **PASS** / **Pending** with proof paths | [validation.md](./validation.md), [validation/P01-validation.md](./validation/P01-validation.md) … [validation/P04-validation.md](./validation/P04-validation.md) |
+
+---
+
+## Visual (P01)
+
+*No Qdrant dashboard screenshot committed yet. For proof of run, see [executions/evidence/p01/](./executions/evidence/p01/) and [validation/P01-validation.md](./validation/P01-validation.md).*
+
+<!-- When captured, replace the paragraph above with:
+![Qdrant collection multi_domain_docs — points after ingest](./executions/evidence/p01/p01-qdrant-dashboard.png)
+-->
 
 ---
 
@@ -41,7 +51,7 @@
 ## System Summary
 
 - **Problem:** Fragmented RAG stacks without shared indexing, citations, or quality measurement.
-- **Scope:** P01–P04 as defined in [implementation.md](./implementation.md); **P01** is the next execution target.
+- **Scope:** P01–P04 as defined in [implementation.md](./implementation.md); **P01** executed and **PASS**; **P02–P04** planned.
 - **Outcome:** End-to-end retrieval backbone with evidence per phase (target state).
 - **Constraints:** Local-first defaults; **$0 recurring** API spend in the default path; no production cloud claims.
 
@@ -53,4 +63,10 @@
 - `validation/P01-validation.md` … `P04-validation.md`
 - `user-guides/` — **P01** [runbook](./user-guides/P01-user-guide.md); P02–P04 guides and full [series](./user-guides/SERIES-user-guide.md) narrative as phases complete
 - `case-study/` — scenario scaffold (requirements, runbook, `data/`); flesh out when the **full series** is validated (**by-design** proof)
-- `build/` — runnable code and configs (populated starting with **P01**)
+- `build/` — **`ingest.py`**, `requirements.txt`, `data/` samples (P01); P02+ scripts as phases land
+
+---
+
+## Related systems
+
+- [Multimodal Knowledge Artifact Factory](../multimodal-knowledge-artifact-factory/) — local multimodal study pipeline (separate problem domain; same portfolio standards)

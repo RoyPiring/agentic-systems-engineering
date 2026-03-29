@@ -41,8 +41,7 @@ Every system follows the same engineering standard:
 | **Recruiter** assessing role fit | This README — systems table + standards | 30 sec |
 | **Hiring manager** evaluating judgment | [business-context.md](./engineering-systems/multimodal-knowledge-artifact-factory/business-context.md) → [architecture.md](./engineering-systems/multimodal-knowledge-artifact-factory/architecture.md) | 2 min |
 | **Principal engineer** reviewing depth | [architecture.md](./engineering-systems/multimodal-knowledge-artifact-factory/architecture.md) → [validation.md](./engineering-systems/multimodal-knowledge-artifact-factory/validation.md) → [evidence/](./engineering-systems/multimodal-knowledge-artifact-factory/executions/evidence/) | 5 min |
-| **Operator** — Multimodal (full series) | [user-guides/](./engineering-systems/multimodal-knowledge-artifact-factory/user-guides/) | 15+ min |
-| **Operator** — Retrieval P01 (ingest + index) | [P01 user guide](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/user-guides/P01-user-guide.md) | 30–60 min |
+| **Engineer** running a system locally | [Engineering systems](./engineering-systems/README.md) — open the system folder, then **`user-guides/`** (per-phase runbooks) | 15–60 min |
 
 ---
 

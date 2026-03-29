@@ -18,7 +18,7 @@
 - [x] No private-workspace paths or internal governance references in reader-facing text
 - [x] Execution record updated in `executions/execution-record.md` for **each completed project**
 - [x] Per-project plans in `executions/implementation/` (`P0X-implementation-plan.md`); run transcripts in `executions/evidence/`
-- [x] Changelog entry created in `.github/changelog/` (`2026-03-26-multimodal-knowledge-artifact-factory.md`)
+- [x] Changelog: [CHANGELOG.md](../../changelog/2026-03-26-multimodal-knowledge-artifact-factory/CHANGELOG.md) (P01 section — shared file for **2026-03-26**)
 - [x] Mermaid diagram(s) in `architecture.md` render in GitHub preview
 
 ### Evidence Summary

@@ -20,7 +20,7 @@
 - [x] No private-workspace paths in reader-facing portfolio text
 - [x] **`executions/execution-record.md`** and **`executions/implementation/`** aligned with evidence paths
 - [x] Evidence uses **`p01/`…`p04/`** layout (not flat-only legacy paths)
-- [x] Changelog: `.github/changelog/2026-03-28-multimodal-knowledge-artifact-factory-full-series.md`
+- [x] Changelog: [CHANGELOG.md](../../changelog/2026-03-28-multimodal-knowledge-artifact-factory/CHANGELOG.md)
 - [x] Mermaid in **`architecture.md`** renders in GitHub preview
 - [x] `.github/workflows/` — Documentation Quality workflow expected green
 - [x] `.github/ISSUE_TEMPLATE/` — bug / feature templates present

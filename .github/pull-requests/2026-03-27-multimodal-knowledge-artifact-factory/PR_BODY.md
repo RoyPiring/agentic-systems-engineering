@@ -18,7 +18,7 @@
 - [x] No private-workspace paths or internal governance references in reader-facing text
 - [x] Execution record updated in `executions/execution-record.md` for **each completed project**
 - [x] Per-project plans in `executions/implementation/`; run transcripts in `executions/evidence/`
-- [x] Changelog: `.github/changelog/2026-03-27-multimodal-knowledge-artifact-factory-p03.md`
+- [x] Changelog: [CHANGELOG.md](../../changelog/2026-03-27-multimodal-knowledge-artifact-factory/CHANGELOG.md)
 - [x] Mermaid diagram(s) in `architecture.md` render in GitHub preview
 - [x] `.github/workflows/` — documentation workflow expected green on this branch (Step 73)
 - [x] `.github/ISSUE_TEMPLATE/` — present for bug / feature triage
