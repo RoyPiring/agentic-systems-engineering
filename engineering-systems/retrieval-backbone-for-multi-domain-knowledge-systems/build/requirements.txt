@@ -1,7 +1,8 @@
-# P01 — pin for reproducible ingest (refresh with pip freeze after upgrades)
+# P01–P02 — pin for reproducible ingest + RAG query (refresh with pip freeze after upgrades)
 llama-index>=0.10.68,<0.13
 llama-index-readers-file>=0.1.0
 llama-index-embeddings-ollama>=0.1.2
+llama-index-llms-ollama>=0.1.0
 llama-index-vector-stores-qdrant>=0.2.0
 qdrant-client>=1.9.0,<2
 unstructured[md]>=0.12.0

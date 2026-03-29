@@ -21,3 +21,16 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 | Deps | `pip install -r build/requirements.txt`; `charset-normalizer` rebuilt from sdist (`--no-binary charset-normalizer`) to avoid DLL **MAX_PATH** on this host |
 
 **Evidence:** `executions/evidence/p01/` — `p01-curl-qdrant.txt`, `p01-qdrant-collection.txt`, `p01-ollama-list.txt`, `p01-ingest-run.txt`, `p01-pip-freeze.txt`, `p01-python-version.txt`, `p01-negative-edge.txt`. Validation: **`validation/P01-validation.md`** **PASS**.
+
+## P02 — Citation-aware retrieval pipeline
+
+**Status:** **Implementation started** (2026-03-29) on branch `feature/retrieval-backbone-for-multi-domain-knowledge-systems-p02`.
+
+### What ran
+
+| Step | Command / artifact |
+| --- | --- |
+| Code | `build/query_pipeline.py` — `Settings` → **Ollama** LLM (`llama3.2`) + **Ollama** embed (`nomic-embed-text`); `VectorStoreIndex.from_vector_store` + `as_query_engine(similarity_top_k=3, text_qa_template=…)`; stdout **Answer** / **Citations** |
+| Deps | `build/requirements.txt` adds **`llama-index-llms-ollama`** |
+
+**Operator next:** `pip install -r build/requirements.txt` (cwd `build/`), `ollama pull llama3.2`, ensure Qdrant + P01 collection, then `python query_pipeline.py --query "…"`. Save transcripts under `executions/evidence/p02/` and set **`validation/P02-validation.md`** to **PASS** when accepted.

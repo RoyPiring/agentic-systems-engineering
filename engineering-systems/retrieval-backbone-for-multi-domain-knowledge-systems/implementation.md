@@ -27,9 +27,11 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 | --- | --- |
 | **Plan** | [executions/implementation/P02-implementation-plan.md](./executions/implementation/P02-implementation-plan.md) |
 | **Goal** | LlamaIndex query pipeline over Qdrant with **Ollama** models; answers cite retrieved nodes |
+| **Inputs** | P01 index in **`multi_domain_docs`** · script [`build/query_pipeline.py`](./build/query_pipeline.py) |
+| **Output** | Answer + **Citations** (source nodes); evidence under [`executions/evidence/p02/`](./executions/evidence/p02/) |
 | **Depends on** | P01 **PASS** |
 
-**Status:** **Planned** — [validation/P02-validation.md](./validation/P02-validation.md) **Pending**.
+**Status:** **In progress** — query CLI landed; operator run + evidence still required. [validation/P02-validation.md](./validation/P02-validation.md) **Pending**.
 
 ### P03 — Live web content (Firecrawl)
 

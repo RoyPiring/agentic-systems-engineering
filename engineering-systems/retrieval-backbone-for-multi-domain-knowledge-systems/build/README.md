@@ -24,3 +24,18 @@ Runnable artifacts live here—not in the narrative docs at the engineering-syst
 **Windows (long clone path):** If you see DLL load errors mentioning a path that is “too long”, either enable [long paths](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation) for the OS, or run `.\run_ingest_windows.ps1` (requires a free **`R:`** drive letter). After `pip install -r requirements.txt`, if `charset_normalizer` fails to import, reinstall it from source: `pip install --no-binary charset-normalizer "charset-normalizer>=3.4.4,<4"`.
 
 **Qdrant data:** Docker volume (e.g. `qdrant_storage` next to where you run `docker`) is operator-local—not required inside this folder.
+
+## P02 layout (citation-aware query)
+
+| Path | Purpose |
+| --- | --- |
+| `query_pipeline.py` | Load **`multi_domain_docs`** from Qdrant; **Ollama** `llama3.2` + `nomic-embed-text`; print **Answer** + **Citations** ([plan](../executions/implementation/P02-implementation-plan.md)) |
+
+**Run query:** cwd **`build/`**, venv active, **Qdrant** + **Ollama** running, P01 ingest completed once. Then:
+
+```bash
+ollama pull llama3.2
+python query_pipeline.py --query "What topics appear in the sample corpus?"
+```
+
+Optional env: `QDRANT_URL`, `QDRANT_COLLECTION`, `OLLAMA_EMBED_MODEL`, `OLLAMA_LLM_MODEL`, `RAG_QUERY`. Capture stdout under [`executions/evidence/p02/`](../executions/evidence/p02/) when closing validation.

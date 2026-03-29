@@ -13,7 +13,7 @@ Roll-up of proof for this engineering system. Each per-project file moves from *
 
 ## Validation summary
 
-**P01:** [P01 validation](./validation/P01-validation.md) **PASS** with transcripts under [`executions/evidence/p01/`](./executions/evidence/p01/). **P02–P04** not started. Success criteria for the system: [business-context.md](./business-context.md); boundaries: [architecture.md](./architecture.md).
+**P01:** [P01 validation](./validation/P01-validation.md) **PASS** with transcripts under [`executions/evidence/p01/`](./executions/evidence/p01/). **P02:** [`build/query_pipeline.py`](./build/query_pipeline.py) added; [P02 validation](./validation/P02-validation.md) still **Pending** until operator evidence. **P03–P04** not started. Success criteria for the system: [business-context.md](./business-context.md); boundaries: [architecture.md](./architecture.md).
 
 ## Expected vs actual
 
@@ -50,4 +50,4 @@ Local trust boundaries and URL/crawl policy are documented in [architecture.md](
 
 ## Limitations
 
-**P01** closed with evidence; **P02–P04** remain planned until executed.
+**P01** closed with evidence; **P02** query CLI is in-repo—close with evidence when [P02 validation](./validation/P02-validation.md) is **PASS**; **P03–P04** remain planned until executed.
