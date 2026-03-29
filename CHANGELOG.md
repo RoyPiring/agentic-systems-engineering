@@ -12,7 +12,7 @@ All notable changes to this portfolio are documented here in reverse-chronologic
 
 Document ingestion and vector indexing: Unstructured + Ollama embeddings + Qdrant; evidence and validation PASS; portfolio slot **#1** aligned.
 
-- **PR:** _(open / fill on merge)_
+- **PR [#6](https://github.com/RoyPiring/agentic-systems-engineering/pull/6)**
 - [Changelog](.github/changelog/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md)
 - [Pre-merge review](.github/code-review/2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW.md)
 

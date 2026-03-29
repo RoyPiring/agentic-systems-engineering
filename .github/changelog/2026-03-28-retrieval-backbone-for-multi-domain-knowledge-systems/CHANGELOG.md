@@ -2,7 +2,7 @@
 
 ## P01 — Document ingestion and vector indexing
 
-**PR:** _(fill on merge)_  
+**PR:** [#6](https://github.com/RoyPiring/agentic-systems-engineering/pull/6)  
 **Type:** Engineering System — New (incremental slice)
 
 ### Summary
