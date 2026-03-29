@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 The implementation plan targets **Python 3.12**; **3.13** is known to work on a validated host. Refresh pins after upgrades with `pip freeze` and capture evidence per [validation/P01-validation.md](../validation/P01-validation.md).
 
-3. **Qdrant (Docker)** — must accept HTTP on **`http://localhost:6333`** (or set `QDRANT_URL`).
+1. **Qdrant (Docker)** — must accept HTTP on **`http://localhost:6333`** (or set `QDRANT_URL`).
 
 ```bash
 docker run -p 6333:6333 -p 6334:6334 -v "$(pwd)/qdrant_storage:/qdrant/storage:z" qdrant/qdrant
@@ -33,13 +33,13 @@ docker run -p 6333:6333 -p 6334:6334 -v "$(pwd)/qdrant_storage:/qdrant/storage:z
 
 PowerShell volume example: `-v "${PWD}/qdrant_storage:/qdrant/storage"`.
 
-4. **Ollama** — embedding model on the host Ollama API (default `http://localhost:11434` used by the client library):
+1. **Ollama** — embedding model on the host Ollama API (default `http://localhost:11434` used by the client library):
 
 ```bash
 ollama pull nomic-embed-text
 ```
 
-5. **Optional: Windows long paths** — if native libraries fail with “filename or extension is too long”, see [build/README.md](../build/README.md) (`run_ingest_windows.ps1`, `charset-normalizer` sdist reinstall).
+1. **Optional: Windows long paths** — if native libraries fail with “filename or extension is too long”, see [build/README.md](../build/README.md) (`run_ingest_windows.ps1`, `charset-normalizer` sdist reinstall).
 
 ## Prerequisites (short list)
 
