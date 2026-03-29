@@ -91,7 +91,7 @@ When documenting a run for **[P02 validation](../validation/P02-validation.md)**
 | `p02-pip-freeze.txt` | `pip freeze` after **`pip install -r requirements.txt`** |
 | `p02-python-version.txt` | `python --version` from the same venv |
 
-See [`executions/evidence/p02/README.md`](../executions/evidence/p02/README.md) — these files are **committed** for the portfolio **PASS** run (2026-03-29).
+Evidence is plain transcripts under **`executions/evidence/p02/`** (same pattern as **p01** — no README in the folder). The **PASS** set is listed in [P02 validation](../validation/P02-validation.md) (2026-03-29).
 
 ## Proof and deeper detail
 
