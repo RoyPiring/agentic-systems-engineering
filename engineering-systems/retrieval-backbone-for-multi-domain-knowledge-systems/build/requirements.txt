@@ -11,3 +11,5 @@ unstructured[md]>=0.12.0
 # Deep Windows paths: prebuilt wheel can hit DLL path limits; use pure wheel from sdist:
 #   pip install --no-binary charset-normalizer "charset-normalizer>=3.4.4,<4"
 charset-normalizer>=3.4.4,<4
+# P03 — Firecrawl client for build/ingest_web.py (local API on port 3002); see executions/implementation/P03-implementation-plan.md
+firecrawl-py>=1.0.0

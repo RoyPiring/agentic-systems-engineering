@@ -4,6 +4,21 @@ Application code, scripts, configs, and infrastructure-as-code produced while ex
 
 Runnable artifacts live here—not in the narrative docs at the engineering-system root.
 
+## Committed tree (P01–P03)
+
+Everything below is part of the delivered build; there are no auxiliary one-off test scripts in this folder (use `executions/evidence/` for transcripts).
+
+| Path | Phase |
+| --- | --- |
+| `requirements.txt` | P01–P03 deps |
+| `ingest.py` | P01 |
+| `run_ingest_windows.ps1` | P01 (Windows **MAX_PATH** helper for `ingest.py`) |
+| `data/sample.md`, `data/README.md` | P01 sample corpus |
+| `query_pipeline.py` | P02 |
+| `ingest_web.py` | P03 (Firecrawl path + **`--synthetic-evidence`** for the same index contract without Firecrawl) |
+
+`venv/` is local-only (typically gitignored).
+
 ## Rules
 
 - Prefer real, runnable content over empty placeholders.
@@ -41,3 +56,34 @@ python query_pipeline.py --query "What topics appear in the sample corpus?"
 Optional env: `QDRANT_URL`, `QDRANT_COLLECTION`, `OLLAMA_EMBED_MODEL`, `OLLAMA_LLM_MODEL`, `RAG_QUERY`. Capture stdout under [`executions/evidence/p02/`](../executions/evidence/p02/) when closing validation.
 
 **P02 deps:** `requirements.txt` pins **`llama-index-vector-stores-qdrant>=0.10.0`** so **`query_pipeline.py`** works with **qdrant-client 1.17+**. If you see **`QdrantClient` has no attribute `search`**, recreate the venv and reinstall from this file — see [P02 user guide — Troubleshooting](../user-guides/P02-user-guide.md#troubleshooting-dependency-stack).
+
+## P03 layout (Firecrawl → Qdrant append)
+
+| Path | Purpose |
+| --- | --- |
+| `ingest_web.py` | **Firecrawl** (self-hosted) scrape or bounded **crawl** → **LlamaIndex** `Document` with **`source_url`** → append vectors to **`multi_domain_docs`** ([plan](../executions/implementation/P03-implementation-plan.md), [operator guide](../user-guides/P03-user-guide.md)) |
+
+**Firecrawl (Docker example):**
+
+```bash
+docker run -d -p 3002:3002 ghcr.io/mendableai/firecrawl
+curl http://localhost:3002/health
+```
+
+**Run (cwd `build/`, venv active):**
+
+```bash
+pip install -r requirements.txt
+# When Firecrawl is down or the image is unavailable: prove Qdrant + source_url citations (no network scrape)
+python ingest_web.py --synthetic-evidence --dry-run
+python ingest_web.py --synthetic-evidence
+# With Firecrawl up — optional: prove fetch only (no Qdrant writes)
+python ingest_web.py --dry-run
+python ingest_web.py
+# Multi-page (strict limits; slower)
+python ingest_web.py --mode crawl --url https://docs.python.org/3/library/ --crawl-limit 5 --crawl-max-depth 1
+```
+
+Env: **`FIRECRAWL_URL`** (default `http://localhost:3002`), **`FIRECRAWL_API_KEY`** (empty or omit for many self-hosted images; SDK sends `Authorization: Bearer …`), **`INGEST_WEB_URL`**, same Qdrant/Ollama vars as P01.
+
+**Then query** with a question that targets the ingested page (see [P03 user guide](../user-guides/P03-user-guide.md)); **`query_pipeline.py`** prints **`source_url:`** in **Citations** when node metadata includes it.

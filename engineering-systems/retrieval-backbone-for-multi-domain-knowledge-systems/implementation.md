@@ -2,7 +2,7 @@
 
 # Implementation
 
-Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). **Operators:** start at [`user-guides/README.md`](./user-guides/README.md) and [`user-guides/SERIES-user-guide.md`](./user-guides/SERIES-user-guide.md); per phase: [P01 user guide](./user-guides/P01-user-guide.md) · [P02 user guide](./user-guides/P02-user-guide.md).
+Phased delivery from a working **ingest + index** path through **citation-aware retrieval**, **web augmentation**, and **measured, packaged** retrieval services. Per-project plans live in [`executions/implementation/`](./executions/implementation/); evidence lives in [`executions/evidence/`](./executions/evidence/). **Operators:** start at [`user-guides/README.md`](./user-guides/README.md) and [`user-guides/SERIES-user-guide.md`](./user-guides/SERIES-user-guide.md); per phase: [P01](./user-guides/P01-user-guide.md) · [P02](./user-guides/P02-user-guide.md) · [P03](./user-guides/P03-user-guide.md).
 
 ## Strategy
 
@@ -39,9 +39,11 @@ Work moves **P01 → P04** so each phase is testable alone: without a trustworth
 | --- | --- |
 | **Plan** | [executions/implementation/P03-implementation-plan.md](./executions/implementation/P03-implementation-plan.md) |
 | **Goal** | Fold crawled pages into the same ingest/index contract as file corpora |
+| **Inputs** | Self-hosted **Firecrawl** · script [`build/ingest_web.py`](./build/ingest_web.py) · existing **`multi_domain_docs`** |
+| **Output** | Appended vectors with **`source_url`** metadata; evidence under [`executions/evidence/p03/`](./executions/evidence/p03/) |
 | **Depends on** | P02 **PASS** |
 
-**Status:** **Planned** — [validation/P03-validation.md](./validation/P03-validation.md) **Pending**.
+**Status:** **Executed** — [validation/P03-validation.md](./validation/P03-validation.md) **PASS** (2026-03-29); evidence in [`executions/evidence/p03/`](./executions/evidence/p03/) (see [`evidence/p03/README.md`](./executions/evidence/p03/README.md)); [P03 user guide](./user-guides/P03-user-guide.md). Optional: **`p03-ingest-web-run.txt`** when live Firecrawl is used.
 
 ### P04 — Quality measurement and packaging (Ragas)
 

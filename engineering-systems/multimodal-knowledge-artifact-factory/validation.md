@@ -94,3 +94,7 @@ P01 scope is parse + stdout + error path; list bodies are not fully enumerated a
 | P02 — Audio | ~3s | P01 stdout | WAV chunks under `p02/audio/` |
 | P03 — Viewer | build ~30s, run instant | P01 sample + P02 WAVs | Dioxus desktop window |
 | P04 — Export | ~1s | P01 sample | `flashcards.json` + `quiz.md` |
+
+## Related portfolio system — Retrieval Backbone
+
+Sibling stack **Retrieval Backbone — Multi-Domain Knowledge** (Python ingest/query/web, Qdrant, optional Firecrawl) documents operator notes and **P03** evidence in that system’s [validation roll-up](../retrieval-backbone-for-multi-domain-knowledge-systems/validation.md#limitations), aligned with this file’s pattern (single roll-up, not ad-hoc evidence sidecars).

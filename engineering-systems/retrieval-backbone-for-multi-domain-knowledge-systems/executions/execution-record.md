@@ -35,3 +35,18 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 | Models | `ollama pull llama3.2` (in addition to P01 `nomic-embed-text`) |
 
 **Evidence:** `executions/evidence/p02/` — `p02-query-run.txt`, `p02-ollama-list.txt`, `p02-curl-qdrant.txt`, `p02-qdrant-collection.txt`, `p02-pip-freeze.txt`, `p02-python-version.txt`. Operator runbook: **`user-guides/P02-user-guide.md`**. Validation: **`validation/P02-validation.md`** **PASS**.
+
+## P03 — Live web content (Firecrawl)
+
+**Status:** **Executed** (2026-03-29) — plan: [`executions/implementation/P03-implementation-plan.md`](./implementation/P03-implementation-plan.md). **`build/ingest_web.py`** (Firecrawl v1 scrape/crawl → **`source_url`** → Qdrant append; **`--synthetic-evidence`** when Firecrawl unavailable) and **`build/query_pipeline.py`** **`source_url`** citations. Operator runbook: [`user-guides/P03-user-guide.md`](../user-guides/P03-user-guide.md).
+
+### What ran — P03
+
+| Step | Command / artifact |
+| --- | --- |
+| Qdrant | Operator-local container on **6333** (e.g. `qdrant-p03-evidence`); see `p03-qdrant-collections.json`, `p03-qdrant-after-web.txt` |
+| Ingest | `python ingest_web.py --synthetic-evidence` (no Firecrawl); optional `--dry-run` — `p03-ingest-web-synthetic.txt`, `p03-ingest-web-dry-run.txt` |
+| Query | `python query_pipeline.py --query "…PEP 405…PYPREFIX…"` — `p03-query-web-citation.txt` (**`source_url:`** in Citations) |
+| Firecrawl | Not running on host — `p03-firecrawl-health.txt` (see [validation.md](../validation.md) **Limitations**) |
+
+**Evidence:** `executions/evidence/p03/` — **`README.md`**, transcripts above, **`p03-pip-freeze.txt`**. Validation: **`validation/P03-validation.md`** **PASS**.

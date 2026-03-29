@@ -14,12 +14,12 @@ Portfolio slots **1–12** match [ROADMAP.md](./ROADMAP.md). **Published folders
 
 | # | System | What It Solves | Tech Stack | Status |
 |---|--------|---------------|-----------|--------|
-| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama | 🔨 **P01** validated — P02–P04 next |
+| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama, Firecrawl (optional) | 🔨 **P01–P03** [PASS](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/validation.md); **P04** next |
 | 2–9 | *Planned* | See roadmap | — | 📋 |
 | 10 | [Multimodal Knowledge Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/) | Turn markdown research into local audio, interactive UI, and study exports — $0 recurring cost | Rust, Python, Dioxus | ✅ **P01–P04** on `main` |
 | 11–12 | *Planned* | See roadmap | — | 📋 |
 
-**Summary:** **#10** is the first system **fully merged** to `main`. **#1** has **P01** complete with evidence and validation; integrate via PR from `feature/retrieval-backbone-for-multi-domain-knowledge-systems` when ready. Full grid → [ROADMAP.md](./ROADMAP.md) · [Engineering systems index](./engineering-systems/README.md)
+**Summary:** **#10** is the first system **fully merged** to `main`. **#1** has **P01–P03** with evidence and validation **PASS**. Full grid → [ROADMAP.md](./ROADMAP.md) · [Engineering systems index](./engineering-systems/README.md)
 
 ---
 
@@ -36,12 +36,12 @@ Every system follows the same engineering standard:
 
 ## Who This Is For
 
-| You are a… | Start here | Time |
-|-----------|-----------|:----:|
-| **Recruiter** assessing role fit | This README — systems table + standards | 30 sec |
-| **Hiring manager** evaluating judgment | [business-context.md](./engineering-systems/multimodal-knowledge-artifact-factory/business-context.md) → [architecture.md](./engineering-systems/multimodal-knowledge-artifact-factory/architecture.md) | 2 min |
-| **Principal engineer** reviewing depth | [architecture.md](./engineering-systems/multimodal-knowledge-artifact-factory/architecture.md) → [validation.md](./engineering-systems/multimodal-knowledge-artifact-factory/validation.md) → [evidence/](./engineering-systems/multimodal-knowledge-artifact-factory/executions/evidence/) | 5 min |
-| **Engineer** running a system locally | [Engineering systems](./engineering-systems/README.md) — open the system folder, then **`user-guides/`** (per-phase runbooks) | 15–60 min |
+| Role | You're trying to… | Start here | Time |
+|------|-------------------|------------|:----:|
+| **Recruiter** | Assess role or team fit from this portfolio | This README — systems table + how systems are built | 30 sec |
+| **Hiring manager** | Judge problem framing and architectural judgment | [Engineering systems](./engineering-systems/README.md) → open a system → **`business-context.md`** → **`architecture.md`** | 2 min |
+| **Engineer** | Understand how a system is designed and delivered — peer-level technical read | Pick a system under [Engineering systems](./engineering-systems/README.md) → **`architecture.md`** → **`implementation.md`** → **`executions/`** (record, plans, evidence) | 15–45 min |
+| **Operator** | Operate, hand off, or verify against committed proof | Same system folder → **`user-guides/`**, **`validation.md`** (PASS rows + limitations), and **`executions/evidence/`** | 15–45 min |
 
 ---
 
