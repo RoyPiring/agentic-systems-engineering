@@ -2,7 +2,7 @@
 
 ## P02 — Citation-aware retrieval (LlamaIndex and Ollama)
 
-**PR:** *(add number after open — e.g. `https://github.com/RoyPiring/agentic-systems-engineering/pull/N`)*  
+**PR:** [#7](https://github.com/RoyPiring/agentic-systems-engineering/pull/7)  
 **Type:** Engineering System — Incremental slice (same system as 2026-03-28 P01)
 
 ### Summary
