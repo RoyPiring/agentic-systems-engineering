@@ -18,10 +18,11 @@ jobs:
         with:
           globs: '**/*.md'
 
+      # Operator docs reference local services (Qdrant/Ollama on localhost); exclude loopback from link check.
       - name: Link Check
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress './**/*.md'
+          args: --verbose --no-progress --exclude-loopback './**/*.md'
 
       - name: Structure Validation
         run: |

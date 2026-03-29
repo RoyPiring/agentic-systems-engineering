@@ -19,15 +19,22 @@ jobs:
         with:
           fetch-depth: 0
 
+      # LLM-based review is optional. Without secrets, nothing calls an API — there is no separate
+      # deterministic "code review script" in this repo yet; humans use codereview.md + CHECKLIST.md.
       - name: Check for API Key
         id: check_key
         run: |
           if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ] && [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
             echo "has_key=false" >> $GITHUB_OUTPUT
-            echo "No API key found. Skipping automated review."
+            echo "No API key found. Skipping LLM review step."
           else
             echo "has_key=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Manual review pointer (no API key)
+        if: steps.check_key.outputs.has_key == 'false'
+        run: |
+          echo "::notice::No ANTHROPIC_API_KEY or OPENAI_API_KEY — LLM review skipped. Human review uses .github/code-review/codereview.md and CHECKLIST.md (and optional PRE_MERGE_REVIEW.md per slice)."
 
       - name: Run AI Review Script
         if: steps.check_key.outputs.has_key == 'true'

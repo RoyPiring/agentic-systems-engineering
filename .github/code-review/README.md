@@ -14,4 +14,4 @@ Same folder name as [pull-requests/](../pull-requests/) and [changelog/](../chan
 
 **Master index:** [SLICE_LAYOUT.md](../SLICE_LAYOUT.md)
 
-**Automation:** [.github/workflows/ai-pr-review.yml](../workflows/ai-pr-review.yml) references the root briefs; slice folders are for human-recorded outcomes.
+**Automation:** [.github/workflows/ai-pr-review.yml](../workflows/ai-pr-review.yml) only posts an LLM stub **comment** when `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set. There is **no** keyless script that executes this checklist — reviewers use the markdown briefs locally or in the IDE. [.github/workflows/docs-lint.yml](../workflows/docs-lint.yml) enforces markdown + links + required system files.
