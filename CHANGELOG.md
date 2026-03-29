@@ -21,7 +21,7 @@ Citation-aware query pipeline (`query_pipeline.py`), LlamaIndex + Ollama + Qdran
 
 Web ingest (`ingest_web.py`, Firecrawl v1, Qdrant append, `source_url` citations); `--synthetic-evidence` when Firecrawl is unavailable; evidence `p03/*`, validation **PASS**. Domain indexes and multimodal cross-link updated.
 
-- **PR** *(add link after open)*
+- **PR [#8](https://github.com/RoyPiring/agentic-systems-engineering/pull/8)**
 - [Changelog](.github/changelog/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) (see **P03** section)
 - [Pre-merge review — P03](.github/code-review/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW_P03.md)
 - [PR body — P03](.github/pull-requests/2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P03.md)

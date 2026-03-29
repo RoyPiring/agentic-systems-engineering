@@ -24,7 +24,7 @@ P02 **PASS** with transcripts under `engineering-systems/retrieval-backbone-for-
 
 ## P03 — Live web content (Firecrawl)
 
-**PR:** *(add number after `gh pr create` — link here)*  
+**PR:** [#8](https://github.com/RoyPiring/agentic-systems-engineering/pull/8)  
 **Type:** Engineering System — Incremental slice (same system folder as P01/P02 above)
 
 ### Summary
