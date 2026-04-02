@@ -12,7 +12,7 @@ All notable changes to this portfolio are documented here in reverse-chronologic
 
 Ragas quality measurement (**context_precision**, **answer_relevancy**) with injected Ollama; **`RetrievalBackboneService`** packaged API + **`consumer_demo.py`**; evidence **`p04/*`**, validation **PASS**; **Local knowledge spine** case study (**`case-study/`** RUNBOOK + SCENARIO + tools + diagram); **Ragas dry-dataset** CI workflow; slot **#1** series complete (**P01–P04**).
 
-- **PR:** *(add link when opened)*
+- **PR [#9](https://github.com/RoyPiring/agentic-systems-engineering/pull/9)**
 - [Changelog](.github/changelog/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md)
 - [Pre-merge review — P04](.github/code-review/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW_P04.md)
 - [PR body — P04](.github/pull-requests/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P04.md)

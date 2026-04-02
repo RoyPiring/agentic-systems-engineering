@@ -74,6 +74,6 @@
 | Important | 0 | — |
 | Suggestion | 0 | — |
 
-**Verdict:** **Ready to open PR** to `main` with [PR_BODY_P04.md](../../pull-requests/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P04.md) and [CHANGELOG.md](../../changelog/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md); confirm **Documentation Quality** + **Retrieval Backbone — Ragas dry dataset** workflows green before merge; paste **PR #** into changelog after open.
+**Verdict:** **PR opened** — [#9](https://github.com/RoyPiring/agentic-systems-engineering/pull/9) to `main` with [PR_BODY_P04.md](../../pull-requests/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P04.md) and [CHANGELOG.md](../../changelog/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md); confirm **Documentation Quality** + **Retrieval Backbone — Ragas dry dataset** workflows green before merge.
 
 **Session sign-off (2026-04-01):** Reviewed against [codereview.md](../codereview.md) + [CHECKLIST.md](../CHECKLIST.md); **0 Critical / 0 Important**.

@@ -32,7 +32,7 @@
 - [x] No private-workspace paths in reader-facing portfolio text
 - [x] Execution record — [`executions/execution-record.md`](../../../engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/execution-record.md) **P04** + case study subsection
 - [x] Evidence — [`executions/evidence/p04/`](../../../engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/evidence/p04/)
-- [ ] **Changelog:** [CHANGELOG.md](../../changelog/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) — paste **PR #** after open; repo-root [CHANGELOG.md](../../../CHANGELOG.md)
+- [x] **Changelog:** [CHANGELOG.md](../../changelog/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) — **PR [#9](https://github.com/RoyPiring/agentic-systems-engineering/pull/9)**; repo-root [CHANGELOG.md](../../../CHANGELOG.md)
 - [ ] **CI:** Documentation Quality + **Retrieval Backbone — Ragas dry dataset** green on this PR
 - [x] Issue templates present (existing `.github/ISSUE_TEMPLATE/`)
 
@@ -54,4 +54,4 @@ gh pr create --base main --head feature/retrieval-backbone-p04-ragas-quality-ser
   --body-file .github/pull-requests/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P04.md
 ```
 
-**PR:** *(paste PR # after open — e.g. `**PR [#N](https://github.com/RoyPiring/agentic-systems-engineering/pull/N)**`)*
+**PR:** [#9](https://github.com/RoyPiring/agentic-systems-engineering/pull/9)

@@ -22,4 +22,4 @@ P04 **PASS** with transcripts under `engineering-systems/retrieval-backbone-for-
 
 **PR body:** [PR_BODY_P04.md](../../pull-requests/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PR_BODY_P04.md) · **Pre-merge:** [PRE_MERGE_REVIEW_P04.md](../../code-review/2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/PRE_MERGE_REVIEW_P04.md)
 
-**PR:** *(paste PR # when opened — e.g. `**PR [#N](https://github.com/RoyPiring/agentic-systems-engineering/pull/N)**`)*
+**PR:** [#9](https://github.com/RoyPiring/agentic-systems-engineering/pull/9)
