@@ -33,6 +33,7 @@
 ## Evidence By Phase
 
 ### P01
+
 Ingest run output, Qdrant collection confirmation, and negative-edge transcripts are committed under [executions/evidence/p01/](./executions/evidence/p01/). Validation details: [validation/P01-validation.md](./validation/P01-validation.md).
 
 ### P02
