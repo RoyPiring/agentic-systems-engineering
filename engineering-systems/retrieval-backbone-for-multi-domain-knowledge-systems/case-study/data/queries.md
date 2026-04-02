@@ -42,4 +42,4 @@ What does the corpus say about PDF ingestion?
 What topics appear in the sample corpus?
 ```
 
-(Second line mirrors common P02 smoke; first appears in [../build/README.md](../build/README.md) consumer example.)
+(Second line mirrors common P02 smoke; first appears in [../../build/README.md](../../build/README.md) consumer example.)
