@@ -1,0 +1,4 @@
+# docker ps (filtered) — 2026-03-31
+# Reused existing container qdrant-p01 (not a new image).
+
+qdrant-p01 Up 0.0.0.0:6333-6334->6333-6334/tcp

@@ -50,6 +50,8 @@ Capture **`executions/evidence/p0X/`** using the matching runbook so commands an
 - [Execution record](./executions/execution-record.md) — P01–P04 summary  
 - [executions/evidence/](./executions/evidence/) — per-project folders **`p01/`**…**`p04/`** (transcripts; P02 WAVs under **`p02/audio/`** when generated; P04 exports under **`p04/exports/`**)  
 
+**Path note:** the canonical repository layout is **`executions/evidence/p02/audio/`** and **`executions/evidence/p04/exports/`**. A few preserved transcripts still show earlier flattened names (`p02-audio`, `p04-exports`) from the validation run environment; those logs are historical evidence, not the current doc standard.
+
 ## Negative cases
 
 | Scenario | Result |
@@ -97,4 +99,4 @@ P01 scope is parse + stdout + error path; list bodies are not fully enumerated a
 
 ## Related portfolio system — Retrieval Backbone
 
-Sibling stack **Retrieval Backbone — Multi-Domain Knowledge** (Python ingest/query/web, Qdrant, optional Firecrawl) documents operator notes and **P03** evidence in that system’s [validation roll-up](../retrieval-backbone-for-multi-domain-knowledge-systems/validation.md#limitations), aligned with this file’s pattern (single roll-up, not ad-hoc evidence sidecars).
+Sibling stack **Retrieval Backbone — Multi-Domain Knowledge** (Python ingest/query/web/Ragas, Qdrant, optional Firecrawl) documents operator notes and **P03**–**P04** evidence in that system’s [validation roll-up](../retrieval-backbone-for-multi-domain-knowledge-systems/validation.md#limitations), aligned with this file’s pattern (single roll-up, not ad-hoc evidence sidecars).

@@ -3,7 +3,7 @@
 | | |
 |--|--|
 | **Plan** | [../executions/implementation/P04-implementation-plan.md](../executions/implementation/P04-implementation-plan.md) |
-| **Result** | **PASS (conditional)** — export + integration path logic proven; **AIRI UI launch not observed** on this machine (no `airi` on PATH). Re-run as **PASS** when AIRI is installed and a launch transcript or screenshot is added. |
+| **Result** | **PASS (conditional)** — export + integration path logic proven; **AIRI UI launch not observed** on this machine (no `airi` on PATH). Re-run as **PASS** when AIRI is installed and a launch transcript is committed under `executions/evidence/p04/`. |
 
 ## Checks
 
@@ -32,3 +32,5 @@ See [`../executions/execution-record.md`](../executions/execution-record.md) § 
 | 5 | AIRI | **Conditional PASS** — [`p04-integration-no-airi.txt`](../executions/evidence/p04/p04-integration-no-airi.txt) (exit 2, clear stderr) |
 | 6 | E2E narrative | **PASS** — [`p04-e2e-summary.txt`](../executions/evidence/p04/p04-e2e-summary.txt) |
 | 7 | Evidence set | **PASS** — `p04-*` files under [`../executions/evidence/`](../executions/evidence/) |
+
+**Path note:** some preserved transcripts in `p04/` still print the earlier flattened name `p04-exports`. The canonical repo directory for generated study artifacts is [`executions/evidence/p04/exports/`](../executions/evidence/p04/exports/).

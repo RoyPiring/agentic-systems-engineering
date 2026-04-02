@@ -1,0 +1,9 @@
+NAME                       ID              SIZE      MODIFIED
+llama3.2:latest            a80c4f17acd5    2.0 GB    3 days ago
+nomic-embed-text:latest    0a109f422b47    274 MB    3 days ago
+qwen3:4b                   359d7dd4bcda    2.5 GB    2 weeks ago
+gemma3:4b                  a2af6cc3eb7f    3.3 GB    2 weeks ago
+qwen3:8b                   500a1f067a9f    5.2 GB    2 weeks ago
+
+# RAG generation: OLLAMA_LLM_MODEL=llama3.2 (default)
+# Ragas judge: OLLAMA_EVAL_LLM_MODEL=qwen3:8b (default)

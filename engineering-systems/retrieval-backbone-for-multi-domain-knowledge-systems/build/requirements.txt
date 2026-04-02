@@ -13,3 +13,8 @@ unstructured[md]>=0.12.0
 charset-normalizer>=3.4.4,<4
 # P03 — Firecrawl client for build/ingest_web.py (local API on port 3002); see executions/implementation/P03-implementation-plan.md
 firecrawl-py>=1.0.0
+# P04 — Ragas + LangChain-Ollama adapters (explicit local judge LLM; no OpenAI default path)
+ragas>=0.2.0
+datasets>=2.14.0
+langchain-ollama>=0.2.0
+langchain-core>=0.3.0

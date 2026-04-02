@@ -1,0 +1,2 @@
+Python 3.13.11
+# Plan target remains 3.12; same note as P01/P02 evidence.

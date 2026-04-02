@@ -8,7 +8,7 @@ Every engineering system in this repository is expected to:
 - Include an architecture with explicit tradeoffs and failure modes
 - Provide a phased implementation plan with sequencing rationale
 - Validate claims against expected and observed results
-- Link to evidence artifacts (logs, screenshots, outputs, metrics)
+- Link to evidence artifacts (logs, terminal output, execution transcripts, metrics)
 
 ## Audience Requirements
 

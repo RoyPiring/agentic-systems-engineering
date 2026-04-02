@@ -33,7 +33,6 @@
 ### Gaps Identified
 
 - Windows **LNK1104** on very long `target/` paths — use short `CARGO_TARGET_DIR`, `cargo clean`, AV exclusion, or shorter clone path (see evidence files).
-- Optional UI screenshot under `executions/evidence/` — follow-up after local viewer run.
 
 ### Verify
 

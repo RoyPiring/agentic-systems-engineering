@@ -73,7 +73,7 @@ pip install llama-index llama-index-readers-file qdrant-client unstructured llam
 | 3.1 | `Settings.embed_model = OllamaEmbedding(model_name="nomic-embed-text")`; LLM unset for this phase if only indexing |
 | 3.2 | `QdrantClient(url="http://localhost:6333")` and **`multi_domain_docs`** collection created via index build |
 | 3.3 | Script prints success (e.g. **Vector indexing complete.**) and exits **0** |
-| 3.4 | Qdrant dashboard at **`http://localhost:6333/dashboard`** shows **`multi_domain_docs`** with vectors (or API equivalent documented in validation) |
+| 3.4 | **`multi_domain_docs`** is verifiable via **Qdrant HTTP API** (e.g. collection info / points count) with transcript under **`executions/evidence/p01/`** — documented in validation |
 
 ## Phase 4 — Evidence and closeout
 

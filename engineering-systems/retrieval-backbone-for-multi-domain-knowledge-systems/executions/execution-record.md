@@ -50,3 +50,23 @@ Single log for **P01 through P04**. For each project add `## P0X` sections: **su
 | Firecrawl | Not running on host — `p03-firecrawl-health.txt` (see [validation.md](../validation.md) **Limitations**) |
 
 **Evidence:** `executions/evidence/p03/` — **`README.md`**, transcripts above, **`p03-pip-freeze.txt`**. Validation: **`validation/P03-validation.md`** **PASS**.
+
+## P04 — Quality measurement and service packaging (Ragas)
+
+**Status:** **Executed** (2026-03-31) on branch `feature/retrieval-backbone-p04-ragas-quality-service` (PR to `main`). Plan: [`executions/implementation/P04-implementation-plan.md`](./implementation/P04-implementation-plan.md). **`build/retrieval_service.py`** (packaged API), **`build/ragas_eval.py`**, **`build/consumer_demo.py`**; **`query_pipeline.py`** delegates to the service.
+
+### What ran — P04
+
+| Step | Command / artifact |
+| --- | --- |
+| Qdrant | Reused existing Docker container **`qdrant-p01`** (`docker start qdrant-p01`); **`multi_domain_docs`** — see `p04-docker-qdrant.txt`, `p04-curl-qdrant-collection.txt` |
+| Ingest | `python ingest.py` (updated `data/sample.md` Section C); `python ingest_web.py --synthetic-evidence` (web slice) |
+| Ragas | `python ragas_eval.py --mode baseline`; `python ragas_eval.py --mode batch --sleep-between 2` — **`qwen3:8b`** judge via **`OLLAMA_EVAL_LLM_MODEL`** (default); generation **`llama3.2`** |
+| Consumer | `python consumer_demo.py` — `p04-consumer-demo.txt` |
+| Deps | `p04-pip-freeze.txt` (includes **ragas**, **langchain-ollama**) |
+
+**Evidence:** `executions/evidence/p04/` — **`README.md`**, transcripts above. Validation: **`validation/P04-validation.md`** **PASS**.
+
+### Case study — Local knowledge spine (E2E)
+
+**Status:** **Documented** with this P04 slice. Linear operator path: [`case-study/RUNBOOK.md`](../case-study/RUNBOOK.md) (scenario: [`SCENARIO.md`](../case-study/SCENARIO.md), requirements: [`REQUIREMENTS.md`](../case-study/REQUIREMENTS.md)); optional helpers under [`case-study/tools/`](../case-study/tools/); diagram source [`case-study/diagrams/e2e-flow.mmd`](../case-study/diagrams/e2e-flow.mmd). **CI:** `.github/workflows/retrieval-backbone-ragas-dry.yml` exercises `ragas_eval.py --mode batch --synthetic-rows --dry-dataset` on PR/push to `main` when `build/` changes.
