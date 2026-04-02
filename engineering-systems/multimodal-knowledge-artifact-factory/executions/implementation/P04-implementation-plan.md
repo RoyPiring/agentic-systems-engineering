@@ -20,7 +20,7 @@
 | ----- | ----- |
 | **1** | Add **`serde`** / **`serde_json`**; new **`src/bin/export.rs`** + **`[[bin]]`**; implement flashcard + quiz writers; run once and capture listing / file hashes or small transcripts |
 | **2** | **`integration.py`** — path discovery from repo layout; documented AIRI launch contract; smoke run without hardcoded absolute paths |
-| **3** | Full pipeline ordering: sample markdown → P01 → P02 → export → integration; note AIRI UI capture when the desktop app is available |
+| **3** | Full pipeline ordering: sample markdown → P01 → P02 → export → integration; capture **AIRI / integration stdout or logs** in transcripts when the desktop app is available (no raster/UI image evidence required) |
 | **4** | Execution record, evidence, **`validation/P04-validation.md`**, **`implementation.md`** / **`validation.md`** rollups |
 
 ## Phase 1 — Export binary (Rust)
@@ -50,14 +50,14 @@
 | 3.2 | Run P02 stub pipeline → WAVs present under **`executions/evidence/p02/audio/`** |
 | 3.3 | Run **`export`** → **`flashcards.json`** + **`quiz.md`** refreshed |
 | 3.4 | Run **`integration.py`** → AIRI launches **or** documented **skip** with honest validation note |
-| 3.5 | Optional screenshot or log of AIRI showing assembled assets under **`executions/evidence/`** when feasible |
+| 3.5 | Optional terminal log or launch transcript of AIRI showing assembled assets under **`executions/evidence/`** when feasible |
 
 ## Phase 4 — Closeout
 
 | Item | Complete when |
 | ---- | ------------- |
 | Summary | [Execution record](../execution-record.md) updated for P04 with commands actually run |
-| Evidence | Transcripts (and optional screenshot) under [`../evidence/`](../evidence/) |
+| Evidence | Transcripts and execution logs under [`../evidence/`](../evidence/) |
 | Validation | [P04 validation](../../validation/P04-validation.md) **PASS** or **PASS (conditional)** with rationale |
 | Rollups | Root [`implementation.md`](../../implementation.md) and [`validation.md`](../../validation.md) show P04 **Executed** |
 | Domain index | If this slice merges, update the domain repo’s featured / index tables so strangers see **P04** status (same discipline as prior phases) |

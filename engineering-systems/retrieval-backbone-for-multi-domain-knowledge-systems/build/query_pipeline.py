@@ -2,6 +2,8 @@
 """
 P02 — Citation-aware RAG: load Qdrant index (P01), query with LlamaIndex + Ollama LLM/embeddings.
 
+P04 — Uses ``RetrievalBackboneService`` (public packaged API) for all retrieval state.
+
 Run from this directory (build/):  python query_pipeline.py --query "Your question"
 
 Prerequisites: Qdrant with collection populated by ingest.py; Ollama with llama3.2 (or --llm-model)
@@ -14,32 +16,11 @@ import argparse
 import os
 import sys
 
-import qdrant_client
-from llama_index.core import Settings, PromptTemplate, VectorStoreIndex
-from llama_index.embeddings.ollama import OllamaEmbedding
-from llama_index.llms.ollama import Ollama
-from llama_index.vector_stores.qdrant import QdrantVectorStore
-
-# Prompt must include {context_str} and {query_str} for default LlamaIndex text QA synthesis.
-CITATION_AWARE_QA_TEMPLATE = PromptTemplate(
-    template=(
-        "Context information is below.\n"
-        "---------------------\n"
-        "{context_str}\n"
-        "---------------------\n"
-        "You are a helpful assistant. Use only the context above to answer the question.\n"
-        "When you use information from the context, cite it explicitly using the document name, "
-        "file path, or source URL shown in the context (for example: [Source: filename] or "
-        "[Source: https://…]).\n"
-        "If the context does not contain the answer, say you do not have enough information.\n"
-        "Question: {query_str}\n"
-        "Answer: "
-    )
-)
+from retrieval_service import RetrievalBackboneConfig, RetrievalBackboneService
 
 
 def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Query Qdrant via LlamaIndex + Ollama (P02).")
+    p = argparse.ArgumentParser(description="Query Qdrant via LlamaIndex + Ollama (P02 / P04 service).")
     p.add_argument(
         "--query",
         default=os.environ.get("RAG_QUERY", "What is in the indexed documents? Summarize briefly."),
@@ -80,100 +61,48 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
-def response_text(response: object) -> str:
-    """Normalize LlamaIndex Response to a string."""
-    r = getattr(response, "response", None)
-    if r is not None:
-        return str(r).strip()
-    return str(response).strip()
-
-
-def run_query(query_engine: object, query: str) -> tuple[str, list]:
-    """Execute query_engine.query and return (answer_text, source_nodes list)."""
-    result = query_engine.query(query)
-    nodes = getattr(result, "source_nodes", None) or []
-    return response_text(result), list(nodes)
-
-
-def print_answer_and_citations(answer: str, source_nodes: list) -> None:
+def print_answer_and_citations(answer: str, citations: list) -> None:
     print("Answer")
     print("------")
     print(answer if answer else "(empty)")
     print()
     print("Citations")
     print("---------")
-    if not source_nodes:
+    if not citations:
         print("  (no source nodes returned)")
         return
-    for i, sn in enumerate(source_nodes, start=1):
-        node = sn.node
-        node_id = getattr(node, "node_id", None) or getattr(node, "id_", "?")
-        score = getattr(sn, "score", None)
+    for i, c in enumerate(citations, start=1):
         score_part = ""
-        if score is not None:
-            try:
-                score_part = f" score={float(score):.4f}"
-            except (TypeError, ValueError):
-                score_part = f" score={score!r}"
-        meta = node.metadata or {}
-        file_name = (
-            meta.get("file_name")
-            or meta.get("file_path")
-            or meta.get("source_url")
-            or meta.get("document_id", "unknown")
-        )
-        source_url = meta.get("source_url")
-        snippet = node.get_content().strip().replace("\n", " ")
-        if len(snippet) > 280:
-            snippet = snippet[:277] + "..."
-        print(f"  [{i}] node_id={node_id}{score_part}")
-        print(f"      file: {file_name}")
-        if source_url:
-            print(f"      source_url: {source_url}")
-        print(f"      text: {snippet}")
+        if c.score is not None:
+            score_part = f" score={c.score:.4f}"
+        print(f"  [{i}] node_id={c.node_id}{score_part}")
+        print(f"      file: {c.label}")
+        if c.source_url:
+            print(f"      source_url: {c.source_url}")
+        print(f"      text: {c.text_excerpt}")
 
 
 def main() -> int:
     args = parse_args()
-
-    Settings.embed_model = OllamaEmbedding(model_name=args.embed_model)
-    Settings.llm = Ollama(
-        model=args.llm_model,
-        request_timeout=args.ollama_request_timeout,
-    )
-
-    try:
-        client = qdrant_client.QdrantClient(url=args.qdrant_url)
-        client.get_collections()
-    except Exception as exc:
-        print(
-            f"ERROR: cannot reach Qdrant at {args.qdrant_url!r}: {exc}",
-            file=sys.stderr,
-        )
-        return 1
-
-    vector_store = QdrantVectorStore(client=client, collection_name=args.collection)
-    try:
-        index = VectorStoreIndex.from_vector_store(
-            vector_store=vector_store,
-            embed_model=Settings.embed_model,
-        )
-    except Exception as exc:
-        print(
-            f"ERROR: failed to load VectorStoreIndex from Qdrant collection "
-            f"{args.collection!r}: {exc}",
-            file=sys.stderr,
-        )
-        print("Run P01 ingest.py first so the collection exists and has vectors.", file=sys.stderr)
-        return 1
-
-    query_engine = index.as_query_engine(
+    cfg = RetrievalBackboneConfig(
+        qdrant_url=args.qdrant_url,
+        qdrant_collection=args.collection,
+        ollama_embed_model=args.embed_model,
+        ollama_llm_model=args.llm_model,
         similarity_top_k=args.similarity_top_k,
-        text_qa_template=CITATION_AWARE_QA_TEMPLATE,
+        ollama_request_timeout=args.ollama_request_timeout,
     )
+    try:
+        service = RetrievalBackboneService(cfg)
+        result = service.query(args.query)
+    except Exception as exc:
+        print(
+            f"ERROR: query failed ({exc!r}). Is Qdrant up and the collection populated?",
+            file=sys.stderr,
+        )
+        return 1
 
-    answer, source_nodes = run_query(query_engine, args.query)
-    print_answer_and_citations(answer, source_nodes)
+    print_answer_and_citations(result.answer, result.citations)
     return 0
 
 

@@ -21,13 +21,18 @@
 
 ---
 
+## Best Evidence
+
+| Proof | What it demonstrates |
+| --- | --- |
+| [validation.md](./validation.md) | The full system story is validated across P01-P04 with explicit limitations |
+| [p03-viewer-build.txt](./executions/evidence/p03/p03-viewer-build.txt) | The desktop viewer built and resolved narration paths from the local artifact tree |
+| [exports/](./executions/evidence/p04/exports/) | The system produced concrete study artifacts, not just logs |
+| [p04-e2e-summary.txt](./executions/evidence/p04/p04-e2e-summary.txt) | The parser, audio bridge, and export flow were exercised end to end |
+
 ## Knowledge Viewer (P03)
 
-*Screenshot will be added after next local build. To see the viewer now: follow [user-guides/P03-user-guide.md](./user-guides/P03-user-guide.md).*
-
-<!-- When captured, replace the line above with:
-![Dioxus Knowledge Viewer — parsed sections with audio mapping](./executions/evidence/p03/p03-viewer-screenshot.png)
--->
+The Dioxus desktop viewer renders parsed markdown sections with per-section audio controls. To run it: follow [user-guides/P03-user-guide.md](./user-guides/P03-user-guide.md). Terminal output and execution transcripts are committed under [executions/evidence/p03/](./executions/evidence/p03/).
 
 ---
 
@@ -42,10 +47,11 @@
 
 1. **To run the system:** [user-guides/README.md](./user-guides/README.md) → per-phase guides or [user-guides/SERIES-user-guide.md](./user-guides/SERIES-user-guide.md) end-to-end
 2. [business-context.md](./business-context.md)
-3. [architecture.md](./architecture.md) (plus [architecture/diagrams/](./architecture/diagrams/) and [architecture/adr/](./architecture/adr/))
-4. [implementation.md](./implementation.md)
-5. [validation.md](./validation.md)
-6. [build/](./build/) — Rust crate, Python TTS bridge, samples
+3. [validation.md](./validation.md)
+4. [architecture.md](./architecture.md) (plus [architecture/diagrams/](./architecture/diagrams/) and [architecture/adr/](./architecture/adr/))
+5. [implementation.md](./implementation.md)
+6. [executions/evidence/](./executions/evidence/) — proof files and generated artifacts
+7. [build/](./build/) — Rust crate, Python TTS bridge, samples
 
 ---
 

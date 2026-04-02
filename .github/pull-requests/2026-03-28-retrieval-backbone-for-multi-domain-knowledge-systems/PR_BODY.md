@@ -33,5 +33,4 @@
 
 ### Gaps Identified
 
-- Optional: add Qdrant dashboard PNG under `executions/evidence/p01/` when convenient (placeholder documented in system README).
 - **P02–P04:** follow-on PRs after merge; not blocking this slice.

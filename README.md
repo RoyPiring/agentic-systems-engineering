@@ -8,18 +8,40 @@ Each engineering system starts with a real-world problem and works backward to t
 
 ---
 
-## Systems
+## Published Now
 
-Portfolio slots **1–12** match [ROADMAP.md](./ROADMAP.md). **Published folders** today: **#1** and **#10** under [`engineering-systems/`](./engineering-systems/).
+Published folders today: **#1** and **#10** under [`engineering-systems/`](./engineering-systems/).
 
 | # | System | What It Solves | Tech Stack | Status |
 |---|--------|---------------|-----------|--------|
-| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama, Firecrawl (optional) | 🔨 **P01–P03** [PASS](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/validation.md); **P04** next |
-| 2–9 | *Planned* | See roadmap | — | 📋 |
+| 1 | [Retrieval Backbone — Multi-Domain Knowledge](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | Measured, citation-aware retrieval across files and web — local Qdrant + Ollama by default | Python, Qdrant, LlamaIndex, Ollama, Firecrawl (optional), Ragas | ✅ **P01–P04** [PASS](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/validation.md) |
 | 10 | [Multimodal Knowledge Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/) | Turn markdown research into local audio, interactive UI, and study exports — $0 recurring cost | Rust, Python, Dioxus | ✅ **P01–P04** on `main` |
-| 11–12 | *Planned* | See roadmap | — | 📋 |
 
-**Summary:** **#10** is the first system **fully merged** to `main`. **#1** has **P01–P03** with evidence and validation **PASS**. Full grid → [ROADMAP.md](./ROADMAP.md) · [Engineering systems index](./engineering-systems/README.md)
+**Summary:** **#10** is fully merged to `main` with **P01–P04** shipped. **#1** has **P01–P04** with committed evidence and validation **PASS**. Full grid: [ROADMAP.md](./ROADMAP.md) · [Engineering systems index](./engineering-systems/README.md)
+
+## Portfolio KPI Snapshot
+
+| Metric | Current |
+|---|---:|
+| Published systems | 2 |
+| Systems with roll-up validation **PASS** | 2 |
+| Systems with per-phase operator guides | 2 |
+| Systems with committed execution evidence | 2 |
+| Root-level CI quality gate | 1 active workflow badge |
+
+## Proof At A Glance
+
+| System | Strongest proof | Why it matters |
+|---|---|---|
+| [Retrieval Backbone](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) | [P04 validation](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/validation/P04-validation.md), [Ragas batch evidence](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/evidence/p04/p04-ragas-batch.txt), [consumer demo](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/executions/evidence/p04/p04-consumer-demo.txt) | Shows measured retrieval quality and a service-shaped public interface, not just ingestion scripts |
+| [Multimodal Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/) | [validation](./engineering-systems/multimodal-knowledge-artifact-factory/validation.md), [P03 viewer build evidence](./engineering-systems/multimodal-knowledge-artifact-factory/executions/evidence/p03/p03-viewer-build.txt), [P04 exports](./engineering-systems/multimodal-knowledge-artifact-factory/executions/evidence/p04/exports/) | Shows an end-to-end local system from parser to UI to study artifacts |
+
+## 2-Minute Review Path
+
+1. Start with the published systems table above.
+2. Open [Retrieval Backbone](./engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/) or [Multimodal Knowledge Artifact Factory](./engineering-systems/multimodal-knowledge-artifact-factory/).
+3. Read that system's `README.md` and `validation.md`.
+4. Open the linked `Best Evidence` artifacts if you need proof before code.
 
 ---
 
@@ -31,6 +53,12 @@ Every system follows the same engineering standard:
 2. **Architecture** — components, boundaries, ADRs, tradeoffs, failure modes
 3. **Implementation** — phased delivery with execution records and evidence
 4. **Validation** — expected vs actual results, negative cases, explicit pass criteria
+
+---
+
+## Engineering Judgment
+
+This portfolio is organized around systems, not isolated demos, because hiring teams need to see tradeoffs, sequencing, and proof in the same place. Local-first defaults and explicit validation gates are deliberate: they expose how each system behaves under practical constraints instead of hiding behind managed services or claims without evidence. The result is a portfolio optimized for technical trust, not just presentation.
 
 ---
 
@@ -53,6 +81,12 @@ Every system follows the same engineering standard:
 | Architectural judgment | Tradeoffs, boundaries, risks, and ADRs are explicit | `engineering-systems/*/architecture.md` |
 | Delivery discipline | Systems implemented in phases with documented sequencing and evidence | `engineering-systems/*/implementation.md` |
 | Evidence rigor | Claims backed by validation artifacts and observed results | `engineering-systems/*/validation.md` |
+
+---
+
+## Roadmap
+
+Portfolio slots **1–12** match [ROADMAP.md](./ROADMAP.md). Planned systems and target quarters live there so the landing page can lead with shipped work instead of future inventory.
 
 ---
 

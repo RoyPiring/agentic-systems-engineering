@@ -10,7 +10,7 @@ For a full step or phase review, load **codereview.md** first, then tick the lay
 - [ ] Breadcrumb navigation present at the top of all modified nested markdown docs
 - [ ] Audience routing table is present and robust in the root `README.md`
 - [ ] System `README.md` opens with a 3-line Problem/Approach/Outcome block
-- [ ] Screenshot or documented HTML comment placeholder present in system `README.md`
+- [ ] Evidence section present in system `README.md` — links to `executions/evidence/` transcripts or per-phase validation files
 - [ ] "Related systems" section present in system `README.md`
 
 ## Layer 2 — Evidence Integrity (Binary)

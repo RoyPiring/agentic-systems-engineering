@@ -4,18 +4,21 @@ Application code, scripts, configs, and infrastructure-as-code produced while ex
 
 Runnable artifacts live here—not in the narrative docs at the engineering-system root.
 
-## Committed tree (P01–P03)
+## Committed tree (P01–P04)
 
 Everything below is part of the delivered build; there are no auxiliary one-off test scripts in this folder (use `executions/evidence/` for transcripts).
 
 | Path | Phase |
 | --- | --- |
-| `requirements.txt` | P01–P03 deps |
+| `requirements.txt` | P01–P04 deps |
 | `ingest.py` | P01 |
 | `run_ingest_windows.ps1` | P01 (Windows **MAX_PATH** helper for `ingest.py`) |
 | `data/sample.md`, `data/README.md` | P01 sample corpus |
-| `query_pipeline.py` | P02 |
+| `query_pipeline.py` | P02 (uses **`retrieval_service`** in P04) |
 | `ingest_web.py` | P03 (Firecrawl path + **`--synthetic-evidence`** for the same index contract without Firecrawl) |
+| `retrieval_service.py` | P04 packaged API (**`RetrievalBackboneService`**) |
+| `ragas_eval.py` | P04 Ragas baseline / batch |
+| `consumer_demo.py` | P04 consumer smoke (public imports only) |
 
 `venv/` is local-only (typically gitignored).
 
@@ -87,3 +90,24 @@ python ingest_web.py --mode crawl --url https://docs.python.org/3/library/ --cra
 Env: **`FIRECRAWL_URL`** (default `http://localhost:3002`), **`FIRECRAWL_API_KEY`** (empty or omit for many self-hosted images; SDK sends `Authorization: Bearer …`), **`INGEST_WEB_URL`**, same Qdrant/Ollama vars as P01.
 
 **Then query** with a question that targets the ingested page (see [P03 user guide](../user-guides/P03-user-guide.md)); **`query_pipeline.py`** prints **`source_url:`** in **Citations** when node metadata includes it.
+
+## P04 layout (Ragas + packaged service)
+
+| Path | Purpose |
+| --- | --- |
+| `retrieval_service.py` | **`RetrievalBackboneConfig`** + **`RetrievalBackboneService.query()`** → **`QueryResult`** (`answer`, `contexts`, `citations`) — env/injected config, instance-scoped clients ([plan](../executions/implementation/P04-implementation-plan.md), [operator guide](../user-guides/P04-user-guide.md)) |
+| `ragas_eval.py` | Build Ragas dataset from the live pipeline; run **context_precision** + **answer_relevancy** with **Ollama** judge models (**`OLLAMA_EVAL_LLM_MODEL`**, default **`qwen3:8b`**) |
+| `consumer_demo.py` | Instantiate service + one query — **only** imports from `retrieval_service` |
+
+**Run (cwd `build/`, venv active, Qdrant + Ollama up, collection populated):**
+
+```bash
+pip install -r requirements.txt
+python consumer_demo.py
+python ragas_eval.py --mode baseline
+python ragas_eval.py --mode batch --sleep-between 2
+```
+
+**When Qdrant is down:** `python ragas_eval.py --mode batch --synthetic-rows` (hand-crafted rows + Ragas only).
+
+Capture stdout under [`../executions/evidence/p04/`](../executions/evidence/p04/) when closing validation.

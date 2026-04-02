@@ -1,0 +1,10 @@
+# cwd: build/
+# python consumer_demo.py
+# Uses only retrieval_service.RetrievalBackboneService + RetrievalBackboneConfig
+
+answer: [Source: sample.md, file path C:\Users\rpiri\PineappleKingdom\09-tech-learning-builder\08-GITHUB-BUILDS\agentic-systems-engineering\engineering-systems\retrieval-backbone-for-multi-domain-knowledge-systems\build\data\sample.md]
+
+Qdrant is the vector database mentioned in the indexed documentation.
+contexts (count): 2
+  [1] sample.md
+  [2] README.md

@@ -1,0 +1,28 @@
+%% End-to-end case study — Retrieval Backbone (P01–P04)
+%% Render: https://mermaid.live or editor Mermaid preview
+
+flowchart LR
+  subgraph p01 [P01 Ingest]
+    MD[Markdown_and_optional_PDF]
+    MD --> UN[Unstructured]
+    UN --> EMB[Ollama_embeddings]
+    EMB --> QD[(Qdrant_multi_domain_docs)]
+  end
+
+  subgraph p02 [P02 Retrieve]
+    QD --> LI[LlamaIndex_query]
+    LI --> LLM[Ollama_LLM]
+    LLM --> OUT[Answer_plus_Citations]
+  end
+
+  subgraph p03 [P03 Web_slice]
+    FC[Firecrawl_or_synthetic_ingest_web]
+    FC --> QD
+  end
+
+  subgraph p04 [P04_Quality_and_API]
+    SVC[RetrievalBackboneService]
+    QD --> SVC
+    SVC --> RG[Ragas_eval]
+    SVC --> CON[consumer_demo]
+  end

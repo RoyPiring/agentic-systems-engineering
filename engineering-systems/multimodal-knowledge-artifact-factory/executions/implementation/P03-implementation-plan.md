@@ -13,7 +13,7 @@
 - **Shared parse model** — markdown sections available to the UI as Rust data (refactor parser from a single `main.rs` into a `lib` target or module as needed so the CLI binary and UI binary both compile).
 - **Rendered sections** — headings and paragraph text from parsed markdown appear in the UI (sample path or embedded fixture aligned with P01 sample).
 - **Multimodal hook** — per-section control (e.g. **Play Narration**) that resolves to the correct **local** `.wav` under `executions/evidence/p02/audio/` (or documented relative path from the running app’s cwd).
-- **Evidence** — build/run transcripts and at least one UI capture under `executions/evidence/` (e.g. `p03-*` files or a `p03-ui/` folder); execution record and validation updated to **PASS** when accepted.
+- **Evidence** — build/run **text transcripts** under `executions/evidence/p03/` (e.g. `p03-*.txt`); execution record and validation updated to **PASS** when accepted.
 
 ## Roadmap
 
@@ -54,7 +54,7 @@
 | Item | Complete when |
 | ---- | ------------- |
 | Summary | [Execution record](../execution-record.md) updated for P03 with commands actually run |
-| Evidence | Transcripts + at least one UI screenshot or equivalent under [`../evidence/`](../evidence/) |
+| Evidence | Transcripts and terminal output capturing the running UI under [`../evidence/`](../evidence/) |
 | Validation | [P03 validation](../../validation/P03-validation.md) shows **PASS** |
 | Rollups | Root [`implementation.md`](../../implementation.md) and [`validation.md`](../../validation.md) match P03 status |
 

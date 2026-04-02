@@ -1,0 +1,32 @@
+# Smoke: build Ragas eval dataset shape without Qdrant, Ollama, or judge LLM calls.
+name: Retrieval Backbone — Ragas dry dataset
+
+on:
+  pull_request:
+    paths:
+      - 'engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/build/**'
+      - '.github/workflows/retrieval-backbone-ragas-dry.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/build/**'
+      - '.github/workflows/retrieval-backbone-ragas-dry.yml'
+
+jobs:
+  dry-dataset:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engineering-systems/retrieval-backbone-for-multi-domain-knowledge-systems/build
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Synthetic batch — print dataset JSON only (no Ragas evaluate)
+        run: python ragas_eval.py --mode batch --synthetic-rows --dry-dataset

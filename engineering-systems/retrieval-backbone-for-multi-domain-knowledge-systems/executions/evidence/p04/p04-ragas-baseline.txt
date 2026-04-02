@@ -1,0 +1,12 @@
+# cwd: build/
+# python ragas_eval.py --mode baseline
+# Qdrant: qdrant-p01 localhost:6333, collection multi_domain_docs
+# Env defaults: OLLAMA_LLM_MODEL=llama3.2, OLLAMA_EVAL_LLM_MODEL=qwen3:8b
+
+Ragas aggregate (non-NaN metrics)
+---------------------------------
+  answer_relevancy: 0.4384
+  context_precision: 1.0000
+
+Per-row domains (pipeline)
+  - markdown_file: contexts=2

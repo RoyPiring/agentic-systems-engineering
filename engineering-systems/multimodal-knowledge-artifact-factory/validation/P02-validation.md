@@ -42,6 +42,8 @@ python tts_inference.py --from-file ../executions/evidence/p01/p01-stdout-for-p0
 | Audio | WAV files on disk | **PASS** — [`p02/audio/`](../executions/evidence/p02/audio/), [`p02-audio-listing.txt`](../executions/evidence/p02/p02-audio-listing.txt) |
 | Edge | Empty input handled | **PASS** — [`p02-edge-empty-stderr.txt`](../executions/evidence/p02/p02-edge-empty-stderr.txt) |
 
+**Path note:** `p02-pipeline-run.txt` preserves the original runtime output, which prints the earlier flattened name `p02-audio`. The canonical repo directory for these files is [`executions/evidence/p02/audio/`](../executions/evidence/p02/audio/).
+
 ## Delivery
 
 | | |

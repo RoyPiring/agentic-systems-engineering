@@ -91,4 +91,4 @@ Capture transcripts for [P03 validation](../validation/P03-validation.md): see [
 
 ## Next
 
-**P04** — Ragas / packaging (see [implementation plan](../executions/implementation/P04-implementation-plan.md)).
+**P04** — [Ragas + packaged service](./P04-user-guide.md) (see [implementation plan](../executions/implementation/P04-implementation-plan.md)).

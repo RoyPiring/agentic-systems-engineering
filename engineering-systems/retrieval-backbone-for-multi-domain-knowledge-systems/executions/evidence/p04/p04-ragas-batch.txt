@@ -1,0 +1,17 @@
+# cwd: build/
+# python ragas_eval.py --mode batch --sleep-between 2
+# Live pipeline: RetrievalBackboneService over Qdrant + Ollama llama3.2 + nomic-embed-text
+
+Ragas aggregate (non-NaN metrics)
+---------------------------------
+  answer_relevancy: 0.6299
+  context_precision: 1.0000
+
+Per-row domains (pipeline)
+  - markdown_file: contexts=2
+  - pdf_topic: contexts=2
+  - web_synthetic: contexts=3
+
+# Expected vs actual (quantitative baseline for this run):
+# - context_precision mean 1.0 — all rows scored full precision vs reference strings.
+# - answer_relevancy mean ~0.63 — local judge model variance; not a hard production SLO.

@@ -9,8 +9,6 @@ desktop.ini
 *~
 
 # Evidence (large binaries — link to external storage if needed)
-executions/*/screenshots/*.png
-executions/*/screenshots/*.jpg
 executions/*/recordings/*.mp4
 
 # Secrets

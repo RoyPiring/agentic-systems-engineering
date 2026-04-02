@@ -31,7 +31,7 @@
 | ----- | ----- |
 | Portfolio voice | No private vault paths in reader-facing system docs |
 | Root README / ROADMAP | Slots **#1** (Retrieval) and **#10** (Multimodal) aligned |
-| System README | Problem / Approach / Outcome; visual placeholder; **Related systems** link |
+| System README | Problem / Approach / Outcome; evidence links / narrative; **Related systems** link |
 
 ## 4. Checklist.md — Layer 1 (binary)
 
@@ -41,7 +41,7 @@
 | Breadcrumbs on nested docs | **Pass** (system README + pattern match multimodal) |
 | Root README audience routing | **Pass** (systems table + operator rows) |
 | System README 3-line block | **Pass** |
-| Screenshot / placeholder | **Pass** — HTML comment + narrative (P01) |
+| Evidence section / README honesty | **Pass** — transcripts + validation pointers (P01) |
 | Related systems | **Pass** — link to Multimodal |
 
 ## 5. Checklist.md — Layer 2 (binary)
@@ -68,7 +68,7 @@
 | -------- | ----- | ------ |
 | Critical | 0 | — |
 | Important | 0 | — |
-| Suggestion | 1 | Optional screenshot under `executions/evidence/p01/` when convenient |
+| Suggestion | 0 | — |
 
 **Verdict:** **Ready to open PR** to `main` after changelog + PR body are attached and CI green.
 

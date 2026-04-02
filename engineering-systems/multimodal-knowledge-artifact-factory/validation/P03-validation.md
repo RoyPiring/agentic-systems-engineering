@@ -13,7 +13,7 @@
 | 2 | Parse in UI | Structured markdown sections render as headings and body text (not raw unparsed `.md` in one blob) |
 | 3 | Audio affordance | Per-section control resolves to the intended `.wav` under `executions/evidence/p02/audio/` (path contract documented) |
 | 4 | Responsiveness | Click / play path does not hard-freeze the UI |
-| 5 | Evidence | Transcripts and at least one UI capture under `executions/evidence/` |
+| 5 | Evidence | Text transcripts under `executions/evidence/p03/` (build, test, viewer run) |
 | 6 | Dependencies | Dioxus **0.7.3** with desktop configuration as per series guide |
 
 ## How to run

@@ -13,5 +13,6 @@ Entries are grouped by **`YYYY-MM-DD-<engineering-system-folder>/`** — the sam
 | `2026-03-28-multimodal-knowledge-artifact-factory` | [CHANGELOG.md](./2026-03-28-multimodal-knowledge-artifact-factory/CHANGELOG.md) |
 | `2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems` | [CHANGELOG.md](./2026-03-28-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) |
 | `2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems` | [CHANGELOG.md](./2026-03-29-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) (P02 [PR #7](https://github.com/RoyPiring/agentic-systems-engineering/pull/7) + P03 follow-on; P03 validation **PASS**) |
+| `2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems` | [CHANGELOG.md](./2026-04-01-retrieval-backbone-for-multi-domain-knowledge-systems/CHANGELOG.md) (P04 — Ragas + packaged service; validation **PASS**) |
 
 The repo-root [CHANGELOG.md](../../CHANGELOG.md) stays a short **human digest** with links into these files.
