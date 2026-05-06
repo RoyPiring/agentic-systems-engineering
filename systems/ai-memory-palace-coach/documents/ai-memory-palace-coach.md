@@ -1,11 +1,3 @@
----
-nextwork_uuid: c2b8ab27-596b-4287-82f1-756d164d2c25
-original_filename: legendary-c2b8ab27-596b-4287-82f1-756d164d2c25.md
-migrated_to: productivity-engineering/ai-memory-palace-coach.md
-migrated_at: 2026-05-04
-schema: nextwork-generator
----
-
 <img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
 
 # Build an AI Memory Palace Coach

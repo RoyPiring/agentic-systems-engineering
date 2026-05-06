@@ -1,11 +1,3 @@
----
-nextwork_uuid: 09722f01-6a11-410a-8927-e0095cec8f54
-original_filename: legendary-09722f01-6a11-410a-8927-e0095cec8f54.md
-migrated_to: agentic-systems-engineering/voice-ai-tutor.md
-migrated_at: 2026-05-04
-schema: nextwork-generator
----
-
 <img src="https://cdn.prod.website-files.com/677c400686e724409a5a7409/6790ad949cf622dc8dcd9fe4_nextwork-logo-leather.svg" alt="NextWork" width="300" />
 
 # Build a Voice-Enabled AI Tutor
