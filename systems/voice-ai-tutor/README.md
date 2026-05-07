@@ -4,11 +4,11 @@
 
 ## Overview
 
-The main loop orchestrates the full system.
+A voice-enabled AI tutor that takes a spoken question, retrieves age-appropriate curriculum from a local vector store, and returns a spoken answer tuned to the learner's tier — all without a single external API call. The system is built local-first on Ollama, ChromaDB, and Whisper so the cost, latency, and privacy profile match what a classroom or home learner can actually deploy.
 
-It manages input selection, retrieval, generation, safety validation, and output delivery, acting as the control layer for the tutor.
+The orchestration question the system answers is *how should an AI agent decide what to retrieve, how to phrase the answer, and what to refuse* — not just *how to call an LLM*. Three age-tier prompt templates (elementary / middle / advanced) sit on top of one shared retrieval path, Guardrails AI validators police output safety, and the same architecture extends to Japanese and Spanish without retraining the underlying model.
 
-The architecture is built across **7 phases**, anchored by **Setting Up the Local AI Development Environment** on the input side and **Multilingual Support in Japanese and Spanish** at the end. Each phase is listed in the Implementation section below.
+The architecture below shows the request lifecycle: voice input → Whisper transcription → ChromaDB semantic search → tier-aware LangChain LCEL chain → safety validation → spoken response back to the learner.
 
 ## Architecture
 
