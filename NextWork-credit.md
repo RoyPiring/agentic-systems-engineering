@@ -5,7 +5,6 @@ This portfolio repository was built from NextWork projects, created via NextWork
 **Original NextWork projects:**
 
 - Build an AI Memory Palace Coach
-- Command a 25-Engineer AI Org in Cursor
 - PortfolioForge: Doc to Repo
 - Build a Voice-Enabled AI Tutor
 
