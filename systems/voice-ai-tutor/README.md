@@ -4,9 +4,9 @@
 
 ## Overview
 
-A voice-enabled AI tutor that takes a spoken question, retrieves age-appropriate curriculum from a local vector store, and returns a spoken answer tuned to the learner's tier — all without a single external API call. The system is built local-first on Ollama, ChromaDB, and Whisper so the cost, latency, and privacy profile match what a classroom or home learner can actually deploy.
+A voice-enabled AI tutor that takes a spoken question, retrieves age-appropriate curriculum from a local vector store, and returns a spoken answer tuned to the learner's tier, all without a single external API call. The system is built local-first on Ollama, ChromaDB, and Whisper so the cost, latency, and privacy profile match what a classroom or home learner can actually deploy.
 
-The orchestration question the system answers is *how should an AI agent decide what to retrieve, how to phrase the answer, and what to refuse* — not just *how to call an LLM*. Three age-tier prompt templates (elementary / middle / advanced) sit on top of one shared retrieval path, Guardrails AI validators police output safety, and the same architecture extends to Japanese and Spanish without retraining the underlying model.
+The orchestration question the system answers is *how should an AI agent decide what to retrieve, how to phrase the answer, and what to refuse*, not just *how to call an LLM*. Three age-tier prompt templates (elementary / middle / advanced) sit on top of one shared retrieval path, Guardrails AI validators police output safety, and the same architecture extends to Japanese and Spanish without retraining the underlying model.
 
 The architecture below shows the request lifecycle: voice input → Whisper transcription → ChromaDB semantic search → tier-aware LangChain LCEL chain → safety validation → spoken response back to the learner.
 
@@ -92,7 +92,7 @@ This system is built across **7 phases**:
 4. **Adding Voice Input and Output**
 5. **Wiring Up Guardrails AI for Student Safety**
 6. **Running the Full Prototype and Evaluating Performance**
-7. **Multilingual Support in Japanese and Spanish**
+7. **Multilingual Support in Japanese and Spanish**, -.
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/voice-ai-tutor.md`](./documents/voice-ai-tutor.md).
 
