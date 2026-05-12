@@ -4,9 +4,9 @@
 
 ## Overview
 
--P-o-r-t-f-o-l-i-o-F-o-r-g-e- -i-s- -a- -C-l-a-u-d-e- -C-o-d-e- -s-k-i-l-l- -d-e-s-i-g-n-e-d- -t-o- -a-u-t-o-m-a-t-e- -t-h-e- -c-o-n-v-e-r-s-i-o-n- -o-f- -r-a-w- -p-r-o-j-e-c-t- -d-o-c-u-m-e-n-t-a-t-i-o-n- -i-n-t-o- -s-t-r-u-c-t-u-r-e-d-,- -p-o-r-t-f-o-l-i-o---r-e-a-d-y- -G-i-t-H-u-b- -r-e-p-o-s-i-t-o-r-i-e-s-.-
--
--T-h-e- -p-r-o-b-l-e-m- -i-t- -s-o-l-v-e-s- -i-s- -t-h-e- -m-a-n-u-a-l- -o-v-e-r-h-e-a-d- -o-f- -t-r-a-n-s-l-a-t-i-n-g- -n-o-t-e-s- -i-n-t-o- -p-r-o-d-u-c-t-i-o-n---q-u-a-l-i-t-y- -a-r-t-i-f-a-c-t-s-.- -I-n-s-t-e-a-d- -o-f- -r-e-w-r-i-t-i-n-g- -d-o-c-u-m-e-n-t-a-t-i-o-n-,- -s-t-r-u-c-t-u-r-i-n-g- -r-e-p-o-s-i-t-o-r-i-e-s-,- -a-n-d- -a-d-d-i-n-g- -s-u-p-p-o-r-t-i-n-g- -f-i-l-e-s- -b-y- -h-a-n-d-,- -t-h-e- -s-y-s-t-e-m- -s-t-a-n-d-a-r-d-i-z-e-s- -t-h-i-s- -p-r-o-c-e-s-s- -i-n-t-o- -a- -r-e-p-e-a-t-a-b-l-e- -p-i-p-e-l-i-n-e-.- -I-t- -e-n-s-u-r-e-s- -c-o-n-s-i-s-t-e-n-c-y- -i-n- -s-t-r-u-c-t-u-r-e-,- -c-o-m-p-l-e-t-e-n-e-s-s-,- -a-n-d- -s-i-g-n-a-l- -q-u-a-l-i-t-y- -a-c-r-o-s-s- -p-o-r-t-f-o-l-i-o- -p-r-o-j-e-c-t-s-.-
+PortfolioForge is a Claude Code skill designed to automate the conversion of raw project documentation into structured, portfolio-ready GitHub repositories.
+
+The problem it solves is the manual overhead of translating notes into production-quality artifacts. Instead of rewriting documentation, structuring repositories, and adding supporting files by hand, the system standardizes this process into a repeatable pipeline. It ensures consistency in structure, completeness, and signal quality across portfolio projects.
 
 The architecture is built across **8 phases**, anchored by **Setting Up the Development Environment** on the input side and **Adding OpenSSF Scorecard, Vale, and commitlint** at the end. Each phase is listed in the Implementation section below.
 
@@ -99,7 +99,7 @@ This system is built across **8 phases**:
 5. **Writing the 5 Parallel Subagent Prompts**
 6. **Building the Orchestrator Skill and Conformance Checker**
 7. **Running the End-to-End Forge Pipeline**
-8. **Adding OpenSSF Scorecard, Vale, and commitlint**, -.
+8. **Adding OpenSSF Scorecard, Vale, and commitlint**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/portfolioforge-doc-to-repo.md`](./documents/portfolioforge-doc-to-repo.md).
 

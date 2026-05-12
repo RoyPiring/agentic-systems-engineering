@@ -4,9 +4,9 @@
 
 ## Overview
 
--I-n- -t-h-i-s- -p-r-o-j-e-c-t-,- -I- -b-u-i-l-t- -a- -n-i-n-e---a-g-e-n-t- -A-I- -o-r-c-h-e-s-t-r-a-t-i-o-n- -p-i-p-e-l-i-n-e- -t-h-a-t- -t-r-a-n-s-f-o-r-m-s- -a- -p-u-b-l-i-c- -G-i-t-H-u-b- -r-e-p-o-s-i-t-o-r-y- -i-n-t-o- -p-o-l-i-s-h-e-d- -e-x-p-l-a-i-n-e-r- -v-i-d-e-o-s- -a-n-d- -c-a-r-o-u-s-e-l- -d-e-c-k-s-.- -T-h-e- -o-b-j-e-c-t-i-v-e- -w-a-s- -t-o- -s-i-m-u-l-a-t-e- -a- -p-r-o-d-u-c-t-i-o-n---g-r-a-d-e- -c-o-n-t-e-n-t- -g-e-n-e-r-a-t-i-o-n- -s-y-s-t-e-m- -w-h-e-r-e- -s-p-e-c-i-a-l-i-z-e-d- -a-g-e-n-t-s- -c-o-l-l-a-b-o-r-a-t-e- -t-h-r-o-u-g-h- -s-t-r-u-c-t-u-r-e-d- -c-o-n-t-r-a-c-t-s- -i-n-s-t-e-a-d- -o-f- -o-p-e-r-a-t-i-n-g- -a-s- -i-s-o-l-a-t-e-d- -p-r-o-m-p-t-s-.-
--
--T-h-e- -s-y-s-t-e-m- -c-o-m-b-i-n-e-s- -r-e-p-o-s-i-t-o-r-y- -a-n-a-l-y-s-i-s-,- -s-t-o-r-y-b-o-a-r-d- -g-e-n-e-r-a-t-i-o-n-,- -d-i-a-g-r-a-m- -r-e-n-d-e-r-i-n-g-,- -v-o-i-c-e- -s-y-n-t-h-e-s-i-s-,- -a-n-i-m-a-t-i-o-n- -c-o-m-p-o-s-i-t-i-o-n-,- -a-n-d- -a-d-v-e-r-s-a-r-i-a-l- -r-e-v-i-e-w- -i-n-t-o- -a- -s-i-n-g-l-e- -a-u-t-o-m-a-t-e-d- -w-o-r-k-f-l-o-w-.- -R-a-t-h-e-r- -t-h-a-n- -t-r-e-a-t-i-n-g- -A-I- -a-s- -a- -s-i-n-g-l-e- -a-s-s-i-s-t-a-n-t-,- -t-h-e- -p-r-o-j-e-c-t- -f-o-c-u-s-e-d- -o-n- -d-e-s-i-g-n-i-n-g- -a-n- -o-r-c-h-e-s-t-r-a-t-e-d- -m-u-l-t-i---a-g-e-n-t- -s-y-s-t-e-m- -w-i-t-h- -t-y-p-e-d- -s-t-a-t-e- -m-a-n-a-g-e-m-e-n-t-,- -g-o-v-e-r-n-a-n-c-e- -b-o-u-n-d-a-r-i-e-s-,- -a-n-d- -d-e-t-e-r-m-i-n-i-s-t-i-c- -o-u-t-p-u-t-s-.-
+In this project, I built a nine-agent AI orchestration pipeline that transforms a public GitHub repository into polished explainer videos and carousel decks. The objective was to simulate a production-grade content generation system where specialized agents collaborate through structured contracts instead of operating as isolated prompts.
+
+The system combines repository analysis, storyboard generation, diagram rendering, voice synthesis, animation composition, and adversarial review into a single automated workflow. Rather than treating AI as a single assistant, the project focused on designing an orchestrated multi-agent system with typed state management, governance boundaries, and deterministic outputs.
 
 The architecture is built across **9 phases**, anchored by **Building a Nine-Agent Content Foundry** on the input side and **Long-Mode YouTube Explainer with Chapter Markers** at the end. Each phase is listed in the Implementation section below.
 
@@ -115,14 +115,14 @@ The diagram shows the topology and data flow of the system as built. The full ar
 This system is built across **9 phases**:
 
 1. **Building a Nine-Agent Content Foundry**
-2. **Verifying and Installing the Full Tool Chain**, -.
+2. **Verifying and Installing the Full Tool Chain**
 3. **Designing the State Machine and JSON Contracts**
 4. **Authoring the Nine Specialist Agent Definitions**
 5. **Building the Orchestrator with Mode Routing and Error Handling**
 6. **Assembling the Visual and Audio Pipeline**
 7. **Building the Carousel and Composition Pipeline**
 8. **Running the Pipeline End-to-End Against a Live Repo**
-9. **Long-Mode YouTube Explainer with Chapter Markers**, -.
+9. **Long-Mode YouTube Explainer with Chapter Markers**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/nine-agent-repo-to-video.md`](./documents/nine-agent-repo-to-video.md).
 

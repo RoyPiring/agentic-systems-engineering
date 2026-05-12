@@ -92,7 +92,7 @@ This system is built across **7 phases**:
 4. **Adding Voice Input and Output**
 5. **Wiring Up Guardrails AI for Student Safety**
 6. **Running the Full Prototype and Evaluating Performance**
-7. **Multilingual Support in Japanese and Spanish**, -.
+7. **Multilingual Support in Japanese and Spanish**
 
 For the full walkthrough with screenshots and step-by-step content, see [`documents/voice-ai-tutor.md`](./documents/voice-ai-tutor.md).
 
