@@ -47,7 +47,7 @@ Each agent communicates exclusively through typed JSON contracts, creating stric
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/959497e2-faed-4bca-b74e-605c22c68469_sm5w1jwz)
 
-### Deep dive into one agent's input/output contract
+### One agent's input/output contract
 
 The A6 Voice Director agent consumes structured storyboard data and transforms it into SSML-driven narration payloads for Azure TTS.
 
