@@ -67,7 +67,7 @@ Content is mapped to confirmed loci, and each item is associated with a vivid, e
 
 ### The cognitive science behind sticky memories
 
-The system leverages the brain’s preference for novelty and distinctiveness.
+The system relies on the brain’s preference for novelty and distinctiveness.
 
 Bizarre imagery increases memorability by engaging multiple cognitive pathways, including visual, emotional, and spatial processing. When combined with a fixed location, this creates multiple retrieval paths, increasing the likelihood of successful recall under different conditions.
 
