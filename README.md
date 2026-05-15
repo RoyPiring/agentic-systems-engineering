@@ -1,6 +1,6 @@
 # Agentic Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-4-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--13-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-4-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--15-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *How do AI agents orchestrate, control, and stay reliable?*
 
@@ -24,8 +24,8 @@ AI and ML engineering across agents, multi-agent orchestration, model integratio
 ## Systems
 
 - **[Build an AI Memory Palace Coach](./systems/ai-memory-palace-coach/)**, AI · MCP · FSRS · Claude
-- **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**, Nine-Agent · JSON · Long-Mode · YouTube
 - **[PortfolioForge: Doc to Repo](./systems/portfolioforge-doc-to-repo/)**, PortfolioForge · NextWork · Tier-Conditional · OpenSSF
 - **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**, Voice-Enabled · AI · ChromaDB · RAG
+- **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**, Nine-Agent · JSON · Long-Mode · YouTube
 
 
