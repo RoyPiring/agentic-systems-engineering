@@ -1,6 +1,6 @@
 # Agentic Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-4-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--19-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-5-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--22-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *How do AI agents orchestrate, control, and stay reliable?*
 
@@ -21,12 +21,12 @@ AI and ML engineering across agents, multi-agent orchestration, model integratio
 
 **What it isn't.** A guarantee of agent reliability under all conditions. A vendor-neutral comparison of AI frameworks.
 
-## Featured Systems
+## Systems
 
-- **[Build an AI Memory Palace Coach](./systems/ai-memory-palace-coach/)**: MCP coach grounded in Dresler protocol and FSRS scheduling, validated against published research
-- **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**: Nine-agent pipeline with 18 typed JSON contracts and council veto gates over a deterministic render stack
-- **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**: Local-first voice RAG with age-tier prompts, Guardrails safety, and Japanese plus Spanish extension
-
-_+ 1 other system in the full catalog: [`INDEX.md`](./INDEX.md)._
+- **[Build an AI Memory Palace Coach](./systems/ai-memory-palace-coach/)**, AI · MCP · FSRS · Claude
+- **[PortfolioForge: Doc to Repo](./systems/portfolioforge-doc-to-repo/)**, PortfolioForge · NextWork · Tier-Conditional · OpenSSF
+- **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**, Voice-Enabled · AI · ChromaDB · RAG
+- **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**, Nine-Agent · JSON · Long-Mode · YouTube
+- **[Architect Your Manifesto](./systems/four-persona-manifesto-engine/)**, Laying the Foundation
 
 
