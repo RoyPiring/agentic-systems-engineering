@@ -1,6 +1,6 @@
 # Agentic Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-5-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--22-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-6-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--05--23-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *How do AI agents orchestrate, control, and stay reliable?*
 
@@ -28,5 +28,6 @@ AI and ML engineering across agents, multi-agent orchestration, model integratio
 - **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**, Voice-Enabled · AI · ChromaDB · RAG
 - **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**, Nine-Agent · JSON · Long-Mode · YouTube
 - **[Architect Your Manifesto](./systems/four-persona-manifesto-engine/)**, Laying the Foundation
+- **[Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/)**, Self-Improving · YouTube · MCP · Claude
 
 
