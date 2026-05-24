@@ -1,68 +1,98 @@
 lens: agentic-systems-engineering
 featured_enabled: auto
-threshold: 1
-scored_at: '2026-05-18'
+threshold: 6
+scored_at: '2026-05-23'
 human_pin: []
 systems:
 - slug: ai-memory-palace-coach
   axis_scores:
     technical_depth: 8
-    voice: 8
-    validation: 7
+    voice: 7
+    validation: 8
   axis_reasoning:
-    technical_depth: Eight-phase MCP server with FastMCP, SQLite schema (palaces/loci/encodings/cards/sessions),
-      and FSRS scheduler; diagram names subgraphs for Encoding, Retrieval, Reinforcement
-      with real edges.
-    voice: Direct sentences anchored in research ('targets 0.9 retention', 'Dresler
-      protocol', 'enforces validation of loci before encoding begins') with no marketing
-      filler.
-    validation: Each of 8 phases checked with screenshots and the Dresler 2017 certification
-      test as a published-research baseline; evidence is screenshot-based rather than
-      measured runs.
-  average: 7.7
-  rationale: MCP coach grounded in Dresler protocol and FSRS scheduling, validated
-    against published research
+    technical_depth: FastMCP server with SQLite-backed Loci Manager, Bizarre Imagery
+      Encoder, and FSRS scheduler targeting 0.9 retention across 8 phases.
+    voice: Direct framing of active cognitive training loop with named techniques
+      (Method of Loci, FSRS) and no marketing filler.
+    validation: All 8 phases checked end-to-end with Dresler 2017 certification test
+      as the closing science-grounded gate.
+  average: 7.67
+  rationale: FSRS-scheduled spatial recall on a local MCP server, closed by the Dresler
+    2017 certification test
+  featured: true
+- slug: four-persona-manifesto-engine
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 9
+  axis_reasoning:
+    technical_depth: 11 phases, ten subgraphs covering three parallel build agents,
+      checksum-locked Counsel prompts, 607 atomic claims, and a weekly living pipeline.
+    voice: Names concrete decisions like adversarial model-family separation and default-private
+      sensitivity classification without filler.
+    validation: Every one of the 11 phases verified including Counsel adversarial
+      review and the Sunday weekly runner journal.
+  average: 8.67
+  rationale: Adversarial Counsel across Claude and Gemini families gating 607 atomic
+    claims into 13 chapters
   featured: true
 - slug: nine-agent-repo-to-video
   axis_scores:
     technical_depth: 9
-    voice: 9
-    validation: 8
+    voice: 8
+    validation: 9
   axis_reasoning:
-    technical_depth: Nine specialist agents (A1-A9), 18 typed JSON schemas, 6-state
-      orchestrator with warm-start cache, deterministic render stack (Mermaid CLI,
-      Azure TTS with Piper fallback, Whisper caption verify, Remotion, Playwright,
-      ffmpeg), adversarial council veto gate; diagram is the densest in the lens.
-    voice: First-person ownership ('I built', 'I designed'), names concrete tradeoffs
-      ('release integrity over completion speed', least-privilege tools, refusal rules),
-      no filler verbs.
-    validation: Nine phases each marked with screenshots, end-to-end run against a
-      live repo, and a long-mode YouTube explainer artifact as the final gate.
-  average: 8.7
-  rationale: Nine-agent pipeline with 18 typed JSON contracts and council veto gates
-    over a deterministic render stack
+    technical_depth: Nine specialist agents on a 6-state machine with 18 typed JSON
+      schemas, warm-start cache, and deterministic render stack (Mermaid CLI, Azure
+      TTS, Piper fallback, Whisper, Remotion, ffmpeg).
+    voice: Frames the system as typed contracts and governance boundaries rather than
+      prompt chains; specific tech names throughout.
+    validation: All 9 phases verified end-to-end against a live repo, with Council
+      veto and Whisper caption sidecar audit closing the loop.
+  average: 8.67
+  rationale: Nine agents across 18 typed schemas with Council veto and a Whisper caption
+    audit on every release
   featured: true
 - slug: portfolioforge-doc-to-repo
   axis_scores: null
-  rationale: self-referential; skip from Featured ranking
+  axis_reasoning:
+    technical_depth: self-referential, skipped per scorer rule
+    voice: self-referential, skipped per scorer rule
+    validation: self-referential, skipped per scorer rule
+  average: 0
+  rationale: self-referential, skipped per scorer rule
   featured: false
+- slug: self-improving-youtube-engine
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: Four MCP servers, Audience-RAG, Arize Phoenix evaluation, asymmetric
+      promotion gates (4 confirmations to proven, 2 failures to anti-pattern), and
+      8-axis council with trend-drift watchlists.
+    voice: Treats content production as an evolving knowledge system with named tooling
+      (Firecrawl, WhisperX, Arize) and concrete cadence rules.
+    validation: Each of 7 phases verified including the publish-live milestone, with
+      Phoenix evals feeding lessons-learned.yaml as append-only audit.
+  average: 8.33
+  rationale: Asymmetric 4/2 promotion gates feeding proven and anti-patterns back
+    into the script outline
+  featured: true
 - slug: voice-ai-tutor
   axis_scores:
     technical_depth: 7
-    voice: 6
-    validation: 6
+    voice: 9
+    validation: 7
   axis_reasoning:
-    technical_depth: Seven-phase local-first RAG stack (Ollama qwen3:8b, ChromaDB,
-      mxbai-embed-large, Whisper, Guardrails AI, pyttsx3) with tier-aware prompts
-      and multilingual extension; diagram covers full request lifecycle but lacks
-      subgraphs for retries or evaluation.
-    voice: Mostly direct but thinner than peers; the Phase 1 'Project vision' paragraph
-      misfires by describing the main loop instead of the system goal, and several
-      sub-sections collapse into two-sentence summaries.
-    validation: Seven phases marked complete with screenshots, including a full evaluation
-      phase and multilingual run, but the prose evidence is generic ('confirms output
-      varies appropriately') without numbers.
-  average: 6.3
-  rationale: Local-first voice RAG with age-tier prompts, Guardrails safety, and Japanese
-    plus Spanish extension
+    technical_depth: Local-first stack (Ollama qwen3:8b, ChromaDB, Whisper, pyttsx3,
+      LangChain LCEL) with three age-tier prompt templates and Guardrails AI safety
+      wrapper.
+    voice: Opens by reframing the orchestration question rather than pitching features,
+      names concrete cost and latency motivations.
+    validation: All 7 phases verified including the multilingual extension to Japanese
+      and Spanish on the shared retrieval path.
+  average: 7.67
+  rationale: Local-first RAG on Ollama and ChromaDB with tier-aware prompts and Guardrails
+    policing every reply
   featured: true
