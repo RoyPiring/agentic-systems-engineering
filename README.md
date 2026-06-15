@@ -21,14 +21,14 @@ AI and ML engineering across agents, multi-agent orchestration, model integratio
 
 **What it isn't.** A guarantee of agent reliability under all conditions. A vendor-neutral comparison of AI frameworks.
 
-## Systems
+## Featured Systems
 
-- **[Build an AI Memory Palace Coach](./systems/ai-memory-palace-coach/)**, AI · MCP · FSRS · Claude
-- **[PortfolioForge: Doc to Repo](./systems/portfolioforge-doc-to-repo/)**, PortfolioForge · NextWork · Tier-Conditional · OpenSSF
-- **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**, Voice-Enabled · AI · ChromaDB · RAG
-- **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**, Nine-Agent · JSON · Long-Mode · YouTube
-- **[Architect Your Manifesto](./systems/four-persona-manifesto-engine/)**, Laying the Foundation
-- **[Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/)**, Self-Improving · YouTube · MCP · Claude
-- **[Build an AI Job Application Pipeline](./systems/agent-job-application-pipeline/)**, AI · Command-Center · API · Self-Refining
+- **[Build an AI Job Application Pipeline](./systems/agent-job-application-pipeline/)**: 12 agents across 4 teams with dual-model fact-check gates and 27-URL pipeline validation
+- **[Architect Your Manifesto](./systems/four-persona-manifesto-engine/)**: Adversarial Counsel across Claude and Gemini families gating 607 atomic claims into 13 chapters
+- **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**: Nine agents across 18 typed schemas with Council veto and a Whisper caption audit on every release
+- **[Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/)**: Asymmetric 4/2 promotion gates feeding proven and anti-patterns back into the script outline
+- **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**: Local-first RAG on Ollama and ChromaDB with tier-aware prompts and Guardrails policing every reply
+
+_+ 2 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 

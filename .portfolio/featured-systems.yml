@@ -1,25 +1,44 @@
 lens: agentic-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-05-23'
+scored_at: '2026-06-15'
 human_pin: []
 systems:
+- slug: agent-job-application-pipeline
+  axis_scores:
+    technical_depth: 10
+    voice: 8
+    validation: 9
+  axis_reasoning:
+    technical_depth: 12 agents across 4 teams with dual-model adversarial gates, blocking
+      dependency graph, Next.js plus SQLite command center, and Gmail OAuth response
+      loop.
+    voice: Concrete throughput numbers (27 URLs in 50 to 55 minutes, 12 of 12 claims
+      flagged) carry the prose, though the Overview opens with 'I successfully' filler.
+    validation: 10-phase checklist with end-to-end pipeline run captured per phase
+      and named bottlenecks (qualification filtering, missing artifacts, exclusion
+      rules).
+  average: 9.0
+  rationale: 12 agents across 4 teams with dual-model fact-check gates and 27-URL
+    pipeline validation
+  featured: true
 - slug: ai-memory-palace-coach
   axis_scores:
-    technical_depth: 8
+    technical_depth: 7
     voice: 7
     validation: 8
   axis_reasoning:
     technical_depth: FastMCP server with SQLite-backed Loci Manager, Bizarre Imagery
-      Encoder, and FSRS scheduler targeting 0.9 retention across 8 phases.
-    voice: Direct framing of active cognitive training loop with named techniques
+      Encoder, and FSRS scheduler targeting 0.9 retention; smaller surface than peer
+      systems.
+    voice: Direct framing of an active cognitive training loop with named techniques
       (Method of Loci, FSRS) and no marketing filler.
-    validation: All 8 phases checked end-to-end with Dresler 2017 certification test
-      as the closing science-grounded gate.
-  average: 7.67
+    validation: All 8 phases checked end-to-end with the Dresler 2017 certification
+      test as the closing science-grounded gate.
+  average: 7.33
   rationale: FSRS-scheduled spatial recall on a local MCP server, closed by the Dresler
     2017 certification test
-  featured: true
+  featured: false
 - slug: four-persona-manifesto-engine
   axis_scores:
     technical_depth: 9
