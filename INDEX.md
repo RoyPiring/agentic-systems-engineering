@@ -14,3 +14,4 @@ AI agents and orchestration that move from prompt to outcome.
 | 4 | [Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/) | 2026-05-11 | 2026-05-14 | Nine-Agent · JSON · Long-Mode · YouTube |
 | 5 | [Architect Your Manifesto](./systems/four-persona-manifesto-engine/) | 2026-05-19 | 2026-05-19 | Four-Persona · Adversarial-Counsel · Gemini · Obsidian |
 | 6 | [Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/) | 2026-05-19 | 2026-05-19 | Self-Improving · YouTube · MCP · Claude |
+| 7 | [Build an AI Job Application Pipeline](./systems/agent-job-application-pipeline/) | 2026-05-19 | 2026-05-19 | AI · Command-Center · API · Self-Refining |
