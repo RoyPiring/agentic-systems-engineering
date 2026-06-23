@@ -12,6 +12,6 @@ AI agents and orchestration that move from prompt to outcome.
 | 2 | [PortfolioForge: Doc to Repo](./systems/portfolioforge-doc-to-repo/) | 2026-05-06 | 2026-05-11 | PortfolioForge · NextWork · Tier-Conditional · OpenSSF |
 | 3 | [Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/) | 2026-05-06 | 2026-05-11 | Voice-Enabled · AI · ChromaDB · RAG |
 | 4 | [Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/) | 2026-05-11 | 2026-05-14 | Nine-Agent · JSON · Long-Mode · YouTube |
-| 5 | [Architect Your Manifesto](./systems/four-persona-manifesto-engine/) | 2026-05-19 | 2026-05-19 | Four-Persona · Adversarial-Counsel · Gemini · Obsidian |
-| 6 | [Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/) | 2026-05-19 | 2026-05-19 | Self-Improving · YouTube · MCP · Claude |
-| 7 | [Build an AI Job Application Pipeline](./systems/agent-job-application-pipeline/) | 2026-05-19 | 2026-05-19 | AI · Command-Center · API · Self-Refining |
+| 5 | [Architect Your Manifesto](./systems/four-persona-manifesto-engine/) | 2026-05-22 | 2026-05-22 | Laying the Foundation |
+| 6 | [Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/) | 2026-05-23 | 2026-05-23 | Self-Improving · YouTube · MCP · Claude |
+| 7 | [Build an AI Job Application Pipeline](./systems/agent-job-application-pipeline/) | 2026-06-15 | 2026-06-15 | AI · Command-Center · API · Self-Refining |
