@@ -202,7 +202,6 @@ flowchart LR
     TenSeed --> TwentySevenURLs
     TwentySevenURLs --> TenToElevenMin
     TwentySevenURLs --> Bottlenecks
-
     class Node,ClaudeDesktop,CodexCLI,Obsidian,FilesystemMCP service
     class ClaudeGen,CodexValidate,Recruiter1,HiringManager,LeadEngineer service
     class ResumeIngest,LinkedInChannel,AlertsChannel,CareerPageChannel,FitScoring,Prioritization service
@@ -239,7 +238,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/12-agent-job-application-pipeline.md`](./documents/12-agent-job-application-pipeline.md):
+Each build phase below is documented in [`documents/12-agent-job-application-pipeline.md`](./documents/12-agent-job-application-pipeline.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ The Mission: Building an Unfair Advantage in a Crowded Market
 - ✅ Designing the 12-Agent Architecture

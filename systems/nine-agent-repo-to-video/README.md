@@ -101,7 +101,6 @@ flowchart LR
     Quality -->|approve or veto| Veto
     Compliance -->|approve or veto| Veto
     Veto -->|veto halts release| Orch
-
     class Schemas,Cache datastore
     class Orch,Anatomist,Distiller,BrandSlice,Script,Visual,Motion,Voice,Carousel,Quality,Compliance,MermaidCli,Azure,PiperTts,Whisper,Remotion,Playwright,FFmpeg service
     class Veto event
@@ -128,7 +127,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/nine-agent-repo-to-video.md`](./documents/nine-agent-repo-to-video.md):
+Each build phase below is documented in [`documents/nine-agent-repo-to-video.md`](./documents/nine-agent-repo-to-video.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Building a Nine-Agent Content Foundry
 - ✅ Verifying and Installing the Full Tool Chain

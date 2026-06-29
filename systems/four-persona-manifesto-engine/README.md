@@ -175,7 +175,6 @@ flowchart LR
     Canon --> ManifestoSafe
     ManifestoSafe --> Positioning
     Positioning --> CounselReviewSM
-
     class Python,NodeJS,Pydantic,Whisper,Ghostwriter,Interviewer,Architect,Counsel service
     class AgentA,AgentB,AgentC,Dashboard,VocabAnalysis,Positioning,CounselReviewSM service
     class Contradiction,Unsupported,Coherence,SelfDeception,CarryoverTrack,DataviewQueries,IdentityGraph,ChapterClaimLinks,Scheduler service
@@ -206,7 +205,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/four-persona-manifesto-engine.md`](./documents/four-persona-manifesto-engine.md):
+Each build phase below is documented in [`documents/four-persona-manifesto-engine.md`](./documents/four-persona-manifesto-engine.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Laying the Foundation
 - ✅ Designing the Architecture with ADRs and Diagrams

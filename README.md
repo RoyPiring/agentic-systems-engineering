@@ -4,7 +4,7 @@
 
 > *How do AI agents orchestrate, control, and stay reliable?*
 
-AI agents and orchestration that move from prompt to outcome. Each system in this domain ships with a Mermaid architecture diagram, a numbered implementation map, and a checkmark list of build outcomes verified end-to-end. The original source document is kept per system.
+AI agents and orchestration that move from prompt to outcome. Each system in this domain ships with a Mermaid architecture diagram, a numbered implementation map, and a checkmark list of documented build phases. The original source document is kept per system.
 
 ## Who this is for
 

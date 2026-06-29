@@ -78,9 +78,6 @@ flowchart LR
 
     Output[/Coached recall + retention metrics/]
     WalkSession --> Output
-class DB datastore
-class Validator,StruggleFlag event
-
     class DB datastore
     class Claude,FastMCP,LociMgr,Encoder,WalkSession,Grader,FSRS service
     class Validator,StruggleFlag event
@@ -106,7 +103,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/ai-memory-palace-coach.md`](./documents/ai-memory-palace-coach.md):
+Each build phase below is documented in [`documents/ai-memory-palace-coach.md`](./documents/ai-memory-palace-coach.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Building an AI Memory Coach with the Science of World Champions
 - ✅ Setting Up the MCP Server Foundation

@@ -77,9 +77,6 @@ flowchart LR
     Copier -->|renders repo tree| Conformance
     Conformance -->|score >= tier threshold| Repo
     Conformance -->|fail: regenerate failing agent| Orchestrator
-class ParsedJSON,Assembled,Template datastore
-class Orchestrator event
-
     class ParsedJSON,Assembled,Template datastore
     class Parser,Tier,Structurer,ADR,Diagram,PhaseSplit,Credit,Copier,Conformance service
     class Orchestrator event
@@ -105,7 +102,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/portfolioforge-doc-to-repo.md`](./documents/portfolioforge-doc-to-repo.md):
+Each build phase below is documented in [`documents/portfolioforge-doc-to-repo.md`](./documents/portfolioforge-doc-to-repo.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Setting Up the Development Environment
 - ✅ Building the NextWork Doc Parser and Tier Detector

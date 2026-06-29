@@ -71,9 +71,6 @@ flowchart LR
     Fallback -->|safe text| TTS
     Guardrails -->|approved text| TTS
     TTS -->|synthesizes at age-rate| Speaker
-class Chroma,Curriculum datastore
-class Flag,Fallback event
-
     class Chroma,Curriculum datastore
     class Whisper,MainLoop,LCEL,TierPrompt,LLM,Guardrails,Embed,TTS service
     class Flag,Fallback event
@@ -98,7 +95,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/voice-ai-tutor.md`](./documents/voice-ai-tutor.md):
+Each build phase below is documented in [`documents/voice-ai-tutor.md`](./documents/voice-ai-tutor.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Setting Up the Local AI Development Environment
 - ✅ Ingesting Curriculum Content into ChromaDB

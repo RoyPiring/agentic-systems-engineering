@@ -163,7 +163,6 @@ flowchart LR
     Month6Cal --> ArizePhoenix
     Month12Cal --> ArizePhoenix
     Day30Targets -.fixed commitments.-> SundayRunbook
-
     class ClaudeDesktop,NodePython,OBS,DaVinci,Obsidian,FilesystemMCP,GitMCP,SqliteMCP,FirecrawlMCP service
     class Interview,TrendIntel,Whisper,ClaimExtract,Confidence,ScriptOutline,HookBench,ThumbnailPrompt service
     class AudienceRAG,ArizePhoenix,ComplianceQC,EightAxisCouncil,DriftIndicators,SundayRunbook service
@@ -192,7 +191,7 @@ For the full walkthrough with screenshots and step-by-step content, see [`docume
 
 ## Validation
 
-Build outcomes verified end-to-end. Each phase below is captured with screenshots, configuration, and observable behavior in [`documents/self-improving-youtube-engine.md`](./documents/self-improving-youtube-engine.md):
+Each build phase below is documented in [`documents/self-improving-youtube-engine.md`](./documents/self-improving-youtube-engine.md), with screenshots, configuration, and notes as captured during the build:
 
 - ✅ Configuring the MCP Stack for Claude
 - ✅ Defining Channel Identity and Content Strategy
