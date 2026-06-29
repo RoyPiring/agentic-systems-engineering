@@ -107,7 +107,7 @@ In dual-output mode, the orchestrator reuses Phase 1 distillation outputs instea
 
 State reuse avoids recomputing repository structure, branding, and system analysis when the repository SHA remains unchanged. Only creative and rendering phases are regenerated for the second output mode.
 
-This reduced orchestration overhead and improved overall throughput without compromising determinism.
+This reduced orchestration overhead and raised overall throughput without compromising determinism.
 
 ## Assembling the Visual and Audio Pipeline
 
@@ -211,7 +211,7 @@ The Remotion render stage exposed the practical limits of compute-heavy orchestr
 
 The most important takeaway was understanding how specialized AI agents can coordinate through strict contracts instead of relying on shared conversational context.
 
-The next area I want to improve is large-scale orchestration management and software project coordination across longer-running AI execution pipelines.
+The next area I want to strengthen is large-scale orchestration management and software project coordination across longer-running AI execution pipelines.
 
 ---
 
