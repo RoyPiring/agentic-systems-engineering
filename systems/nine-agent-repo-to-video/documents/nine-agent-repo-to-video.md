@@ -179,7 +179,7 @@ A8 validates content quality and technical accuracy. It checks whether claims ar
 
 A9 validates release safety. It checks the repository license, confirms asset and music rights, verifies brand-kit compliance, and compares generated captions against the audio transcript using speech-to-text. If the transcript and captions drift too far apart, the release is blocked.
 
-The important design choice is that A8 and A9 can only pass or veto. They are not allowed to fix the output they review. That separation prevents the review layer from hiding its own findings and keeps quality control independent from gen
+The important design choice is that A8 and A9 can only pass or veto. They are not allowed to fix the output they review. That separation prevents the review layer from hiding its own findings and keeps quality control independent from generation.
 
 ## Secret Mission: Long-Mode YouTube Explainer with Chapter Markers
 
