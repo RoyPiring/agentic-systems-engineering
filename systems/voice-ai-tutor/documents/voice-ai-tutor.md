@@ -95,7 +95,7 @@ This allows spoken questions to be converted into text for processing, enabling 
 
 Text-to-speech converts responses into audio output.
 
-Speech rates are adjusted by age tier to match comprehension levels, improving usability for different audiences.
+Speech rates are adjusted by age tier to match comprehension levels, lifting usability for different audiences.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/09722f01-6a11-410a-8927-e0095cec8f54_dn5p7xwk)
 
@@ -149,7 +149,7 @@ Faithfulness ensures answers align with the curriculum, age-appropriateness meas
 
 Guardrail performance revealed a gap.
 
-A 0% block rate indicates that unsafe prompts were not intercepted, showing that validator configuration or integration needs improvement.
+A 0% block rate indicates that unsafe prompts were not intercepted, showing that validator configuration or integration needs work.
 
 ## Secret Mission: Multilingual Support in Japanese and Spanish
 

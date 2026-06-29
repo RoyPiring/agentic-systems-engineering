@@ -17,7 +17,7 @@
 
 This project builds a local Python MCP server that transforms Claude into a structured memory palace coach using the Method of Loci and FSRS-based spaced repetition.
 
-The system is designed to move beyond passive note-taking into an active cognitive training loop. It encodes information into spatial memory structures, reinforces recall through guided sessions, and schedules reviews based on retention probability. The goal is not just storing knowledge, but improving long-term recall through a system that combines spatial anchoring, imagery, and adaptive review intervals.
+The system is designed to move beyond passive note-taking into an active cognitive training loop. It encodes information into spatial memory structures, reinforces recall through guided sessions, and schedules reviews based on retention probability. The goal is not just storing knowledge, but strengthening long-term recall through a system that combines spatial anchoring, imagery, and adaptive review intervals.
 
 ## Setting Up the MCP Server Foundation
 
@@ -55,7 +55,7 @@ The loci table defines ordered spatial anchors within a palace, each tied to a p
 
 The system enforces validation of loci before encoding begins.
 
-Only locations that can be clearly visualized are confirmed and used for memory encoding. This prevents weak anchors from entering the system, ensuring that downstream recall relies on stable spatial references. This aligns with the Dresler protocol, where early validation improves long-term retention quality.
+Only locations that can be clearly visualized are confirmed and used for memory encoding. This prevents weak anchors from entering the system, ensuring that downstream recall relies on stable spatial references. This aligns with the Dresler protocol, where early validation lifts long-term retention quality.
 
 ## Encoding Memories with Bizarre Imagery
 
@@ -129,7 +129,7 @@ Claude Desktop launches the MCP server using the virtual environment’s Python 
 
 The results align with expected learning curves.
 
-Initial improvements reflect skill acquisition rather than scale, indicating that encoding quality has a larger impact early in the process. However, results depend on consistent practice and full implementation of the protocol, not isolated sessions.
+Initial gains reflect skill acquisition rather than scale, indicating that encoding quality has a larger impact early in the process. However, results depend on consistent practice and full implementation of the protocol, not isolated sessions.
 
 ## Reflections and Key Takeaways
 
@@ -147,7 +147,7 @@ The main challenge was debugging syntax errors within the certification test too
 
 ### Looking ahead
 
-This project focuses on building a system that improves memory through structured encoding and adaptive review.
+This project focuses on building a system that strengthens memory through structured encoding and adaptive review.
 
 The next step is refining spaced repetition implementation and expanding the system to support larger-scale knowledge ingestion and long-term retention workflows.
 

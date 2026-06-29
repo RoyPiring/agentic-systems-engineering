@@ -159,7 +159,7 @@ The primary challenge was resolving YAML indentation issues within the CI workfl
 
 This project establishes a foundation for automated portfolio generation.
 
-The next step is improving prompt engineering for multi-agent systems, focusing on increasing reliability and reducing variance across generated outputs.
+The next step is sharpening prompt engineering for multi-agent systems, focusing on increasing reliability and reducing variance across generated outputs.
 
 ---
 

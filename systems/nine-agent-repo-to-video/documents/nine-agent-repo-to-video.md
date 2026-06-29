@@ -203,7 +203,7 @@ The concepts reinforced throughout the project included orchestration state mach
 
 ### Time investment and challenges
 
-This project took approximately 90 minutes to complete. The most difficult part was optimizing the long-form rendering pipeline while maintaining deterministic output quality.
+This project took approximately 90 minutes to complete. The most difficult part was tuning the long-form rendering pipeline while maintaining deterministic output quality.
 
 The Remotion render stage exposed the practical limits of compute-heavy orchestration workloads, especially when scaling into high-frame-count video generation.
 

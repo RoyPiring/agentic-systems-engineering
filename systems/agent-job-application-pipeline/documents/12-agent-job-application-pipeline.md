@@ -51,7 +51,7 @@ The graph also separates recurring maintenance activities from application-speci
 
 The audit process evaluated professional positioning through three separate viewpoints: recruiter, hiring manager, and lead engineer. Each perspective examined the same experience from a different decision-making angle, creating a broader understanding of how technical achievements are perceived during the hiring process.
 
-This multi-perspective review highlights gaps that may not be visible when viewing a resume from a single lens. Recruiters focus on qualification alignment, hiring managers evaluate role fit and business value, while lead engineers assess technical depth and execution capability. Combining these viewpoints creates a more complete picture of professional positioning and provides clearer direction for future improvements. The exercise reinforced the importance of aligning technical accomplishments with the expectations of multiple stakeholders involved in hiring decisions.
+This multi-perspective review highlights gaps that may not be visible when viewing a resume from a single lens. Recruiters focus on qualification alignment, hiring managers evaluate role fit and business value, while lead engineers assess technical depth and execution capability. Combining these viewpoints creates a more complete picture of professional positioning and provides clearer direction for future iterations. The exercise reinforced the importance of aligning technical accomplishments with the expectations of multiple stakeholders involved in hiring decisions.
 
 ![Image](https://learn.nextwork.org/refreshed_maroon_timid_jujube/uploads/d33ab3da-82d6-4292-aa81-68a5ec51cdd6_90kget7e)
 
