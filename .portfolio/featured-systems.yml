@@ -1,7 +1,7 @@
 lens: agentic-systems-engineering
 featured_enabled: auto
 threshold: 6
-scored_at: '2026-06-15'
+scored_at: '2026-06-30'
 human_pin: []
 systems:
 - slug: agent-job-application-pipeline
@@ -114,4 +114,21 @@ systems:
   average: 7.67
   rationale: Local-first RAG on Ollama and ChromaDB with tier-aware prompts and Guardrails
     policing every reply
+  featured: false
+- slug: personal-ai-research-agency
+  axis_scores:
+    technical_depth: 9
+    voice: 8
+    validation: 8
+  axis_reasoning:
+    technical_depth: Seven-phase build with capability routing, adapter timeouts and
+      circuit breaker, quota tracker, and a diagram naming real components and edges.
+    voice: Direct and specific on tradeoffs like degrade-to-Firecrawl and verification-over-regex,
+      though it leans on 'I' recap openers.
+    validation: Every phase checked; the prompt-injection phase is strongest with
+      a red-team catch of a live Firecrawl upsell during verification, though evidence
+      is prose not linked artifacts.
+  average: 8.33
+  rationale: Multi-CLI research firm using verification, not regex, as the prompt-injection
+    backstop.
   featured: true

@@ -1,6 +1,6 @@
 # Agentic Systems Engineering
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-7-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--06--25-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-1B4332?style=flat-square&labelColor=0d1117)](./LICENSE) [![Systems](https://img.shields.io/badge/systems-8-2F5233?style=flat-square&labelColor=0d1117)](./INDEX.md) [![Updated](https://img.shields.io/badge/updated-2026--06--30-264653?style=flat-square&labelColor=0d1117)](./INDEX.md)
 
 > *How do AI agents orchestrate, control, and stay reliable?*
 
@@ -26,9 +26,9 @@ AI and ML engineering across agents, multi-agent orchestration, model integratio
 - **[Build an AI Job Application Pipeline](./systems/agent-job-application-pipeline/)**: 12 agents across 4 teams with dual-model fact-check gates and 27-URL pipeline validation
 - **[Architect Your Manifesto](./systems/four-persona-manifesto-engine/)**: Adversarial Counsel across Claude and Gemini families gating 607 atomic claims into 13 chapters
 - **[Ship a Repo Explainer Pipeline](./systems/nine-agent-repo-to-video/)**: Nine agents across 18 typed schemas with Council veto and a Whisper caption audit on every release
+- **[Personal AI Research Agency](./systems/personal-ai-research-agency/)**: Multi-CLI research firm using verification, not regex, as the prompt-injection backstop
 - **[Build a Self-Improving YouTube Engine](./systems/self-improving-youtube-engine/)**: Asymmetric 4/2 promotion gates feeding proven and anti-patterns back into the script outline
-- **[Build a Voice-Enabled AI Tutor](./systems/voice-ai-tutor/)**: Local-first RAG on Ollama and ChromaDB with tier-aware prompts and Guardrails policing every reply
 
-_+ 2 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
+_+ 3 other systems in the full catalog: [`INDEX.md`](./INDEX.md)._
 
 
